@@ -1,5 +1,3 @@
 export default {
-  en: {
-    message: "hello i18n !!"
-  }
+  message: 'en i18n'
 }
