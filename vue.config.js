@@ -1,7 +1,7 @@
-const path = require('path');const 
-PrerenderSPAPlugin = require('prerender-spa-plugin');
+const path = require('path'); const
+  PrerenderSPAPlugin = require('prerender-spa-plugin')
 
-const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 module.exports = {
   configureWebpack: config => {
@@ -23,9 +23,9 @@ module.exports = {
           },
           renderer: new Renderer({
             renderAfterDocumentEvent: 'render-event'
-          }),
+          })
         })
       ]
     }
-  },
-};
+  }
+}
