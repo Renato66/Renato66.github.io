@@ -7,6 +7,27 @@
       <SkillBars :skills="skills" />
       <PortifolioCards :portifolio="portifolio" />
       <SocialNetworks :socialNetworks="socialNetworks" />
+      <v-container grid-list-xl>
+        <v-layout row wrap>
+          <v-flex xs12 sm6 class="text-xs-center headline">
+            <v-icon large>mdi-map-marker</v-icon>
+            <br>
+            Resido em
+            <a href="https://www.google.com.br/maps/place/Santo+André,+SP">
+              <b>Santo André</b>
+            </a>
+          </v-flex>
+          <v-flex xs12 sm6 class="text-xs-center headline">
+            <v-icon large>mdi-email</v-icon>
+            <br>
+            <a href="mailto:revi66@hotmail.com">
+              <b>
+                Revi66@hotmail.com
+              </b>
+            </a>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-content>
   </v-app>
 </template>
