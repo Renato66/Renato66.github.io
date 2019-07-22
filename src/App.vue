@@ -6,17 +6,20 @@
       }}
       <SkillBars :skills="skills" />
       <PortifolioCards :portifolio="portifolio" />
+      <SocialNetworks :socialNetworks="socialNetworks" />
     </v-content>
   </v-app>
 </template>
 
 <script>
 import SkillBars from '@/components/SkillBars'
+import SocialNetworks from '@/components/SocialNetworks'
 import PortifolioCards from '@/components/PortifolioCards'
 export default {
   name: 'App',
   components: {
     SkillBars,
+    SocialNetworks,
     PortifolioCards
   },
   data () {
@@ -113,6 +116,23 @@ export default {
           link: 'http://www.clubedossalgados.com.br/',
           img: '/img/clube.png',
           technologies: ['bootstrap', 'jquery']
+        }
+      ],
+      socialNetworks: [
+        {
+          name: 'facebook',
+          url: 'https://www.facebook.com/renato.vicente.3344',
+          img: '/img/facebook.png'
+        },
+        {
+          name: 'github',
+          url: 'https://github.com/Renato66',
+          img: '/img/github.png'
+        },
+        {
+          name: 'linkedin',
+          url: 'https://www.linkedin.com/in/renato-vicente-961a7b90/?originalSubdomain=br',
+          img: '/img/linkedin.png'
         }
       ]
     }
