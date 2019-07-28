@@ -4,44 +4,32 @@
       {{
         $t('message')
       }}
+      <WorkTabs :experiences="work" />
       <SkillBars :skills="skills" />
       <PortifolioCards :portifolio="portifolio" />
       <SocialNetworks :socialNetworks="socialNetworks" />
-      <v-container grid-list-xl>
-        <v-layout row wrap>
-          <v-flex xs12 sm6 class="text-xs-center headline">
-            <v-icon large>mdi-map-marker</v-icon>
-            <br>
-            Resido em
-            <a href="https://www.google.com.br/maps/place/Santo+André,+SP">
-              <b>Santo André</b>
-            </a>
-          </v-flex>
-          <v-flex xs12 sm6 class="text-xs-center headline">
-            <v-icon large>mdi-email</v-icon>
-            <br>
-            <a href="mailto:revi66@hotmail.com">
-              <b>
-                Revi66@hotmail.com
-              </b>
-            </a>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <ContactLinks :contact="contact" />
+      <Footer :contact="contact" />
     </v-content>
   </v-app>
 </template>
 
 <script>
+import WorkTabs from '@/components/WorkTabs'
 import SkillBars from '@/components/SkillBars'
 import SocialNetworks from '@/components/SocialNetworks'
 import PortifolioCards from '@/components/PortifolioCards'
+import ContactLinks from '@/components/ContactLinks'
+import Footer from '@/components/Footer'
 export default {
   name: 'App',
   components: {
+    WorkTabs,
     SkillBars,
     SocialNetworks,
-    PortifolioCards
+    Footer,
+    PortifolioCards,
+    ContactLinks
   },
   data () {
     return {
@@ -155,7 +143,63 @@ export default {
           url: 'https://www.linkedin.com/in/renato-vicente-961a7b90/?originalSubdomain=br',
           img: '/img/linkedin.png'
         }
+      ],
+      contact: {
+        name: 'Renato Vicente Frison dos Santos',
+        img: 'https://www.gravatar.com/avatar/44d075eb0dc6e9d7f3528ac2de5c24c3',
+        phone: '5511959818159',
+        telegram: 'irenato66',
+        mail: 'Revi66@hotmail.com',
+        city: 'Santo André',
+        state: 'SP',
+        birthday: new Date(1993, 5, 9, 0, 0, 0, 0)
+      },
+      work: [
+        {
+          id: 'coddera',
+          company: 'Coddera',
+          startDate: '2018-10-01',
+          endDate: null,
+          website: 'http://www.coddera.com'
+        },
+        {
+          id: 'athos',
+          company: 'Athos',
+          startDate: '2016-12-01',
+          endDate: '2018-04-04',
+          website: 'https://www.athos.com.br'
+        },
+        {
+          id: 'cgm',
+          company: 'CGM SP',
+          startDate: '2014-12-01',
+          endDate: '2015-06-01',
+          website: 'https://www.prefeitura.sp.gov.br/cidade/secretarias/controladoria_geral/'
+        },
+        {
+          id: 'vanzoline',
+          company: 'Vanzoline',
+          startDate: '2013-02-01',
+          endDate: '2014-04-01',
+          website: 'https://vanzolini.org.br'
+        },
+        {
+          id: 'blazing',
+          company: 'Blazing produções',
+          startDate: '2013-03-01',
+          endDate: null,
+          website: 'http://blazing.com.br/blazing/'
+        }
       ]
+    }
+  },
+  filters: {
+    age (value) {
+      const currentDate = new Date()
+      const age = currentDate.getFullYear() - value.getFullYear()
+      const month = currentDate.getMonth() - value.getMonth()
+      const day = currentDate.getDate() - value.getDate()
+      return (month < 0 || month === 0) && day < 0 ? age - 1 : age
     }
   },
   mounted () {
@@ -165,4 +209,8 @@ export default {
 </script>
 
 <style>
+a.white--text {
+  text-decoration: none;
+  color: white
+}
 </style>
