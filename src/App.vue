@@ -4,6 +4,40 @@
       {{
         $t('message')
       }}
+      <v-container>
+        <v-layout>
+          <v-flex xs12>
+            <v-timeline align-top :dense="$vuetify.breakpoint.xs">
+              <v-timeline-item
+                v-for="item in timeline"
+                :key="item.id"
+                color="primary"
+                :icon="item.icon"
+                fill-dot
+                large
+              >
+                <v-card>
+                  <v-card-title class="title pb-0">{{ $t(`timeline.${item.id}.title`) }} </v-card-title>
+                  <v-card-text>
+                    <p class="mb-0">{{ $t(`timeline.${item.id}.description`) }}</p>
+                    <span class="float-place">{{ $t(`timeline.${item.id}.place`) }}</span>
+                    <!-- <v-btn
+                      :color="item.color"
+                      class="mx-0"
+                      outline
+                    >
+                      Button
+                    </v-btn> -->
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+            </v-timeline>
+          </v-flex>
+        </v-layout>
+        <v-dialog v-model="open" content-class="text-xs-center dialog-frame">
+          <iframe class="white" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D10203204040314104%26set%3Da.4213882857609%26type%3D3&width=500&show_text=true&appId=998943660228637&height=424" width="500" height="424" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </v-dialog>
+      </v-container>
       <WorkTabs :experiences="work" />
       <SkillBars :skills="skills" />
       <PortifolioCards :portifolio="portifolio" />
@@ -33,6 +67,7 @@ export default {
   },
   data () {
     return {
+      open: true,
       skills: [
         {
           name: 'Vue',
@@ -190,6 +225,34 @@ export default {
           endDate: null,
           website: 'http://blazing.com.br/blazing/'
         }
+      ],
+      timeline: [
+        {
+          id: 'colombia',
+          icon: 'mdi-airplane',
+          startDate: '2019-05-29',
+          endDate: '2019-06-08'
+        },
+        {
+          id: 'fatec',
+          icon: 'mdi-school',
+          startDate: '2012-01-01',
+          endDate: '2016-01-01'
+        },
+        {
+          id: 'fisk',
+          icon: 'mdi-chat',
+          year: '2016',
+          startDate: '2005-01-01',
+          endDate: '2011-01-01'
+        },
+        {
+          id: 'clovis',
+          icon: 'mdi-book-open-page-variant',
+          year: '2016',
+          startDate: '2007-01-01',
+          endDate: '2010-01-01'
+        }
       ]
     }
   },
@@ -209,6 +272,11 @@ export default {
 </script>
 
 <style>
+.dialog-frame {
+  width: auto;
+  height: 424px;
+  overflow: hidden;
+}
 a.white--text {
   text-decoration: none;
   color: white

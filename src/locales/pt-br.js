@@ -1,5 +1,27 @@
 export default {
   message: 'pt-bt i18n',
+  timeline: {
+    colombia: {
+      title: 'Férias',
+      description: 'Primeira viagem internacional',
+      place: 'Colômbia'
+    },
+    fatec: {
+      title: 'Faculdade',
+      description: 'Analise e desenvolvimento de sistemas',
+      place: 'FATEC'
+    },
+    fisk: {
+      title: 'Idioma',
+      description: 'Curso de inglês',
+      place: 'FISK'
+    },
+    clovis: {
+      title: 'Curso',
+      description: 'Ensino médio e técnico em informática',
+      place: 'Clovis Bevilacqua'
+    }
+  },
   actual: 'Atual',
   year: ' | {n} ano e | {n} anos e',
   month: '0 meses | {n} mês | {n} meses',

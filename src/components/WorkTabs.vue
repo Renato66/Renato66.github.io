@@ -25,7 +25,6 @@
             :key="work.id"
             style="min-height: 200px;"
           >
-        
               <v-layout class="text-xs-center mt-4  mb-3" row wrap>
                 <v-flex xs12 class="primary--text title">
                   {{ $t(`work.${work.id}`).position }}
@@ -86,7 +85,7 @@ export default {
   },
   computed: {
     revertExperiences () {
-      return this.experiences.reverse()
+      return [...this.experiences].reverse()
     }
   },
   mounted () {
