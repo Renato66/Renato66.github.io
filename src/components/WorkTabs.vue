@@ -3,15 +3,15 @@
     <v-layout align-center>
       <v-spacer></v-spacer>
       <v-flex shrink>
-        <v-btn flat icon @click="next" :disabled="experiences.length === selected + 1">
+        <v-btn flat icon @click="prev" :disabled="selected === 0">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink class="headline text-xs-center" style="min-width:150px;">
-        {{ experiences[selected].company }}
+        {{ revertExperiences[selected].company }}
       </v-flex>
       <v-flex shrink>
-        <v-btn flat icon @click="prev" :disabled="selected === 0">
+        <v-btn flat icon @click="next" :disabled="revertExperiences.length === selected + 1">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </v-flex>
@@ -21,7 +21,7 @@
       <v-flex xs12>
         <v-window v-model="selected" style="min-height: 200px;">
           <v-window-item
-            v-for="work in experiences"
+            v-for="work in revertExperiences"
             :key="work.id"
             style="min-height: 200px;"
           >
@@ -67,13 +67,13 @@ export default {
   },
   methods: {
     next () {
-      this.selected = this.selected + 1 === this.experiences
+      this.selected = this.selected + 1 === this.revertExperiences.lenght
         ? 0
         : this.selected + 1
     },
     prev () {
       this.selected = this.selected - 1 < 0
-        ? this.experiences - 1
+        ? this.revertExperiences.lenght - 1
         : this.selected - 1
     },
     howLong (value) {
@@ -83,6 +83,14 @@ export default {
         months: months % 12
       }
     }
+  },
+  computed: {
+    revertExperiences () {
+      return this.experiences.reverse()
+    }
+  },
+  mounted () {
+    this.selected = this.experiences.length - 1
   }
 }
 </script>
