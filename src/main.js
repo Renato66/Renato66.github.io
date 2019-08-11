@@ -8,6 +8,7 @@ import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.min.css'
 Vue.config.productionTip = false
 
+
 new Vue({
   i18n,
   router,

@@ -6,43 +6,65 @@
       }}
       <v-container>
         <v-layout>
-          <v-flex xs12>
-            <v-timeline align-top :dense="$vuetify.breakpoint.xs">
-              <v-timeline-item
-                v-for="item in timeline"
-                :key="item.id"
-                color="primary"
-                :icon="item.icon"
-                fill-dot
-                large
-              >
-                <v-card>
-                  <v-card-title class="title pb-0">{{ $t(`timeline.${item.id}.title`) }} </v-card-title>
-                  <v-card-text>
-                    <p class="mb-0">{{ $t(`timeline.${item.id}.description`) }}</p>
-                    <span class="float-place">{{ $t(`timeline.${item.id}.place`) }}</span>
-                    <!-- <v-btn
-                      :color="item.color"
-                      class="mx-0"
-                      outline
-                    >
-                      Button
-                    </v-btn> -->
-                  </v-card-text>
-                </v-card>
-              </v-timeline-item>
-            </v-timeline>
+          <v-flex shrink>
+            <v-menu offset-y content-class="br-8">
+              <template v-slot:activator="{ on }">
+                <v-btn v-on="on" icon outline large style="position:fixed;z-index:2">
+                  <v-icon>
+                    mdi-menu
+                  </v-icon>
+                </v-btn>
+              </template>
+              <v-list dense>
+                <v-list-tile
+                  v-for="item in menu"
+                  :key="item"
+                  @click="$vuetify.goTo(`#${item}`)"
+                >
+                  <v-list-tile-title>{{ item }}</v-list-tile-title>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+          </v-flex>
+          <v-spacer></v-spacer>
+          <v-flex shrink>
+            <v-dialog width="300">
+              <template v-slot:activator="{ on }">
+                <v-btn v-on="on" large round class="text-none">
+                  Entre em contato
+                </v-btn>
+              </template>
+              <v-card>
+                <v-card-title
+                  class="headline primary lighten-2 text-xs-center"
+                  primary-title
+                >
+                  ENTRE EM CONTATO
+                </v-card-title>
+
+                <v-card-text>
+                </v-card-text>
+              </v-card>
+            </v-dialog>
           </v-flex>
         </v-layout>
-        <v-dialog v-model="open" content-class="text-xs-center dialog-frame">
-          <iframe class="white" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D10203204040314104%26set%3Da.4213882857609%26type%3D3&width=500&show_text=true&appId=998943660228637&height=424" width="500" height="424" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-        </v-dialog>
       </v-container>
-      <WorkTabs :experiences="work" />
-      <SkillBars :skills="skills" />
-      <PortifolioCards :portifolio="portifolio" />
-      <SocialNetworks :socialNetworks="socialNetworks" />
-      <ContactLinks :contact="contact" />
+      <section id="skills">
+        <SkillBars :skills="skills" />
+      </section>
+      <section id="work">
+        <WorkTabs :experiences="work" />
+      </section>
+      <section id="timeline">
+        <Timeline :timeline="timeline" />
+      </section>
+      <section id="portifolio">
+        <PortifolioCards :portifolio="portifolio" />
+      </section>
+      <section id="resume">
+        <SocialNetworks :socialNetworks="socialNetworks" />
+        <ContactLinks :contact="contact" />
+      </section>
       <Footer :contact="contact" />
     </v-content>
   </v-app>
@@ -55,9 +77,12 @@ import SocialNetworks from '@/components/SocialNetworks'
 import PortifolioCards from '@/components/PortifolioCards'
 import ContactLinks from '@/components/ContactLinks'
 import Footer from '@/components/Footer'
+import Timeline from '@/components/Timeline'
+
 export default {
   name: 'App',
   components: {
+    Timeline,
     WorkTabs,
     SkillBars,
     SocialNetworks,
@@ -67,7 +92,15 @@ export default {
   },
   data () {
     return {
-      open: true,
+      menu: [
+        'hi',
+        'about',
+        'skills',
+        'work',
+        'timeline',
+        'portfolio',
+        'resume'
+      ],
       skills: [
         {
           name: 'Vue',
@@ -229,6 +262,7 @@ export default {
       timeline: [
         {
           id: 'colombia',
+          dialog: true,
           icon: 'mdi-airplane',
           startDate: '2019-05-29',
           endDate: '2019-06-08'
@@ -236,6 +270,7 @@ export default {
         {
           id: 'fatec',
           icon: 'mdi-school',
+          dialog: true,
           startDate: '2012-01-01',
           endDate: '2016-01-01'
         },
@@ -272,10 +307,8 @@ export default {
 </script>
 
 <style>
-.dialog-frame {
-  width: auto;
-  height: 424px;
-  overflow: hidden;
+.br-8{
+  border-radius: 8px;
 }
 a.white--text {
   text-decoration: none;
