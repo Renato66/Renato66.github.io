@@ -1,5 +1,8 @@
 export default {
   message: 'pt-bt i18n',
+  age: 'anos',
+  description: 'Programador. DJ. Criativo. Inovador.',
+  aditional: ', Apaixonado por musica',
   timeline: {
     colombia: {
       title: 'Férias',

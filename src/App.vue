@@ -1,54 +1,9 @@
 <template>
   <v-app dark>
     <v-content>
-      {{
-        $t('message')
-      }}
-      <v-container>
-        <v-layout>
-          <v-flex shrink>
-            <v-menu offset-y content-class="br-8">
-              <template v-slot:activator="{ on }">
-                <v-btn v-on="on" icon outline large style="position:fixed;z-index:2">
-                  <v-icon>
-                    mdi-menu
-                  </v-icon>
-                </v-btn>
-              </template>
-              <v-list dense>
-                <v-list-tile
-                  v-for="item in menu"
-                  :key="item"
-                  @click="$vuetify.goTo(`#${item}`)"
-                >
-                  <v-list-tile-title>{{ item }}</v-list-tile-title>
-                </v-list-tile>
-              </v-list>
-            </v-menu>
-          </v-flex>
-          <v-spacer></v-spacer>
-          <v-flex shrink>
-            <v-dialog width="300">
-              <template v-slot:activator="{ on }">
-                <v-btn v-on="on" large round class="text-none">
-                  Entre em contato
-                </v-btn>
-              </template>
-              <v-card>
-                <v-card-title
-                  class="headline primary lighten-2 text-xs-center"
-                  primary-title
-                >
-                  ENTRE EM CONTATO
-                </v-card-title>
-
-                <v-card-text>
-                </v-card-text>
-              </v-card>
-            </v-dialog>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <header id="skills" style="background-image: url('/img/background.png');min-height: 100vh;">
+        <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
+      </header>
       <section id="skills">
         <SkillBars :skills="skills" />
       </section>
@@ -74,6 +29,7 @@
 import WorkTabs from '@/components/WorkTabs'
 import SkillBars from '@/components/SkillBars'
 import SocialNetworks from '@/components/SocialNetworks'
+import PortifolioHeader from '@/components/PortifolioHeader'
 import PortifolioCards from '@/components/PortifolioCards'
 import ContactLinks from '@/components/ContactLinks'
 import Footer from '@/components/Footer'
@@ -82,6 +38,7 @@ import Timeline from '@/components/Timeline'
 export default {
   name: 'App',
   components: {
+    PortifolioHeader,
     Timeline,
     WorkTabs,
     SkillBars,
@@ -199,25 +156,34 @@ export default {
         {
           name: 'facebook',
           url: 'https://www.facebook.com/renato.vicente.3344',
-          img: '/img/facebook.png'
+          img: '/img/facebook.png',
+          icon: 'mdi-facebook'
         },
         {
           name: 'github',
           url: 'https://github.com/Renato66',
-          img: '/img/github.png'
+          img: '/img/github.png',
+          icon: 'mdi-github-circle'
         },
         {
           name: 'linkedin',
           url: 'https://www.linkedin.com/in/renato-vicente-961a7b90/?originalSubdomain=br',
-          img: '/img/linkedin.png'
+          img: '/img/linkedin.png',
+          icon: 'mdi-linkedin'
         }
       ],
       contact: {
         name: 'Renato Vicente Frison dos Santos',
-        img: 'https://www.gravatar.com/avatar/44d075eb0dc6e9d7f3528ac2de5c24c3',
-        phone: '5511959818159',
+        shortName: 'Renato Vicente',
+        avatar: 'https://www.gravatar.com/avatar/44d075eb0dc6e9d7f3528ac2de5c24c3',
+        phone: {
+          country: '55',
+          area: '11',
+          number: '95981-8159'
+        },
         telegram: 'irenato66',
         mail: 'Revi66@hotmail.com',
+        linkedin: 'renato-vicente-961a7b90',
         city: 'Santo André',
         state: 'SP',
         birthday: new Date(1993, 5, 9, 0, 0, 0, 0)
@@ -289,15 +255,6 @@ export default {
           endDate: '2010-01-01'
         }
       ]
-    }
-  },
-  filters: {
-    age (value) {
-      const currentDate = new Date()
-      const age = currentDate.getFullYear() - value.getFullYear()
-      const month = currentDate.getMonth() - value.getMonth()
-      const day = currentDate.getDate() - value.getDate()
-      return (month < 0 || month === 0) && day < 0 ? age - 1 : age
     }
   },
   mounted () {

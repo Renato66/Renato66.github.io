@@ -22,9 +22,10 @@
                     v-if="item.dialog"
                     class="ma-0"
                     small
-                    outline
+                    flat
                     icon
                     @click="open[item.id] = true"
+                    style="position: relative;top: -12px;right: -12px;"
                   >
                     <v-icon small>
                       mdi-camera-outline

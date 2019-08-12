@@ -36,7 +36,7 @@
         </v-btn>
       </v-flex>
       <v-flex shrink>
-        <v-btn icon outline large :href="`tel:${contact.phone}`" class="mx-0">
+        <v-btn icon outline large :href="`tel:${phone}`" class="mx-0">
           <v-icon>
             mdi-phone
           </v-icon>
@@ -63,10 +63,15 @@ export default {
         navigator.userAgent.match(/iPod/i) ||
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/Windows Phone/i)) {
-        window.open(`https://api.whatsapp.com/send?phone=${this.contact.phone}`, '_blank')
+        window.open(`https://api.whatsapp.com/send?phone=${this.phone}`, '_blank')
       } else {
-        window.open(`https://web.whatsapp.com/send?phone=${this.contact.phone}`, '_blank')
+        window.open(`https://web.whatsapp.com/send?phone=${this.phone}`, '_blank')
       }
+    }
+  },
+  computed: {
+    phone () {
+      return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
   }
 }
