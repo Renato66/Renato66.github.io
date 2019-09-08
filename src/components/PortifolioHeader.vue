@@ -44,17 +44,18 @@
         <h3 class="grey--text font-weight-light">{{ contact.city }} - {{ contact.birthday | age }} {{ $t('age') }} {{ $t('aditional')}}</h3>
       </v-flex>
     </v-layout>
-    <v-layout>
-      <v-flex xs12 class="text-xs-center floating-btn">
-        <v-dialog width="300" content-class="br-8">
+    <v-layout align-center>
+      <v-spacer></v-spacer>
+      <v-flex shrink class="text-xs-center floating-btn">
+        <v-dialog width="320" content-class="br-8">
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" large round class="text-none">
+            <v-btn v-on="on" large round class="text-none" color="primary">
               Entre em contato
             </v-btn>
           </template>
           <v-card>
             <v-card-title
-              class="headline primary lighten-2"
+              class="headline primary"
               primary-title
             >
             <v-spacer></v-spacer>
@@ -132,11 +133,11 @@
                 <v-layout>
                   <v-spacer></v-spacer>
                   <v-flex shrink>
-                    <v-btn round class="text-none">
-                      <v-icon left>
+                    <v-btn round class="text-none" color="#25d366">
+                      WhatsApp
+                      <v-icon class="ml-2">
                         mdi-whatsapp
                       </v-icon>
-                      Fale comigo
                     </v-btn>
                   </v-flex>
                   <v-spacer></v-spacer>
@@ -146,6 +147,7 @@
           </v-card>
         </v-dialog>
       </v-flex>
+      <v-spacer></v-spacer>
     </v-layout>
   </v-container>
 </template>
@@ -168,7 +170,7 @@ export default {
     LocaleChange
   },
   data () {
-    return  {
+    return {
       followScroll: false
     }
   },
