@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     selectLocale (value) {
-      this.$router.push({ name: 'App', params: {lang: value} })
+      this.$router.push({ name: 'App', params: { lang: value } })
     }
   },
   computed: {
