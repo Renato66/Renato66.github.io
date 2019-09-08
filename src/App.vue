@@ -190,10 +190,17 @@ export default {
       },
       work: [
         {
+          id: 'boxnet',
+          company: 'Boxnet',
+          startDate: '2019-09-02',
+          endDate: null,
+          website: 'http://www.boxnet.com.br'
+        },
+        {
           id: 'coddera',
           company: 'Coddera',
           startDate: '2018-10-01',
-          endDate: null,
+          endDate: '2019-08-31',
           website: 'http://www.coddera.com'
         },
         {
