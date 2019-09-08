@@ -1,15 +1,22 @@
 <template>
-  <v-menu offset-y content-class="br-8">
+  <v-menu offset-y nudge-left="6" nudge-top="47" content-class="br-8">
     <template v-slot:activator="{ on }">
-    <v-btn v-on="on" icon large class="ml-0">
+    <v-btn v-on="on" icon large :ripple="false">
       <v-avatar size="24" tile>
         <v-img :src="selectedLocale.flag"></v-img>
       </v-avatar>
     </v-btn>
     </template>
     <v-list dense>
+      <v-list-tile @click="selectLocale(selectedLocale.id)">
+        <v-list-tile-title>
+          <v-avatar size="24" tile>
+            <v-img :src="selectedLocale.flag"></v-img>
+          </v-avatar>
+        </v-list-tile-title>
+      </v-list-tile>
       <v-list-tile
-        v-for="locale in supportedLocales"
+        v-for="locale in filteredLocales"
         :key="locale.id"
         @click="selectLocale(locale.id)"
       >
@@ -47,6 +54,9 @@ export default {
   computed: {
     selectedLocale () {
       return this.supportedLocales.find(elem => elem.id === this.$i18n.locale)
+    },
+    filteredLocales () {
+      return this.supportedLocales.filter(elem => elem.id !== this.$i18n.locale)
     }
   }
 }
