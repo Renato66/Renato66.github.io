@@ -43,7 +43,8 @@
       </v-flex>
     </v-layout>
     <v-dialog v-model="open['fatec']" content-class="text-xs-center dialog-frame">
-      <iframe class="white" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D10203204040314104%26set%3Da.4213882857609%26type%3D3&width=500&show_text=true&appId=998943660228637&height=424" width="500" height="424" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      <iframe v-if="$vuetify.breakpoint.xs" class="white" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D10203204040314104%26set%3Da.4213882857609%26type%3D3&width=350&show_text=true&appId=998943660228637&height=323" width="350" height="323" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      <iframe v-else class="white" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D10203204040314104%26set%3Da.4213882857609%26type%3D3&width=500&show_text=true&appId=998943660228637&height=424" width="500" height="424" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </v-dialog>
     <v-dialog v-model="open['colombia']" content-class="text-xs-center">
       <v-carousel v-if="open['colombia']" hide-delimiters :cycle="false">
@@ -86,7 +87,7 @@ export default {
 <style>
 .dialog-frame {
   width: auto;
-  height: 424px;
   overflow: hidden;
+  box-shadow: none;
 }
 </style>

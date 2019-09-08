@@ -29,6 +29,10 @@ export default {
   year: ' | {n} ano e | {n} anos e',
   month: '0 meses | {n} mês | {n} meses',
   work: {
+    boxnet: {
+      position: 'Front end',
+      description: 'Antes trabalhava na boxnet como terceirizado pela coddera e fui absorvido para continuar o trabalho; Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway.'
+    },
     coddera: {
       position: 'Front end',
       description: 'Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway.'
@@ -38,16 +42,16 @@ export default {
       description: 'Atuação no desenvolvimento front-end de aplicativos WebApps. Participação do desenvolvimento de melhorias e manutenção do aplicativo webapp App minha adm. Criação de skins personalizadas do sistema de gestão condominial webminio. Criação de hotsites responsivos usando mobile-first.'
     },
     cgm: {
-      position: '',
-      description: ''
+      position: 'Estágiario',
+      description: 'Criação de programas em Excel/VBA para o tratamento e geração de relatórios para o portal da transparência.'
     },
     vanzoline: {
-      position: '',
-      description: ''
+      position: 'Estágiario',
+      description: 'Suporte presencial nas atividades de ensino a distância, configuração da rede intranet, proxy e ip.'
     },
     blazing: {
-      position: '',
-      description: ''
+      position: 'DJ',
+      description: 'Gerenciamento de eventos sociais e condução dos mesmos.'
     }
   },
   liveIn: 'Moro em',
