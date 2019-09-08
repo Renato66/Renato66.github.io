@@ -1,6 +1,6 @@
 {
-  "name": "portifolio",
-  "short_name": "portifolio",
+  "name": "Renato Vicente - portifólio",
+  "short_name": "portifólio",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
@@ -13,8 +13,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#303030",
+  "theme_color": "#22c6a0"
 }
