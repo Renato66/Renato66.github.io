@@ -4,6 +4,7 @@ export default {
   description: 'Programador. DJ. Criativo. Inovador.',
   aditional: ', Apaixonado por musica',
   timeline: {
+    title: 'Linha do tempo',
     colombia: {
       title: 'Férias',
       description: 'Primeira viagem internacional',
@@ -29,6 +30,7 @@ export default {
   year: ' | {n} ano e | {n} anos e',
   month: '0 meses | {n} mês | {n} meses',
   work: {
+    title: 'Experiências',
     boxnet: {
       position: 'Front end',
       description: 'Antes trabalhava na boxnet como terceirizado pela coddera e fui absorvido para continuar o trabalho; Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway.'
@@ -55,5 +57,31 @@ export default {
     }
   },
   liveIn: 'Moro em',
-  footer: 'Este é meu portifólio, espero que tenha gostado.'
+  footer: 'Este é meu portifólio, espero que tenha gostado.',
+  about: {
+    title: 'Sobre mim',
+    quotes: {
+      programming: {
+        title: 'Programação',
+        description: 'Primeiro, resolva o problema. Depois, escreva o código.'
+      },
+      creativity: {
+        title: 'Criatividade',
+        description: 'Você não consegue esgotar ela. quanto mais você usa, mais você tem.'
+      },
+      inovation: {
+        title: 'Inovação',
+        description: 'Um barco no porto está seguro, mas não foi pra isso que barcos foram construidos.'
+      }
+    }
+  },
+  skills: {
+    title: 'Habilidades'
+  },
+  portifolio: {
+    title: 'Portifólio'
+  },
+  contact: {
+    title: 'Contato'
+  }
 }

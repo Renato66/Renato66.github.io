@@ -1,5 +1,12 @@
 <template>
   <v-container grid-list-xl>
+    <v-layout>
+      <v-flex class="primary--text">
+        <h2 class="primary--text display-3 font-weight-thin">
+          {{ $t('skills.title') }}
+        </h2>
+      </v-flex>
+    </v-layout>
     <v-layout row wrap>
       <v-flex xs12 sm6 v-for="(skill, index) in skills" :key="index">
         <v-layout align-end>

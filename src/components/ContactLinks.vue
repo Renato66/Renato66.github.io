@@ -1,6 +1,16 @@
 <template>
   <v-container grid-list-xl>
     <v-layout row wrap>
+      <v-flex xs12 class="white--text text-xs-center pb-0">
+        <h2 class="display-3 font-weight-thin">
+          {{ $t('contact.title') }}
+        </h2>
+      </v-flex>
+      <v-flex xs4 offset-xs4 mb-4>
+        <v-divider class="primary"></v-divider>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap mb-4>
       <v-flex xs12 sm6 class="text-xs-center headline">
         <v-icon large>mdi-map-marker</v-icon>
         <br>
@@ -19,7 +29,7 @@
         </a>
       </v-flex>
     </v-layout>
-    <v-layout row wrap>
+    <v-layout row wrap mb-3>
       <v-spacer></v-spacer>
       <v-flex shrink>
         <v-btn icon outline large :href="`tg://resolve?domain=${contact.telegram}`" class="mx-0">

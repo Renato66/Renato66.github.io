@@ -1,8 +1,15 @@
 <template>
   <v-container>
     <v-layout>
+      <v-flex class="primary--text">
+        <h2 class="primary--text display-3 font-weight-thin">
+          {{ $t('timeline.title') }}
+        </h2>
+      </v-flex>
+    </v-layout>
+    <v-layout>
       <v-flex xs12>
-        <v-timeline align-top :dense="$vuetify.breakpoint.xs">
+        <v-timeline align-top light :dense="$vuetify.breakpoint.xs">
           <v-timeline-item
             v-for="item in timeline"
             :key="item.id"
@@ -11,21 +18,21 @@
             fill-dot
             large
           >
-            <v-card>
-              <v-card-title class="title pb-0">
-                <v-flex shrink>
+            <v-card style="position:relative">
+              <v-card-title class="title pb-0 pt-2">
+                <v-flex shrink class="primary--text pt-1">
                   {{ $t(`timeline.${item.id}.title`) }}
                 </v-flex>
                 <v-spacer></v-spacer>
                 <v-flex shrink>
                   <v-btn
                     v-if="item.dialog"
-                    class="ma-0"
                     small
                     flat
                     icon
+                    color="grey darken-1"
                     @click="open[item.id] = true"
-                    style="position: relative;top: -12px;right: -12px;"
+                    style="position: absolute;top: 2px;right: 0;"
                   >
                     <v-icon small>
                       mdi-camera-outline

@@ -1,5 +1,12 @@
 <template>
   <v-container grid-list-xl>
+    <v-layout>
+      <v-flex class="primary--text">
+        <h2 class="primary--text display-3 font-weight-thin">
+          {{ $t('portifolio.title') }}
+        </h2>
+      </v-flex>
+    </v-layout>
     <v-layout row wrap class="portifolio-wrapper">
       <v-flex xs12 sm6 md4 v-for="(app, index) in portifolio" :key="index">
         <v-hover>

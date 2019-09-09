@@ -1,5 +1,12 @@
 <template>
   <v-container>
+    <v-layout>
+      <v-flex class="primary--text">
+        <h2 class="primary--text display-3 font-weight-thin">
+          {{ $t('work.title') }}
+        </h2>
+      </v-flex>
+    </v-layout>
     <v-layout align-center>
       <v-spacer></v-spacer>
       <v-flex shrink>

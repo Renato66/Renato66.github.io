@@ -4,23 +4,28 @@
       <header id="skills" style="background-image: url('/img/background.png');min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
-      <section id="skills">
+      <section id="about" class="white">
+        <Presentation />
+      </section>
+      <section id="skills" style="background-image: url('/img/background.png');">
         <SkillBars :skills="skills" />
       </section>
-      <section id="work">
-        <WorkTabs :experiences="work" />
-      </section>
-      <section id="timeline">
+      <section id="timeline" class="white">
         <Timeline :timeline="timeline" />
       </section>
-      <section id="portifolio">
+       <section id="work" style="background-image: url('/img/background.png');">
+        <WorkTabs :experiences="work" />
+      </section>
+      <section id="portifolio" class="white">
         <PortifolioCards :portifolio="portifolio" />
       </section>
-      <section id="resume">
+      <section id="resume" class="primary py-5">
         <SocialNetworks :socialNetworks="socialNetworks" />
+      </section>
+      <section style="background-image: url('/img/background.png');">
         <ContactLinks :contact="contact" />
       </section>
-      <Footer :contact="contact" />
+        <Footer :contact="contact" />
     </v-content>
   </v-app>
 </template>
@@ -34,6 +39,7 @@ import PortifolioCards from '@/components/PortifolioCards'
 import ContactLinks from '@/components/ContactLinks'
 import Footer from '@/components/Footer'
 import Timeline from '@/components/Timeline'
+import Presentation from '@/components/Presentation'
 
 export default {
   name: 'App',
@@ -45,7 +51,8 @@ export default {
     SocialNetworks,
     Footer,
     PortifolioCards,
-    ContactLinks
+    ContactLinks,
+    Presentation
   },
   data () {
     return {

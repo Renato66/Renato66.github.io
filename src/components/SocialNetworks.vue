@@ -9,7 +9,7 @@
       </v-flex>
       <v-spacer></v-spacer>
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-        <v-btn round large class="text-none">
+        <v-btn round large color="white" light class="text-none">
           Baixe meu curriculum
         </v-btn>
       </v-flex>
