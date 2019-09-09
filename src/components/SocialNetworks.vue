@@ -9,8 +9,8 @@
       </v-flex>
       <v-spacer></v-spacer>
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-        <v-btn round large color="white" light class="text-none">
-          Baixe meu curriculum
+        <v-btn href="/Renato-CV.pdf" download="Renato-CV.pdf" round large color="white" light class="text-none">
+          {{ $t('downloadResume') }}
         </v-btn>
       </v-flex>
     </v-layout>

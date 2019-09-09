@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-content>
-      <header id="skills" style="background-image: url('/img/background.png');min-height: 100vh;">
+      <header id="hi" style="background-image: url('/img/background.png');min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
       <section id="about" class="white">
@@ -60,9 +60,9 @@ export default {
         'hi',
         'about',
         'skills',
-        'work',
         'timeline',
-        'portfolio',
+        'work',
+        'portifolio',
         'resume'
       ],
       skills: [

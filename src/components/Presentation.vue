@@ -10,13 +10,13 @@
     <v-layout class="grey--text text--darken-2">
       <v-flex xs12 class="pt-2">
         <p>
-          Formado em Análise e desenvolvimento de sistemas pela FATEC São Caetano do Sul, desenvolvi alguns projetos em PHP porem me aprofundei na area de front end, aplicando nos meu trabalhos: SPA, performance, desing responsivo, mobile first, offline first.
+          {{ $t('about.paragraph.1')}}
         </p>
         <p>
-          Atualmente trabalho com Vue.js e AWS stack na <a href="#work" class="primary--text">Boxnet</a>
+          {{ $t('about.paragraph.2')}} <a href="#work" class="primary--text">Boxnet</a>
         </p>
         <p>
-          Em alguns finais de semana trabalho como DJ, aproveitando a festa, fazendo do meu trabalho um hobbie.
+          {{ $t('about.paragraph.3')}}
         </p>
       </v-flex>
     </v-layout>

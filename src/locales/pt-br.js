@@ -1,5 +1,16 @@
 export default {
-  message: 'pt-bt i18n',
+  menu: {
+    hi: 'Olá',
+    about: 'Sobre mim',
+    skills: 'Habilidades',
+    timeline: 'Linha do tempo',
+    work: 'Experiencias',
+    portifolio: 'Portifólio',
+    resume: 'Curriculum'
+  },
+  getInTouch: 'Entre em contato',
+  phone: 'Telefone',
+  email: 'E-mail',
   age: 'anos',
   description: 'Programador. DJ. Criativo. Inovador.',
   aditional: ', Apaixonado por musica',
@@ -53,13 +64,18 @@ export default {
     },
     blazing: {
       position: 'DJ',
-      description: 'Gerenciamento de eventos sociais e condução dos mesmos.'
+      description: 'DJ por hobbie.'
     }
   },
   liveIn: 'Moro em',
   footer: 'Este é meu portifólio, espero que tenha gostado.',
   about: {
     title: 'Sobre mim',
+    paragraph: {
+      1: 'Formado em Análise e desenvolvimento de sistemas pela FATEC São Caetano do Sul, desenvolvi alguns projetos em PHP porem me aprofundei na area de front end, aplicando nos meu trabalhos: SPA, performance, desing responsivo, mobile first, offline first.',
+      2: 'Atualmente trabalho com Vue.js e AWS stack na',
+      3: 'Em alguns finais de semana trabalho como DJ, aproveitando a festa, fazendo do meu trabalho um hobbie.'
+    },
     quotes: {
       programming: {
         title: 'Programação',
@@ -75,6 +91,7 @@ export default {
       }
     }
   },
+  downloadResume: 'Baixe meu curriculum',
   skills: {
     title: 'Habilidades'
   },

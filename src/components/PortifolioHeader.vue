@@ -16,7 +16,7 @@
               :key="item"
               @click="$vuetify.goTo(`#${item}`)"
             >
-              <v-list-tile-title>{{ item }}</v-list-tile-title>
+              <v-list-tile-title>{{ $t(`menu.${item}`) }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -50,7 +50,7 @@
         <v-dialog width="320" content-class="br-8">
           <template v-slot:activator="{ on }">
             <v-btn v-on="on" large round class="text-none" color="primary">
-              Entre em contato
+              {{ $t('getInTouch') }}
             </v-btn>
           </template>
           <v-card>
@@ -59,7 +59,9 @@
               primary-title
             >
             <v-spacer></v-spacer>
-              ENTRE EM CONTATO
+            <span class="text-uppercase">
+              {{ $t('getInTouch') }}
+            </span>
             <v-spacer></v-spacer>
             </v-card-title>
 
@@ -72,7 +74,7 @@
                     </v-icon>
                   </v-flex>
                   <v-flex>
-                    Telefone:
+                    {{ $t('phone')}}:
                   </v-flex>
                   <v-spacer></v-spacer>
                   <v-flex shrink>
@@ -88,7 +90,7 @@
                     </v-icon>
                   </v-flex>
                   <v-flex>
-                    Email:
+                    {{ $t('email')}}:
                   </v-flex>
                   <v-spacer></v-spacer>
                   <v-flex shrink>
