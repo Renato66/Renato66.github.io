@@ -37,17 +37,17 @@ export default {
       quotes: [
         {
           id: 'programming',
-          img: 'https://renato66.github.io/img/programmer.png',
+          img: '/img/programmer.png',
           author: 'John Johnson'
         },
         {
           id: 'creativity',
-          img: 'https://renato66.github.io/img/brain.png',
+          img: '/img/brain.png',
           author: 'Maya Angelou'
         },
         {
           id: 'inovation',
-          img: 'https://renato66.github.io/img/rocket.png',
+          img: '/img/rocket.png',
           autor: 'S. Brown'
         }
       ]
