@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-content>
+    <v-content v-if="true">
       <header id="hi" style="background-image: url('/img/background.png');min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
@@ -8,7 +8,7 @@
         <Presentation />
       </section>
       <section id="skills" style="background-image: url('/img/background.png');">
-        <SkillBars :skills="skills" />
+        <SkillBars :skills="mainSkills" />
       </section>
       <section id="timeline" class="white">
         <Timeline :timeline="timeline" />
@@ -27,6 +27,7 @@
       </section>
         <Footer :contact="contact" />
     </v-content>
+    <ResumePDF :contact="contact" :work="work" :skills="skills" v-if="false"/>
   </v-app>
 </template>
 
@@ -40,6 +41,7 @@ import ContactLinks from '@/components/ContactLinks'
 import Footer from '@/components/Footer'
 import Timeline from '@/components/Timeline'
 import Presentation from '@/components/Presentation'
+import ResumePDF from '@/components/resume/Index'
 
 export default {
   name: 'App',
@@ -52,7 +54,8 @@ export default {
     Footer,
     PortifolioCards,
     ContactLinks,
-    Presentation
+    Presentation,
+    ResumePDF
   },
   data () {
     return {
@@ -68,33 +71,78 @@ export default {
       skills: [
         {
           name: 'Vue',
+          main: true,
           img: '/img/vuejs.png',
           knowlegde: 100
         },
         {
           name: 'Node.js',
+          main: true,
           img: '/img/nodejs.png',
           knowlegde: 70
         },
         {
           name: 'Cypress',
+          main: true,
           img: '/img/cypress.ico',
-          knowlegde: 40
+          knowlegde: 70
         },
         {
           name: 'GraphQL',
+          main: true,
           img: '/img/graphQL.png',
-          knowlegde: 20
+          knowlegde: 50
         },
         {
           name: 'Laravel',
+          main: true,
           img: '/img/laravel.png',
           knowlegde: 40
         },
         {
           name: 'Firebase',
+          main: true,
           img: '/img/firebase.png',
-          knowlegde: 20
+          knowlegde: 80
+        },
+        {
+          name: 'Firebase',
+          main: true,
+          img: '/img/firebase.png',
+          knowlegde: 80
+        },
+        {
+          name: 'Javascript es6+'
+        },
+        {
+          name: 'Stylus'
+        },
+        {
+          name: 'Git'
+        },
+        {
+          name: 'SEO'
+        },
+        {
+          name: 'Scrum'
+        },
+        {
+          name: 'Agile'
+        },
+        {
+          name: 'Jasmine'
+        },
+        {
+          name: 'Jest'
+        },
+        {
+          name: 'PHP'
+        },
+        {
+          name: 'Python'
+        },
+        {
+          name: 'Go'
         }
       ],
       portifolio: [
@@ -230,14 +278,14 @@ export default {
           startDate: '2013-02-01',
           endDate: '2014-04-01',
           website: 'https://vanzolini.org.br'
-        },
-        {
-          id: 'blazing',
-          company: 'Blazing produções',
-          startDate: '2013-03-01',
-          endDate: null,
-          website: 'http://blazing.com.br/blazing/'
         }
+        // {
+        //   id: 'blazing',
+        //   company: 'Blazing produções',
+        //   startDate: '2013-03-01',
+        //   endDate: null,
+        //   website: 'http://blazing.com.br/blazing/'
+        // }
       ],
       timeline: [
         {
@@ -269,6 +317,11 @@ export default {
           endDate: '2010-01-01'
         }
       ]
+    }
+  },
+  computed: {
+    mainSkills () {
+      return this.skills.filter(elem => elem.main)
     }
   },
   mounted () {
