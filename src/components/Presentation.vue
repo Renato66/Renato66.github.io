@@ -7,7 +7,7 @@
         </h2>
       </v-flex>
     </v-layout>
-    <v-layout class="grey--text text--darken-2">
+    <v-layout class="grey--text text--darken-2 subheading">
       <v-flex xs12 class="pt-2">
         <p>
           {{ $t('about.paragraph.1')}}
