@@ -11,9 +11,10 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: Renato66/github-pages-deploy-action@ghtoken
+      uses: Renato66/github-pages-deploy-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: master
         FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
+        BASE_BRANCH: source
