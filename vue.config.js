@@ -4,6 +4,12 @@ const path = require('path'); const
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 module.exports = {
+  pwa: {
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true
+    }
+  },
   configureWebpack: config => {
     if (process.env.NODE_ENV !== 'production') return
     return {

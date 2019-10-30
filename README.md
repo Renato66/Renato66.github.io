@@ -1,4 +1,4 @@
-# portifolio
+# Portfolio
 
 ## Project setup
 ```
@@ -13,11 +13,6 @@ yarn serve
 ### Compiles and minifies for production
 ```
 yarn build
-```
-
-### Run your tests
-```
-yarn test
 ```
 
 ### Lints and fixes files
