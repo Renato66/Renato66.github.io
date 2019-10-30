@@ -12,6 +12,7 @@
     <meta property="og:description" content="Programador front end, Dj e viajante nas horas vagas.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="/favicon.ico">
+    <link href="/update.css" rel="stylesheet">
     <title>portifolio</title>
   </head>
   <body>
@@ -19,6 +20,12 @@
       <strong>Desculpe, mas o meu portifólio não funciona sem o JavaScript habilitado. Por favor habilite-o para continuar.</strong>
       <strong>Sorry, but my portifolio doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div id="update-info" class="update-container" onclick="location.reload()" style="visibility:hidden;">
+      <i aria-hidden="true"  class="v-icon mdi mdi-autorenew theme--dark rotating" style="font-size: 28px;"></i>
+      <span class="update-text">Novas atualizações foram encontradas!</span>
+      <br>
+      <span class="update-text hidden-xs-only">Clique aqui e atualize a página</span>
+    </div>
     <div id="app"></div>
   </body>
 </html>
