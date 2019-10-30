@@ -29,7 +29,7 @@
     <v-layout class="mt-5">
       <v-flex class="text-xs-center">
         <v-avatar size="236">
-          <v-img :src="`//images.weserv.nl/?url=${contact.avatar}?size=236`"></v-img>
+          <v-img :src="`https://images.weserv.nl/?url=${contact.avatar}?size=236`"></v-img>
         </v-avatar>
       </v-flex>
     </v-layout>
