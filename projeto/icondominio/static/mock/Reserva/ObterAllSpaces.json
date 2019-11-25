@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Churrasqueira",
+    "tax": 32,
+    "maxGuests": 10,
+    "image": null
+  },
+  {
+    "id": "2",
+    "name": "Espaço Gourmet",
+    "tax": 100,
+    "maxGuests": 20,
+    "image": "https://www.tuacasa.com.br/wp-content/uploads/2015/11/VF-Archidesign-Deck-Gourmet-Lumis-00-730x548.jpg"
+  }
+]

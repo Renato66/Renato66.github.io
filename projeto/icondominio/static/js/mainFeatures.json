@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Mensagens",
+    "description": "Veja suas mensagens",
+    "url": "/Recado/Cadastra",
+    "href": true,
+    "icon": "icon-mensagens",
+    "bullet": 0
+  },
+  {
+    "title": "Reservas",
+    "description": "Faça suas reservas",
+    "url": "NavegaReservasMobile(true)",
+    "icon": "icon-reservas",
+    "href": false,
+    "bullet": 0
+  },
+  {
+    "title": "Notícias",
+    "description": "Veja as principais notícias",
+    "url": "/Noticias/Index",
+    "icon": "icon-noticias",
+    "href": true,
+    "bullet": 0
+  },
+  {
+    "title": "Mudanças",
+    "description": "Reserve o dia da mudança",
+    "url": "/Mudanca/Index",
+    "icon": "icon-mudancas",
+    "href": true,
+    "bullet": 0
+  },
+  {
+    "title": "Enquetes",
+    "description": "Vote nas enquetes",
+    "url": "/Enquete/Index",
+    "icon": "icon-enquetes",
+    "href": true,
+    "bullet": 1
+  },
+  {
+    "title": "Pessoas",
+    "description": "Cadastre pessoas da unidade",
+    "url": "/Pessoas/Index",
+    "icon": "icon-pessoas",
+    "href": true,
+    "bullet": 0
+  }
+]
