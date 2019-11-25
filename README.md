@@ -1,23 +1,23 @@
 # Portfolio
 
 ## Project setup
-```
-yarn install
+```bash
+yarn # or npm i
 ```
 
 ### Compiles and hot-reloads for development
-```
-yarn run serve
+```bash
+yarn serve # or npm run serve
 ```
 
 ### Compiles and minifies for production
-```
-yarn run build
+```bash
+yarn build # or npm run build
 ```
 
 ### Lints and fixes files
-```
-yarn run lint
+```bash
+yarn lint # or npm run lint
 ```
 
 ### Customize configuration
