@@ -106,12 +106,6 @@ export default {
           knowlegde: 80
         },
         {
-          name: 'Firebase',
-          main: true,
-          img: '/img/firebase.png',
-          knowlegde: 80
-        },
-        {
           name: 'Javascript es6+'
         },
         {
