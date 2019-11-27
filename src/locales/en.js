@@ -39,7 +39,7 @@ export default {
   },
   actual: 'Actual',
   year: ' | {n} year and | {n} years and',
-  month: '0 months | {n} month | {n} months',
+  month: ' | {n} month | {n} months',
   work: {
     title: 'Experiences',
     boxnet: {
