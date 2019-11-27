@@ -11,8 +11,9 @@ jobs:
       uses: actions/checkout@master
     - name: Install
       run:
-        npm install | 
-        npm run build
+        yarn global add @vue/cli |
+        yarn | 
+        yarn build
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
