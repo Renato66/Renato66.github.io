@@ -101,5 +101,8 @@ export default {
   contact: {
     title: 'Contato'
   },
-  doing: 'Cursando'
+  doing: 'Cursando',
+  formation: {
+    title: 'Formação'
+  }
 }

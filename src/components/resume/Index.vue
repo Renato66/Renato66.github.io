@@ -49,7 +49,7 @@
     </v-layout>
     <v-layout mt-3>
       <v-flex xs12 class="display-1">
-        Experiências
+        {{ $t('work.title') }}
       </v-flex>
     </v-layout>
     <v-layout v-for="experience in work" :key="experience.id" row wrap mt-3>
@@ -70,7 +70,7 @@
     </v-layout>
     <v-layout mt-3>
       <v-flex xs12 class="display-1">
-        Skills
+        {{ $t('skills.title') }}
       </v-flex>
     </v-layout>
     <v-layout row wrap mt-3>
@@ -83,7 +83,7 @@
     <div style="page-break-after: always;" class="ma-5"></div>
     <v-layout mt-3>
       <v-flex xs12 class="display-1">
-        Sobre mim
+        {{ $t('about.title') }}
       </v-flex>
     </v-layout>
     <v-layout mt-3>
@@ -101,7 +101,7 @@
     </v-layout>
     <v-layout mt-3>
       <v-flex xs12 class="display-1">
-        Formação
+        {{ $t('formation.title') }}
       </v-flex>
     </v-layout>
     <v-layout v-for="item in timeline.filter(elem => elem.resume)" :key="item.id" row wrap mt-3>
