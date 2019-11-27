@@ -11,8 +11,8 @@ jobs:
       uses: actions/checkout@master
     - name: Install
       run:
-        yarn | 
-        yarn build
+        npm install | 
+        npm run build
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
