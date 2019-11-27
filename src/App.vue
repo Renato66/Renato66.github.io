@@ -1,6 +1,6 @@
 <template>
-  <v-app dark>
-    <v-content v-if="true">
+  <v-app :dark="!print">
+    <v-content v-if="!print">
       <header id="hi" style="background-image: url('/img/background.png');min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
@@ -20,14 +20,14 @@
         <PortifolioCards :portifolio="portifolio" />
       </section>
       <section id="resume" class="primary py-5">
-        <SocialNetworks :socialNetworks="socialNetworks" />
+        <SocialNetworks :socialNetworks="socialNetworks" @print-resume="printResume" />
       </section>
       <section style="background-image: url('/img/background.png');">
         <ContactLinks :contact="contact" />
       </section>
         <Footer :contact="contact" />
     </v-content>
-    <ResumePDF :contact="contact" :work="work" :skills="skills" v-if="false"/>
+    <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="print"/>
   </v-app>
 </template>
 
@@ -59,6 +59,7 @@ export default {
   },
   data () {
     return {
+      print: false,
       menu: [
         'hi',
         'about',
@@ -293,6 +294,7 @@ export default {
           id: 'fatec',
           icon: 'mdi-school',
           dialog: true,
+          resume: true,
           startDate: '2012-01-01',
           endDate: '2016-01-01'
         },
@@ -300,6 +302,7 @@ export default {
           id: 'fisk',
           icon: 'mdi-chat',
           year: '2016',
+          resume: true,
           startDate: '2005-01-01',
           endDate: '2011-01-01'
         },
@@ -307,10 +310,21 @@ export default {
           id: 'clovis',
           icon: 'mdi-book-open-page-variant',
           year: '2016',
+          resume: true,
           startDate: '2007-01-01',
           endDate: '2010-01-01'
         }
       ]
+    }
+  },
+  methods: {
+    printResume () {
+      this.print = true
+      setTimeout(() => {
+        window.print()
+        this.print = false
+        this.$vuetify.goTo(0)
+      }, 100)
     }
   },
   computed: {

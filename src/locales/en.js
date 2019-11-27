@@ -100,5 +100,6 @@ export default {
   },
   contact: {
     title: 'Contact'
-  }
+  },
+  doing: 'Doing'
 }

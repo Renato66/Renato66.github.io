@@ -38,8 +38,8 @@ export default {
     }
   },
   actual: 'Atual',
-  year: ' | {n} ano e | {n} anos e',
-  month: '0 meses | {n} mês | {n} meses',
+  year: ' | {n} ano | {n} anos',
+  month: ' | {n} mês | {n} meses',
   work: {
     title: 'Experiências',
     boxnet: {
@@ -100,5 +100,6 @@ export default {
   },
   contact: {
     title: 'Contato'
-  }
+  },
+  doing: 'Cursando'
 }

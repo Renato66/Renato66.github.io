@@ -9,7 +9,7 @@
       </v-flex>
       <v-spacer></v-spacer>
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-        <v-btn href="/Renato-CV.pdf" download="Renato-CV.pdf" round large color="white" light class="text-none">
+        <v-btn download="Renato-CV.pdf" round large color="white" light class="text-none" @click="$emit('print-resume')">
           {{ $t('downloadResume') }}
         </v-btn>
       </v-flex>
