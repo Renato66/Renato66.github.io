@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@master
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
-      env:
+      with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: master
         FOLDER: dist
