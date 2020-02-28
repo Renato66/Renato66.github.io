@@ -336,7 +336,10 @@ export default {
     }
   },
   mounted () {
-    document.dispatchEvent(new Event('render-event'))
+    setTimeout(() => {
+      this.print = this.$route.query.print
+      document.dispatchEvent(new Event('render-event'))
+    }, 300)
   }
 }
 </script>

@@ -16,7 +16,7 @@ module.exports = {
       plugins: [
         new PrerenderSPAPlugin({
           staticDir: path.join(__dirname, 'dist'),
-          routes: ['/', '/en', '/pt-br'],
+          routes: ['/', '/en', '/pt-br', '/en?print=true', '/pt-br?print=true'],
           minify: {
             collapseBooleanAttributes: true,
             collapseWhitespace: true,

@@ -12,7 +12,8 @@ export const router = new Router({
     {
       path: '/:lang',
       name: 'App',
-      component: App
+      component: App,
+      props: true
     }
   ]
 })
