@@ -27,6 +27,7 @@
       </section>
         <Footer :contact="contact" />
       <ChatMessage :contact="contact" @print-resume="printResume" />
+      <iframe id="printf" name="printf" :src="location" style="opacity: 0; height:0px"></iframe>
     </v-content>
     <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="$route.query.print"/>
   </v-app>
@@ -62,6 +63,7 @@ export default {
   },
   data () {
     return {
+      location: '',
       menu: [
         'hi',
         'about',
@@ -321,11 +323,8 @@ export default {
   },
   methods: {
     printResume () {
-      var printWindow = window.open(`${window.location.href}?print=true`, 'Print', 'left=200, top=200, width=950, height=500, toolbar=0, resizable=0')
-      printWindow.addEventListener('load', function () {
-        printWindow.print()
-        printWindow.close()
-      }, true)
+      window.frames['printf'].focus()
+      window.frames['printf'].print()
     }
   },
   computed: {
@@ -333,8 +332,17 @@ export default {
       return this.skills.filter(elem => elem.main)
     }
   },
+  watch: {
+    $route () {
+      this.location = `${window.location.href}?print=true`
+    }
+  },
   mounted () {
+    this.location = `${window.location.href}?print=true`
     document.dispatchEvent(new Event('render-event'))
+    // setTimeout(() => {
+    //   this.pageLoading = false
+    // })
   }
 }
 </script>
