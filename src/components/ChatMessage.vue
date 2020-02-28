@@ -26,7 +26,7 @@
               mdi-bell
             </v-icon>
           </template>
-          <v-avatar size="50" style="cursor:pointer;" 
+          <v-avatar size="50" style="cursor:pointer;"
             v-on="on"
           >
             <v-img :src="`https://images.weserv.nl/?url=${contact.avatar}?size=50`"></v-img>
@@ -94,7 +94,7 @@ export default {
       let windowY = window.scrollY
       if (windowY < 400) {
         this.show = false
-        } else {
+      } else {
         this.show = true
       }
     },

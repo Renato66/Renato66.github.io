@@ -1,6 +1,6 @@
 <template>
-  <v-app :dark="!print">
-    <v-content v-if="!print">
+  <v-app :dark="!$route.query.print">
+    <v-content v-if="!$route.query.print">
       <header id="hi" style="background-image: url('/img/background.png');min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
@@ -28,7 +28,7 @@
         <Footer :contact="contact" />
       <ChatMessage :contact="contact" @print-resume="printResume" />
     </v-content>
-    <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="print"/>
+    <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="$route.query.print"/>
   </v-app>
 </template>
 
@@ -62,7 +62,6 @@ export default {
   },
   data () {
     return {
-      print: false,
       menu: [
         'hi',
         'about',
@@ -322,12 +321,11 @@ export default {
   },
   methods: {
     printResume () {
-      this.print = true
-      setTimeout(() => {
-        window.print()
-        this.print = false
-        this.$vuetify.goTo(0)
-      }, 100)
+      var printWindow = window.open(`${window.location.href}?print=true`, 'Print', 'left=200, top=200, width=950, height=500, toolbar=0, resizable=0')
+      printWindow.addEventListener('load', function () {
+        printWindow.print()
+        printWindow.close()
+      }, true)
     }
   },
   computed: {
@@ -336,10 +334,7 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      this.print = this.$route.query.print
-      document.dispatchEvent(new Event('render-event'))
-    }, 300)
+    document.dispatchEvent(new Event('render-event'))
   }
 }
 </script>
