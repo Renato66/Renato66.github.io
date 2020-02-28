@@ -104,5 +104,13 @@ export default {
   doing: 'Cursando',
   formation: {
     title: 'Formação'
+  },
+  chat: {
+    who: 'Mensagem de <strong>{name}</strong>:',
+    message: 'Gostaria de baixar o meu curriculum?',
+    actions: {
+      download: 'Download',
+      reject: 'Não obrigado'
+    }
   }
 }

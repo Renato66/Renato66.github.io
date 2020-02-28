@@ -26,6 +26,7 @@
         <ContactLinks :contact="contact" />
       </section>
         <Footer :contact="contact" />
+      <ChatMessage :contact="contact" @print-resume="printResume" />
     </v-content>
     <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="print"/>
   </v-app>
@@ -41,6 +42,7 @@ import ContactLinks from '@/components/ContactLinks'
 import Footer from '@/components/Footer'
 import Timeline from '@/components/Timeline'
 import Presentation from '@/components/Presentation'
+import ChatMessage from '@/components/ChatMessage'
 import ResumePDF from '@/components/resume/Index'
 
 export default {
@@ -55,7 +57,8 @@ export default {
     PortifolioCards,
     ContactLinks,
     Presentation,
-    ResumePDF
+    ResumePDF,
+    ChatMessage
   },
   data () {
     return {

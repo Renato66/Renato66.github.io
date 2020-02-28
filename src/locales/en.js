@@ -104,5 +104,13 @@ export default {
   doing: 'Doing',
   formation: {
     title: 'Qualifications'
+  },
+  chat: {
+    who: '<strong>{name}</strong> sent a message:',
+    message: 'Would you like to have my resume?',
+    actions: {
+      download: 'Download',
+      reject: 'No thanks'
+    }
   }
 }
