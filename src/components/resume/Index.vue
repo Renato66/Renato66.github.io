@@ -6,7 +6,7 @@
       </v-flex>
       <v-flex shrink>
         <strong>
-          Telefone:
+          {{ $t('phone') }}:
         </strong>
         +{{ contact.phone.country }}
           ({{ contact.phone.area }})
@@ -14,7 +14,7 @@
       </v-flex>
       <v-flex shrink>
         <strong>
-          Endereço:
+          {{ $t('address') }}:
         </strong>
         {{ contact.city }} - {{ contact.state }}
       </v-flex>

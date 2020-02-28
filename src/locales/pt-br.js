@@ -10,6 +10,7 @@ export default {
   },
   getInTouch: 'Entre em contato',
   phone: 'Telefone',
+  address: 'Endereço',
   email: 'E-mail',
   age: 'anos',
   description: 'Programador. DJ. Criativo. Inovador.',

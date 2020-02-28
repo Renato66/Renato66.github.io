@@ -10,6 +10,7 @@ export default {
   },
   getInTouch: 'Get in touch',
   phone: 'Phone',
+  address: 'Address',
   email: 'Email',
   age: 'years',
   description: 'Programmer. DJ. Creative. Innovator.',
