@@ -334,11 +334,11 @@ export default {
   },
   watch: {
     $route () {
-      this.location = `${window.location.href}?print=true`
+      this.location = `${process.env.VUE_APP_BASE_URL}/${this.$i18n.locale}/?print=true`
     }
   },
   mounted () {
-    this.location = `${window.location.href}?print=true`
+    this.location = `${process.env.VUE_APP_BASE_URL}/${this.$i18n.locale}/?print=true`
     document.dispatchEvent(new Event('render-event'))
     // setTimeout(() => {
     //   this.pageLoading = false
