@@ -124,7 +124,7 @@
                 <v-layout>
                   <v-spacer></v-spacer>
                   <v-flex shrink v-for="network in socialNetworks" :key="network.name">
-                    <v-btn icon :href="network.url" target="_blank" :aria-label="`Open ${network.name}`">
+                    <v-btn icon :href="network.url" rel="noopener" target="_blank" :aria-label="`Open ${network.name}`">
                       <v-icon>
                         {{ network.icon }}
                       </v-icon>

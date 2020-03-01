@@ -3,7 +3,7 @@
     <v-layout row wrap align-center>
       <v-spacer class="hidden-sm-and-up"></v-spacer>
       <v-flex shrink v-for="(social, index) in socialNetworks" :key="index">
-        <a class="social-icon" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
+        <a class="social-icon" rel="noopener" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
           <img
             :src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=png`"
             :srcset="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=webp`"
