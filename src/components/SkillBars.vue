@@ -12,7 +12,12 @@
         <v-layout align-end>
           <v-flex shrink pr-0>
             <v-avatar size="40" tile>
-              <img :src="skill.img" :alt="skill.name">
+              <img
+                :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=png`"
+                :srcset="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=webp`"
+                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=20`"
+                :alt="skill.name"
+              >
             </v-avatar>
           </v-flex>
           <v-flex>
@@ -32,6 +37,11 @@ export default {
   props: {
     skills: {
       type: Array
+    }
+  },
+  data () {
+    return {
+      baseUrl: process.env.VUE_APP_BASE_URL
     }
   },
   methods: {

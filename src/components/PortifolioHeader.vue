@@ -29,7 +29,12 @@
     <v-layout class="mt-5">
       <v-flex class="text-xs-center">
         <v-avatar size="236">
-          <v-img :src="`https://images.weserv.nl/?url=${contact.avatar}?size=236`"></v-img>
+          <v-img
+            :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=png`"
+            :srcset="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=webp`"
+            :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=20&output=webp`"
+            :alt="contact.shortName"
+          ></v-img>
         </v-avatar>
       </v-flex>
     </v-layout>

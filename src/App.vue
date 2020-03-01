@@ -1,19 +1,19 @@
 <template>
   <v-app :dark="!$route.query.print">
     <v-content v-if="!$route.query.print">
-      <header id="hi" style="background-image: url('/img/background.png');min-height: 100vh;">
+      <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :socialNetworks="socialNetworks"></PortifolioHeader>
       </header>
       <section id="about" class="white">
         <Presentation />
       </section>
-      <section id="skills" style="background-image: url('/img/background.png');">
+      <section id="skills" class="background-section">
         <SkillBars :skills="mainSkills" />
       </section>
       <section id="timeline" class="white">
         <Timeline :timeline="timeline" />
       </section>
-       <section id="work" style="background-image: url('/img/background.png');">
+       <section id="work" class="background-section">
         <WorkTabs :experiences="work" />
       </section>
       <section id="portifolio" class="white">
@@ -22,7 +22,7 @@
       <section id="resume" class="primary py-5">
         <SocialNetworks :socialNetworks="socialNetworks" @print-resume="printResume" />
       </section>
-      <section style="background-image: url('/img/background.png');">
+      <section class="background-section">
         <ContactLinks :contact="contact" />
       </section>
         <Footer :contact="contact" />
@@ -77,37 +77,37 @@ export default {
         {
           name: 'Vue',
           main: true,
-          img: '/img/vuejs.png',
+          img: '/img/vuejs',
           knowlegde: 100
         },
         {
           name: 'Node.js',
           main: true,
-          img: '/img/nodejs.png',
+          img: '/img/nodejs',
           knowlegde: 70
         },
         {
           name: 'Cypress',
           main: true,
-          img: '/img/cypress.ico',
+          img: '/img/cypress',
           knowlegde: 70
         },
         {
           name: 'GraphQL',
           main: true,
-          img: '/img/graphQL.png',
+          img: '/img/graphQL',
           knowlegde: 50
         },
         {
           name: 'Laravel',
           main: true,
-          img: '/img/laravel.png',
+          img: '/img/laravel',
           knowlegde: 40
         },
         {
           name: 'Firebase',
           main: true,
-          img: '/img/firebase.png',
+          img: '/img/firebase',
           knowlegde: 80
         },
         {
@@ -148,61 +148,61 @@ export default {
         {
           name: 'Lista',
           link: 'https://marvelapp.com/18fhc5hg',
-          img: '/img/lista.png',
+          img: '/img/lista',
           technologies: ['vuejs', 'vuetify', 'firebase']
         },
         {
           name: 'Icondominio',
           link: 'https://renato66.github.io/projeto/icondominio',
-          img: '/img/icondominio.png',
+          img: '/img/icondominio',
           technologies: ['vuejs', 'apple', 'google-play']
         },
         {
           name: 'Atendimento',
           link: 'https://renato66.github.io/projeto/atendimento',
-          img: '/img/atendimento.png',
+          img: '/img/atendimento',
           technologies: ['jquery', 'firebase']
         },
         {
           name: 'Building infra',
           link: 'https://building-infra.netlify.com/',
-          img: '/img/building-infra.jpg',
+          img: '/img/building-infra',
           technologies: ['nuxt', 'vuejs']
         },
         {
           name: 'Administradora Sell',
           link: 'http://www.sellimoveis.com.br/',
-          img: '/img/sell.png',
+          img: '/img/sell',
           technologies: ['bootstrap', 'jquery']
         },
         {
           name: 'GVale imóveis',
           link: 'http://gvaleimoveis.com.br/home/',
-          img: '/img/gvale.png',
+          img: '/img/gvale',
           technologies: ['bootstrap', 'jquery']
         },
         {
           name: 'BR imóveis',
           link: 'http://www.brimovel.com.br/home/index.asp',
-          img: '/img/brimovel.png',
+          img: '/img/brimovel',
           technologies: ['bootstrap', 'jquery']
         },
         {
           name: 'Icone administradora',
           link: 'http://icone.adm.br/home/',
-          img: '/img/iconeadm.png',
+          img: '/img/iconeadm',
           technologies: ['bootstrap', 'jquery']
         },
         {
           name: 'Francis imóveis',
           link: 'http://francisimoveis.com.br/home/',
-          img: '/img/francis.png',
+          img: '/img/francis',
           technologies: ['bootstrap', 'jquery']
         },
         {
           name: 'Clube dos Salgados',
           link: 'http://www.clubedossalgados.com.br/',
-          img: '/img/clube.png',
+          img: '/img/clube',
           technologies: ['bootstrap', 'jquery']
         }
       ],
@@ -210,19 +210,19 @@ export default {
         {
           name: 'facebook',
           url: 'https://www.facebook.com/renato.vicente.3344',
-          img: '/img/facebook.png',
+          img: '/img/facebook',
           icon: 'mdi-facebook'
         },
         {
           name: 'github',
           url: 'https://github.com/Renato66',
-          img: '/img/github.png',
+          img: '/img/github',
           icon: 'mdi-github-circle'
         },
         {
           name: 'linkedin',
           url: 'https://www.linkedin.com/in/renato-vicente-961a7b90/?originalSubdomain=br',
-          img: '/img/linkedin.png',
+          img: '/img/linkedin',
           icon: 'mdi-linkedin'
         }
       ],
@@ -354,5 +354,9 @@ export default {
 a.white--text {
   text-decoration: none;
   color: white
+}
+
+.background-section{
+  background-image: url('/img/background.webp');
 }
 </style>

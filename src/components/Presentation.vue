@@ -22,7 +22,12 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex xs12 sm4 class="text-xs-center pa-4" v-for="quote in quotes" :key="quote.id">
-        <img :src="quote.img" :alt="quote.id">
+        <img
+            :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=png`"
+            :srcset="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=webp`"
+            :lazy-src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&q=20`"
+            :alt="quote.id"
+          >
         <h4 class="primary--text text--darken-2 display-1">{{ $t(`about.quotes.${quote.id}.title`) }}</h4>
         <h5 class="grey--text text--darken-2 title pt-2 font-weight-light" v-html="$t(`about.quotes.${quote.id}.description`)"></h5>
       </v-flex>
@@ -34,20 +39,21 @@
 export default {
   data () {
     return {
+      baseUrl: process.env.VUE_APP_BASE_URL,
       quotes: [
         {
           id: 'programming',
-          img: '/img/programmer.png',
+          img: '/img/programmer',
           author: 'John Johnson'
         },
         {
           id: 'creativity',
-          img: '/img/brain.png',
+          img: '/img/brain',
           author: 'Maya Angelou'
         },
         {
           id: 'inovation',
-          img: '/img/rocket.png',
+          img: '/img/rocket',
           autor: 'S. Brown'
         }
       ]

@@ -4,7 +4,12 @@
       <v-spacer class="hidden-sm-and-up"></v-spacer>
       <v-flex shrink v-for="(social, index) in socialNetworks" :key="index">
         <a class="social-icon" target="_blank" :href="social.url">
-          <img :src="social.img" :alt="social.name">
+          <img
+            :src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=png`"
+            :srcset="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=webp`"
+            :lazy-src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&q=20`"
+            :alt="social.name"
+          >
         </a>
       </v-flex>
       <v-spacer></v-spacer>
@@ -22,6 +27,11 @@ export default {
   props: {
     socialNetworks: {
       type: Array
+    }
+  },
+  data () {
+    return {
+      baseUrl: process.env.VUE_APP_BASE_URL
     }
   }
 }

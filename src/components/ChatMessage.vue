@@ -29,7 +29,12 @@
           <v-avatar size="50" style="cursor:pointer;"
             v-on="on"
           >
-            <v-img :src="`https://images.weserv.nl/?url=${contact.avatar}?size=50`"></v-img>
+            <v-img
+              :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=png`"
+              :srcset="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=webp`"
+              :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&q=20&output=webp`"
+              :alt="contact.shortName"
+            ></v-img>
           </v-avatar>
         </v-badge>
       </template>
