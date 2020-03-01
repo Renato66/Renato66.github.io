@@ -39,7 +39,7 @@
                   </v-tooltip>
                   <v-tooltip bottom>
                     <template v-slot:activator="{ on }">
-                      <v-btn icon color="white" flat v-on="on" :href="app.link"  class="ma-1">
+                      <v-btn icon color="white" flat v-on="on" :href="app.link" :aria-label="`Open ${app.name}`" class="ma-1">
                         <v-icon small>
                           mdi-open-in-new
                         </v-icon>

@@ -4,7 +4,7 @@
       <v-flex shrink>
         <v-menu offset-y content-class="br-8">
           <template v-slot:activator="{ on }">
-          <v-btn v-on="on" icon :outline="!followScroll" :color="followScroll ? 'black' : 'white'" large :class="{'follow-scroll': followScroll}" class="ml-0">
+          <v-btn aria-label="Menu" v-on="on" icon :outline="!followScroll" :color="followScroll ? 'black' : 'white'" large :class="{'follow-scroll': followScroll}" class="ml-0">
               <v-icon>
                 mdi-menu
               </v-icon>
@@ -54,7 +54,7 @@
       <v-flex shrink class="text-xs-center floating-btn">
         <v-dialog width="320" content-class="br-8">
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" large round class="text-none" color="primary">
+            <v-btn :aria-label="$t('getInTouch')" v-on="on" large round class="text-none" color="primary">
               {{ $t('getInTouch') }}
             </v-btn>
           </template>
@@ -124,7 +124,7 @@
                 <v-layout>
                   <v-spacer></v-spacer>
                   <v-flex shrink v-for="network in socialNetworks" :key="network.name">
-                    <v-btn icon :href="network.url" target="_blank" @click="openWhats()">
+                    <v-btn icon :href="network.url" target="_blank" :aria-label="`Open ${network.name}`">
                       <v-icon>
                         {{ network.icon }}
                       </v-icon>
@@ -140,7 +140,7 @@
                 <v-layout>
                   <v-spacer></v-spacer>
                   <v-flex shrink>
-                    <v-btn round class="text-none" color="#25d366">
+                    <v-btn aria-label="Open WhatsApp" round class="text-none" color="#25d366">
                       WhatsApp
                       <v-icon class="ml-2">
                         mdi-whatsapp

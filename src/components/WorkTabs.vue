@@ -10,7 +10,7 @@
     <v-layout align-center>
       <v-spacer></v-spacer>
       <v-flex shrink>
-        <v-btn flat icon @click="prev" :disabled="selected === 0">
+        <v-btn flat icon @click="prev" :disabled="selected === 0" aria-label="Previus">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </v-flex>
@@ -18,7 +18,7 @@
         {{ revertExperiences[selected].company }}
       </v-flex>
       <v-flex shrink>
-        <v-btn flat icon @click="next" :disabled="revertExperiences.length === selected + 1">
+        <v-btn flat icon @click="next" :disabled="revertExperiences.length === selected + 1" aria-label="Next">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </v-flex>

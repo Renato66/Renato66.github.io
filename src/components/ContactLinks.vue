@@ -32,21 +32,21 @@
     <v-layout row wrap mb-3>
       <v-spacer></v-spacer>
       <v-flex shrink>
-        <v-btn icon outline large :href="`tg://resolve?domain=${contact.telegram}`" class="mx-0">
+        <v-btn icon outline large :href="`tg://resolve?domain=${contact.telegram}`" class="mx-0" aria-label="Open telegram">
           <v-icon>
             mdi-telegram
           </v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink>
-        <v-btn icon outline large @click="openWhats" class="mx-0">
+        <v-btn icon outline large @click="openWhats" class="mx-0" aria-label="Open whatsapp">
           <v-icon>
             mdi-whatsapp
           </v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink>
-        <v-btn icon outline large :href="`tel:${phone}`" class="mx-0">
+        <v-btn icon outline large :href="`tel:${phone}`" class="mx-0" aria-label="Open phone">
           <v-icon>
             mdi-phone
           </v-icon>

@@ -27,7 +27,7 @@
       </section>
         <Footer :contact="contact" />
       <ChatMessage :contact="contact" @print-resume="printResume" />
-      <iframe id="printf" name="printf" :src="location" style="opacity: 0; height:0px"></iframe>
+      <iframe id="printf" title="Print iframe" name="printf" :src="location" style="opacity: 0; height:0px"></iframe>
     </v-content>
     <ResumePDF :contact="contact" :work="work" :skills="skills" :socialNetworks="socialNetworks" :timeline="timeline" v-if="$route.query.print"/>
   </v-app>
