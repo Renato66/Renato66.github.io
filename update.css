@@ -4,7 +4,6 @@
   z-index: 999;
   padding: 15px 0px 15px 90px;
   bottom: 0;
-  height: 115px;
   background: #397dff;
   width: 100%;
   color: #fff;
@@ -16,7 +15,7 @@
 .update-container i{
   position: absolute;
   left: 25px;
-  top:11px;
+  top:18px;
   transform: rotate(360deg);
   transition-duration: 1s;
   transition-delay: now;
