@@ -1,0 +1,212 @@
+[
+  {
+    "title": "Reservas",
+    "description": "Faça suas reservas",
+    "url": "NavegaReservasMobile(true)",
+    "href": false,
+    "icon": "icon-reservas",
+    "bulet": 0
+  },
+  {
+    "title": "Mensagens",
+    "description": "Veja suas mensagens",
+    "url": "/Recado/Cadastra",
+    "href": true,
+    "icon": "icon-mensagens",
+    "bulet": 0
+  },
+  {
+    "title": "Correspondências",
+    "description": "Faça suas reservas",
+    "url": "/Correspondencia/Index",
+    "href": true,
+    "icon": "icon-correspondencia",
+    "bulet": 0
+  },
+  {
+    "title": "Mudanças",
+    "description": "Faça suas reservas",
+    "url": "/Mudanca/Index",
+    "icon": "icon-mudancas",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Classificados",
+    "description": "Faça suas reservas",
+    "url": "/Classificados/Index",
+    "icon": "icon-conveniencias",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Conveniências",
+    "description": "Faça suas reservas",
+    "url": "navegaAssistis()",
+    "icon": "icon-conveniencias",
+    "href": false,
+    "bulet": 0
+  },
+  {
+    "title": "Arquivos",
+    "description": "Faça suas reservas",
+    "url": "/Arquivos/Index",
+    "href": true,
+    "icon": "icon-arquivos",
+    "bulet": 0
+  },
+  {
+    "title": "Notícias",
+    "description": "Faça suas reservas",
+    "url": "/Noticias/Index",
+    "href": true,
+    "icon": "icon-noticias",
+    "bulet": 0
+  },
+  {
+    "title": "Pessoas",
+    "description": "Faça suas reservas",
+    "url": "/Pessoas/Index",
+    "href": true,
+    "icon": "icon-pessoas",
+    "bulet": 0
+  },
+  {
+    "title": "Veículos",
+    "description": "Faça suas reservas",
+    "url": "/Veiculo/Index",
+    "href": true,
+    "icon": "icon-veiculos",
+    "bulet": 0
+  },
+  {
+    "title": "Enquetes",
+    "description": "Faça suas reservas",
+    "url": "/Enquete/Index",
+    "icon": "icon-enquetes",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Acessos",
+    "description": "Faça suas reservas",
+    "url": "Mensagens/IndexMobile",
+    "href": true,
+    "icon": "icon-acessos",
+    "bulet": 0
+  },
+  {
+    "title": "Animais",
+    "description": "Faça suas reservas",
+    "url": "/Animais/Index",
+    "href": true,
+    "icon": "icon-animais",
+    "bulet": 0
+  },
+  {
+    "title": "Visitantes",
+    "description": "Faça suas reservas",
+    "url": "/Visitante/Index",
+    "href": true,
+    "icon": "icon-visitantes",
+    "bulet": 0
+  },
+  {
+    "title": "Prestadores de serviços",
+    "description": "Faça suas reservas",
+    "url": "/Visitante/Prestadores",
+    "href": true,
+    "icon": "icon-prestadores",
+    "bulet": 0
+  },
+  {
+    "title": "Alertas",
+    "description": "Faça suas reservas",
+    "url": "/Alertas/Index",
+    "href": true,
+    "icon": "icon-alert",
+    "bulet": 0
+  },
+  {
+    "title": "Operação",
+    "description": "Faça suas reservas",
+    "url": "Mensagens/IndexMobile",
+    "href": true,
+    "icon": "icon-operacao",
+    "bulet": 0,
+    "childrens": [
+      {
+        "title": "Gerenciamento de resevas",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      },
+      {
+        "title": "Central de mensagens",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      },
+      {
+        "title": "Usuários do sistema",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      }
+    ]
+  },
+  {
+    "title": "Configurações",
+    "description": "Faça suas reservas",
+    "url": "Mensagens/IndexMobile",
+    "icon": "icon-configuracoes",
+    "href": true,
+    "bulet": 0,
+    "childrens": [
+      {
+        "title": "Gerenciamento de resevas",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      },
+      {
+        "title": "Central de mensagens",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      },
+      {
+        "title": "Usuários do sistema",
+        "url": "Mensagens/IndexMobile",
+        "href": true
+      }
+    ]
+  },
+  {
+    "title": "Avalie-nos",
+    "description": "Avalie-nos",
+    "url": "/Recado/FaleTroad",
+    "icon": "icon-rating",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Termos e condições de uso",
+    "description": "Termos e condições de uso",
+    "url": "/Home/TermoUso",
+    "icon": "icon-noticias",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Politica de privacidade ",
+    "description": "Politica de privacidade",
+    "url": "/Home/PoliticaPrivacidade",
+    "icon": "icon-noticias",
+    "href": true,
+    "bulet": 0
+  },
+  {
+    "title": "Sair",
+    "description": "Faça suas reservas",
+    "url": "/Home/Logout",
+    "icon": "icon-sair",
+    "href": true,
+    "bulet": 0
+  }
+]
