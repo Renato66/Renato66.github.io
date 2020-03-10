@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import WorkTabs from '@/components/WorkTabs'
 import SkillBars from '@/components/SkillBars'
 import SocialNetworks from '@/components/SocialNetworks'
@@ -52,7 +53,6 @@ import Timeline from '@/components/Timeline'
 import Presentation from '@/components/Presentation'
 import ChatMessage from '@/components/ChatMessage'
 import ResumePDF from '@/components/resume/Index'
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -225,7 +225,7 @@ export default {
           name: 'github',
           url: 'https://github.com/Renato66',
           img: '/img/github',
-          icon: 'mdi-github-circle'
+          icon: 'mdi-github'
         },
         {
           name: 'linkedin',
@@ -330,6 +330,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['baseUrl']),
     mainSkills () {
       return this.skills.filter(elem => elem.main)
     }
@@ -340,7 +341,6 @@ export default {
     }
   },
   mounted () {
-    console.log(process)
     this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
     document.dispatchEvent(new Event('render-event'))
     // setTimeout(() => {
@@ -352,9 +352,6 @@ export default {
       window.frames.printf.focus()
       window.frames.printf.print()
     }
-  },
-  computed: {
-    ...mapGetters(['baseUrl'])
   }
 }
 </script>
