@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="!$route.query.print">
+  <v-app dark>
     <v-content v-if="!$route.query.print">
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
@@ -52,6 +52,8 @@ import Timeline from '@/components/Timeline'
 import Presentation from '@/components/Presentation'
 import ChatMessage from '@/components/ChatMessage'
 import ResumePDF from '@/components/resume/Index'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'App',
   components: {
@@ -334,11 +336,12 @@ export default {
   },
   watch: {
     $route () {
-      this.location = `${process.env.VUE_APP_BASE_URL}/${this.$i18n.locale}/?print=true`
+      this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
     }
   },
   mounted () {
-    this.location = `${process.env.VUE_APP_BASE_URL}/${this.$i18n.locale}/?print=true`
+    console.log(process)
+    this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
     document.dispatchEvent(new Event('render-event'))
     // setTimeout(() => {
     //   this.pageLoading = false
@@ -349,6 +352,9 @@ export default {
       window.frames.printf.focus()
       window.frames.printf.print()
     }
+  },
+  computed: {
+    ...mapGetters(['baseUrl'])
   }
 }
 </script>
@@ -356,6 +362,9 @@ export default {
 <style>
 .br-8{
   border-radius: 8px;
+}
+html {
+  color: red
 }
 a.white--text {
   text-decoration: none;

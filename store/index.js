@@ -1,6 +1,7 @@
 export const state = () => ({
   locales: ['pt', 'en'],
-  locale: 'pt'
+  locale: 'pt',
+  baseUrl: 'https://renato66.github.io'
 })
 
 export const mutations = {
@@ -8,5 +9,11 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale
     }
+  }
+}
+
+export const getters = {
+  baseUrl (state) {
+    return state.baseUrl
   }
 }

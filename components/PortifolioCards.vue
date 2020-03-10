@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     portifolio: {
@@ -77,10 +79,8 @@ export default {
       }
     }
   },
-  data () {
-    return {
-      baseUrl: process.env.VUE_APP_BASE_URL
-    }
+  computed: {
+    ...mapGetters(['baseUrl'])
   }
 }
 </script>

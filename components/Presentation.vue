@@ -31,17 +31,19 @@
         <h4 class="primary--text text--darken-2 display-1">
           {{ $t(`about.quotes.${quote.id}.title`) }}
         </h4>
-        <h5 class="grey--text text--darken-2 title pt-2 font-weight-light" v-html="$t(`about.quotes.${quote.id}.description`)" />
+        <h5 class="grey--text text--darken-2 title pt-2 font-weight-light">
+          {{ $t(`about.quotes.${quote.id}.description`) }}
+        </h5>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      baseUrl: process.env.VUE_APP_BASE_URL,
       quotes: [
         {
           id: 'programming',
@@ -60,6 +62,9 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['baseUrl'])
   }
 }
 </script>

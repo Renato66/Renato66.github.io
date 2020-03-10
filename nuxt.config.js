@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   mode: 'universal',
   /*
@@ -60,9 +61,18 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: true,
       themes: {
         light: {
+          primary: '#22c6a0',
+          secondary: '#0e0d1c',
+          accent: '#82B1FF',
+          error: '#FF5252',
+          info: '#2196F3',
+          success: '#4CAF50',
+          warning: '#FFC107'
+        },
+        dark: {
           primary: '#22c6a0',
           secondary: '#0e0d1c',
           accent: '#82B1FF',

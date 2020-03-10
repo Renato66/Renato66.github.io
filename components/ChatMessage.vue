@@ -44,7 +44,9 @@
           <v-card-text>
             <v-layout row wrap>
               <v-flex xs12>
-                <p class="grey--text caption mb-1" v-html="$t('chat.who', { name: contact.shortName })" />
+                <p class="grey--text caption mb-1">
+                  {{ $t('chat.who', { name: contact.shortName }) }}
+                </p>
               </v-flex>
               <v-flex xs12>
                 <p class="mb-1">
