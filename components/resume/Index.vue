@@ -129,19 +129,34 @@ import { differenceInCalendarMonths } from 'date-fns'
 export default {
   props: {
     timeline: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     },
     socialNetworks: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     },
     contact: {
-      type: Object
+      type: Object,
+      default: () => {
+        return {}
+      }
     },
     work: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     },
     skills: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   methods: {

@@ -73,7 +73,9 @@ export default {
         }
       }
     },
-    iconfont: 'mdi'
+    icons: {
+      iconfont: 'mdi'
+    }
   },
   /*
   ** Build configuration

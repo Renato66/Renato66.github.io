@@ -36,7 +36,7 @@
       </v-flex>
     </v-layout>
     <v-layout class="mt-5">
-      <v-flex class="text-xs-center">
+      <v-flex class="text-center">
         <v-avatar size="236">
           <v-img
             :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=png`"
@@ -48,17 +48,17 @@
       </v-flex>
     </v-layout>
     <v-layout class="mt-4 pb-4" row wrap>
-      <v-flex xs12 class="text-xs-center">
+      <v-flex xs12 class="text-center">
         <h1 class="font-weight-thin" :class="{'display-4': $vuetify.breakpoint.smAndUp, 'display-2': $vuetify.breakpoint.xsOnly}">
           {{ contact.shortName }}
         </h1>
       </v-flex>
-      <v-flex xs12 class="text-xs-center mt-3">
+      <v-flex xs12 class="text-center mt-3">
         <h2 :class="{'display-1': $vuetify.breakpoint.smAndUp, 'headline': $vuetify.breakpoint.xsOnly}">
           {{ $t('description') }}
         </h2>
       </v-flex>
-      <v-flex class="text-xs-center mt-3">
+      <v-flex class="text-center mt-3">
         <h3 class="grey--text font-weight-light">
           {{ contact.city }} - {{ contact.birthday | age }} {{ $t('age') }} {{ $t('aditional') }}
         </h3>
@@ -66,7 +66,7 @@
     </v-layout>
     <v-layout align-center>
       <v-spacer />
-      <v-flex shrink class="text-xs-center floating-btn">
+      <v-flex shrink class="text-center floating-btn">
         <v-dialog width="320" content-class="br-8">
           <template v-slot:activator="{ on }">
             <v-btn
@@ -198,13 +198,22 @@ export default {
   },
   props: {
     socialNetworks: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     },
     contact: {
-      type: Object
+      type: Object,
+      default: () => {
+        return {}
+      }
     },
     menu: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {

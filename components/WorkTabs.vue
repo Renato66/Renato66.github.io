@@ -10,15 +10,15 @@
     <v-layout align-center>
       <v-spacer />
       <v-flex shrink>
-        <v-btn flat icon :disabled="selected === 0" aria-label="Previus" @click="prev">
+        <v-btn text icon :disabled="selected === 0" aria-label="Previus" @click="prev">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </v-flex>
-      <v-flex shrink class="headline text-xs-center" style="min-width:150px;">
+      <v-flex shrink class="headline text-center" style="min-width:150px;">
         {{ revertExperiences[selected].company }}
       </v-flex>
       <v-flex shrink>
-        <v-btn flat icon :disabled="revertExperiences.length === selected + 1" aria-label="Next" @click="next">
+        <v-btn text icon :disabled="revertExperiences.length === selected + 1" aria-label="Next" @click="next">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </v-flex>
@@ -32,12 +32,12 @@
             :key="work.id"
             style="min-height: 200px;"
           >
-            <v-layout class="text-xs-center mt-4  mb-3" row wrap>
+            <v-layout class="text-center mt-4  mb-3" row wrap>
               <v-flex xs12 class="primary--text title">
                 {{ $t(`work.${work.id}`).position }}
               </v-flex>
             </v-layout>
-            <v-layout class="text-xs-center subtitle-1">
+            <v-layout class="text-center subtitle-1">
               <v-spacer />
               <v-flex xs10 sm8>
                 {{ $t(`work.${work.id}`).description }}<br>
@@ -63,7 +63,10 @@ import { differenceInCalendarMonths } from 'date-fns'
 export default {
   props: {
     experiences: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {

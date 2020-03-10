@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-layout row wrap>
-      <v-flex xs12 class="white--text text-xs-center pb-0">
+      <v-flex xs12 class="white--text text-center pb-0">
         <h2 class="display-3 font-weight-thin">
           {{ $t('contact.title') }}
         </h2>
@@ -11,7 +11,7 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap mb-4>
-      <v-flex xs12 sm6 class="text-xs-center headline">
+      <v-flex xs12 sm6 class="text-center headline">
         <v-icon large>
           mdi-map-marker
         </v-icon>
@@ -21,7 +21,7 @@
           <b>{{ contact.city }}</b>
         </a>
       </v-flex>
-      <v-flex xs12 sm6 class="text-xs-center headline">
+      <v-flex xs12 sm6 class="text-center headline">
         <v-icon large>
           mdi-email
         </v-icon>
@@ -86,7 +86,10 @@
 export default {
   props: {
     contact: {
-      type: Object
+      type: Object,
+      default: () => {
+        return {}
+      }
     }
   },
   computed: {

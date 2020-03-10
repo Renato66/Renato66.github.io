@@ -28,7 +28,7 @@
                   <v-btn
                     v-if="item.dialog"
                     small
-                    flat
+                    text
                     icon
                     color="grey darken-1"
                     aria-label="Open photos"
@@ -52,7 +52,7 @@
         </v-timeline>
       </v-flex>
     </v-layout>
-    <v-dialog v-model="open['fatec']" content-class="text-xs-center dialog-frame">
+    <v-dialog v-model="open['fatec']" content-class="text-center dialog-frame">
       <div v-if="open['fatec']">
         <iframe
           v-if="$vuetify.breakpoint.xs"
@@ -80,7 +80,7 @@
         />
       </div>
     </v-dialog>
-    <v-dialog v-model="open['colombia']" content-class="text-xs-center">
+    <v-dialog v-model="open['colombia']" content-class="text-center">
       <v-carousel v-if="open['colombia']" hide-delimiters :cycle="false">
         <v-carousel-item v-for="photo in colombia" :key="photo" :src="`/img/colombia/photo${photo}.webp`" />
       </v-carousel>
@@ -92,7 +92,10 @@
 export default {
   props: {
     timeline: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {
@@ -109,7 +112,7 @@ export default {
       this.timeline.forEach((elem) => {
         if (elem.dialog) {
           if (this.open[elem.id] !== false) {
-            console.warn(`No dialog set for id: '${elem.id}' at Timeline.vue`)
+            // console.warn(`No dialog set for id: '${elem.id}' at Timeline.vue`)
           }
         }
       })

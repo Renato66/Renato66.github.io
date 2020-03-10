@@ -13,7 +13,7 @@
         </a>
       </v-flex>
       <v-spacer />
-      <v-flex xs12 sm6 class="text-xs-center text-sm-right">
+      <v-flex xs12 sm6 class="text-center text-sm-right">
         <v-btn
           download="Renato-CV.pdf"
           aria-label="download Renato-CV.pdf"
@@ -35,7 +35,10 @@
 export default {
   props: {
     socialNetworks: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {

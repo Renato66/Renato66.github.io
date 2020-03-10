@@ -27,9 +27,9 @@
                   v-if="hover"
                   class="transition-fast-in-fast-out card-overlay darken-2"
                 >
-                  <v-tooltip v-for="(tech, index) in app.technologies" :key="index" bottom>
+                  <v-tooltip v-for="(tech, index2) in app.technologies" :key="index2" bottom>
                     <template v-slot:activator="{ on }">
-                      <v-btn icon color="white" flat class="ma-1" v-on="on">
+                      <v-btn icon color="white" text class="ma-1" v-on="on">
                         <v-icon small>
                           mdi-{{ tech }}
                         </v-icon>
@@ -42,7 +42,7 @@
                       <v-btn
                         icon
                         color="white"
-                        flat
+                        text
                         :href="app.link"
                         target="_blank"
                         rel="noopener"
@@ -71,7 +71,10 @@
 export default {
   props: {
     portifolio: {
-      type: Array
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {
