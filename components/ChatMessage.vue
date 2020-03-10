@@ -117,12 +117,12 @@ export default {
     }
   },
   beforeDestroy () {
-    if (process.client) {
+    if (process.browser) {
       window.removeEventListener('scroll', this.checkPosition)
     }
   },
-  created () {
-    if (process.client) {
+  beforeMount () {
+    if (process.browser) {
       window.addEventListener('scroll', this.checkPosition)
     }
   },
@@ -132,14 +132,14 @@ export default {
         this.willNotify = false
         setTimeout(() => {
           this.notification = true
-          if (process.client) {
+          if (process.browser) {
             window.navigator.vibrate(200)
           }
         }, 1000)
       }
     },
     checkPosition () {
-      if (process.client) {
+      if (process.browser) {
         const windowY = window.scrollY
         if (windowY < 400) {
           this.show = false
@@ -149,7 +149,7 @@ export default {
       }
     },
     openWhats () {
-      if (process.client) {
+      if (process.browser) {
         if (navigator.userAgent.match(/Android/i) ||
           navigator.userAgent.match(/webOS/i) ||
           navigator.userAgent.match(/iPhone/i) ||

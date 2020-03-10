@@ -217,24 +217,24 @@ export default {
       return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
   },
-  created () {
-    if (process.client) {
+  beforeMount () {
+    if (process.browser) {
       window.addEventListener('scroll', this.handleScroll)
     }
   },
-  destroyed () {
-    if (process.client) {
+  beforeDestroy () {
+    if (process.browser) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   },
   methods: {
     handleScroll () {
-      if (process.client) {
+      if (process.browser) {
         this.followScroll = window.scrollY > 400
       }
     },
     openWhats () {
-      if (process.client) {
+      if (process.browser) {
         if (navigator.userAgent.match(/Android/i) ||
           navigator.userAgent.match(/webOS/i) ||
           navigator.userAgent.match(/iPhone/i) ||
