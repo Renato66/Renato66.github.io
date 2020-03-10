@@ -15,12 +15,7 @@
 </template>
 
 <script>
-import GithubButton from 'vue-github-button'
-
 export default {
-  components: {
-    GithubButton
-  },
   props: {
     contact: {
       type: Object
