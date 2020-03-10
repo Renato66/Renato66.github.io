@@ -89,7 +89,10 @@
 export default {
   props: {
     contact: {
-      type: Object
+      type: Object,
+      default: () => {
+        return {}
+      }
     }
   },
   data () {
