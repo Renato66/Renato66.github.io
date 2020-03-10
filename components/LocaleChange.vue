@@ -8,30 +8,27 @@
       </v-btn>
     </template>
     <v-list dense>
-      <v-list-tile aria-label="Select same language" @click="selectLocale(selectedLocale.id)">
-        <v-list-tile-title>
-          <v-avatar size="24" tile>
-            <v-img :src="selectedLocale.flag" />
-          </v-avatar>
-        </v-list-tile-title>
-      </v-list-tile>
-      <v-list-tile
-        v-for="locale in filteredLocales"
+       <v-list-item>
+        <v-avatar size="24" tile @click="selectLocale(selectedLocale.id)">
+          <v-img :src="selectedLocale.flag" />
+        </v-avatar>
+      </v-list-item>
+      <v-list-item
+         v-for="locale in filteredLocales"
         :key="locale.id"
         :aria-label="`Choose ${locale.name} language`"
         @click="selectLocale(locale.id)"
       >
-        <v-list-tile-title>
-          <v-avatar size="24" tile>
+         <v-avatar size="24" tile>
             <v-img :src="locale.flag" />
           </v-avatar>
-        </v-list-tile-title>
-      </v-list-tile>
+      </v-list-item>
     </v-list>
   </v-menu>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data () {
     return {
@@ -58,8 +55,10 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['SET_LANG']),
     selectLocale (value) {
-      this.$router.push({ name: 'App', params: { lang: value } })
+      this.SET_LANG(value)
+      this.$router.push(`/${value}`)
     }
   }
 }

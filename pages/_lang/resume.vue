@@ -1,36 +1,6 @@
 <template>
-  <v-app dark>
-    <v-content v-if="!$route.query.print">
-      <header id="hi" class="background-section" style="min-height: 100vh;">
-        <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
-      </header>
-      <section id="about" class="white">
-        <Presentation />
-      </section>
-      <section id="skills" class="background-section">
-        <SkillBars :skills="mainSkills" />
-      </section>
-      <section id="timeline" class="white">
-        <Timeline :timeline="timeline" />
-      </section>
-      <section id="work" class="background-section">
-        <WorkTabs :experiences="work" />
-      </section>
-      <section id="portifolio" class="white">
-        <PortifolioCards :portifolio="portifolio" />
-      </section>
-      <section id="resume" class="primary py-5">
-        <SocialNetworks :social-networks="socialNetworks" @print-resume="printResume" />
-      </section>
-      <section class="background-section">
-        <ContactLinks :contact="contact" />
-      </section>
-      <Footer :contact="contact" />
-      <ChatMessage :contact="contact" @print-resume="printResume" />
-      <iframe id="printf" title="Print iframe" name="printf" :src="location" style="opacity: 0; height:0px" />
-    </v-content>
+  <v-app :dark="false">
     <ResumePDF
-      v-if="$route.query.print"
       :contact="contact"
       :work="work"
       :skills="skills"
@@ -41,33 +11,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import WorkTabs from '@/components/WorkTabs'
-import SkillBars from '@/components/SkillBars'
-import SocialNetworks from '@/components/SocialNetworks'
-import PortifolioHeader from '@/components/PortifolioHeader'
-import PortifolioCards from '@/components/PortifolioCards'
-import ContactLinks from '@/components/ContactLinks'
-import Footer from '@/components/Footer'
-import Timeline from '@/components/Timeline'
-import Presentation from '@/components/Presentation'
-import ChatMessage from '@/components/ChatMessage'
 import ResumePDF from '@/components/resume/Index'
 
 export default {
   name: 'App',
   components: {
-    PortifolioHeader,
-    Timeline,
-    WorkTabs,
-    SkillBars,
-    SocialNetworks,
-    Footer,
-    PortifolioCards,
-    ContactLinks,
-    Presentation,
-    ResumePDF,
-    ChatMessage
+    ResumePDF
   },
   data () {
     return {
@@ -329,29 +278,9 @@ export default {
       ]
     }
   },
-  computed: {
-    ...mapGetters(['baseUrl']),
-    mainSkills () {
-      return this.skills.filter(elem => elem.main)
-    }
-  },
-  watch: {
-    $route () {
-      this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
-    }
-  },
   mounted () {
-    this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
+    this.$vuetify.theme.dark = false
     document.dispatchEvent(new Event('render-event'))
-    // setTimeout(() => {
-    //   this.pageLoading = false
-    // })
-  },
-  methods: {
-    printResume () {
-      window.frames.printf.focus()
-      window.frames.printf.print()
-    }
   }
 }
 </script>
@@ -360,17 +289,8 @@ export default {
 .br-8{
   border-radius: 8px;
 }
-html {
-  color: red
-}
 a.white--text {
   text-decoration: none;
   color: white
-}
-.theme--dark.v-application {
-  background: #303030!important
-}
-.background-section{
-  background-image: url('/img/background.webp');
 }
 </style>

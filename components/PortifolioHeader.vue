@@ -20,13 +20,13 @@
             </v-btn>
           </template>
           <v-list dense>
-            <v-list-tile
+            <v-list-item
               v-for="item in menu"
               :key="item"
               @click="$vuetify.goTo(`#${item}`)"
             >
-              <v-list-tile-title>{{ $t(`menu.${item}`) }}</v-list-tile-title>
-            </v-list-tile>
+              <v-list-item-title>{{ $t(`menu.${item}`) }}</v-list-item-title>
+            </v-list-item>
           </v-list>
         </v-menu>
       </v-flex>
