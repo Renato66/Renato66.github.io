@@ -37,7 +37,7 @@ export default {
     return {
       supportedLocales: [
         {
-          id: 'pt-br',
+          id: 'pt',
           name: 'Portugues',
           flag: 'https://www.countryflags.io/BR/flat/24.png'
         },
