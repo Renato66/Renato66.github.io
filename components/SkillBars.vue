@@ -8,7 +8,7 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex xs12 sm6 v-for="(skill, index) in skills" :key="index">
+      <v-flex v-for="(skill, index) in skills" :key="index" xs12 sm6>
         <v-layout align-end>
           <v-flex shrink pr-0>
             <v-avatar size="40" tile>
@@ -21,9 +21,11 @@
             </v-avatar>
           </v-flex>
           <v-flex>
-            <h5 class="headline">{{ skill.name }}</h5>
+            <h5 class="headline">
+              {{ skill.name }}
+            </h5>
             <div class="knowledge-bar">
-              <div class="knowledge-progress" :class="[`knowledge-progress--${color(skill.knowlegde)}`]" :style="{'width': `${skill.knowlegde}%`}"></div>
+              <div class="knowledge-progress" :class="[`knowledge-progress--${color(skill.knowlegde)}`]" :style="{'width': `${skill.knowlegde}%`}" />
             </div>
           </v-flex>
         </v-layout>

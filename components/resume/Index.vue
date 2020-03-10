@@ -9,8 +9,8 @@
           {{ $t('phone') }}:
         </strong>
         +{{ contact.phone.country }}
-          ({{ contact.phone.area }})
-          {{ contact.phone.number }}
+        ({{ contact.phone.area }})
+        {{ contact.phone.number }}
       </v-flex>
       <v-flex shrink>
         <strong>
@@ -24,7 +24,7 @@
         <strong>
           Email:
         </strong>
-          {{ contact.mail }}
+        {{ contact.mail }}
       </v-flex>
     </v-layout>
     <v-layout>
@@ -80,7 +80,7 @@
         </v-chip>
       </v-flex>
     </v-layout>
-    <div style="page-break-after: always;" class="ma-5"></div>
+    <div style="page-break-after: always;" class="ma-5" />
     <v-layout mt-3>
       <v-flex xs12 class="display-1">
         {{ $t('about.title') }}
@@ -89,13 +89,13 @@
     <v-layout mt-3>
       <v-flex xs12 class="pt-2">
         <p>
-          {{ $t('about.paragraph.1')}}
+          {{ $t('about.paragraph.1') }}
         </p>
         <p>
-          {{ $t('about.paragraph.2')}} Boxnet
+          {{ $t('about.paragraph.2') }} Boxnet
         </p>
         <p>
-          {{ $t('about.paragraph.3')}}
+          {{ $t('about.paragraph.3') }}
         </p>
       </v-flex>
     </v-layout>
@@ -106,7 +106,7 @@
     </v-layout>
     <v-layout v-for="item in timeline.filter(elem => elem.resume)" :key="item.id" row wrap mt-3>
       <v-flex xs12>
-        <strong class="title">{{ $t(`timeline.${item.id}.place`)}}</strong>
+        <strong class="title">{{ $t(`timeline.${item.id}.place`) }}</strong>
         <span v-if="item.endDate === null" class="caption">
           {{ item.startDate }}
           ({{ $t('doing') }})
@@ -116,7 +116,7 @@
           {{ $tc('month', howLong(item).months) }}
         </span>
         <v-flex>
-          {{ $t(`timeline.${item.id}.title`)}} - {{ $t(`timeline.${item.id}.description`)}}
+          {{ $t(`timeline.${item.id}.title`) }} - {{ $t(`timeline.${item.id}.description`) }}
         </v-flex>
       </v-flex>
     </v-layout>

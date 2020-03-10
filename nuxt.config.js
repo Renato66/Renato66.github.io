@@ -28,7 +28,16 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/i18n.js'
   ],
+
+  router: {
+    middleware: 'i18n'
+  },
+
+  generate: {
+    routes: ['/', '/en']
+  },
   /*
   ** Nuxt.js dev-modules
   */

@@ -7,12 +7,14 @@
         </h2>
       </v-flex>
       <v-flex xs4 offset-xs4 mb-4>
-        <v-divider class="primary"></v-divider>
+        <v-divider class="primary" />
       </v-flex>
     </v-layout>
     <v-layout row wrap mb-4>
       <v-flex xs12 sm6 class="text-xs-center headline">
-        <v-icon large>mdi-map-marker</v-icon>
+        <v-icon large>
+          mdi-map-marker
+        </v-icon>
         <br>
         {{ $t('liveIn') }}
         <a :href="`https://www.google.com.br/maps/place/${contact.city}, ${contact.state}`" class="white--text">
@@ -20,7 +22,9 @@
         </a>
       </v-flex>
       <v-flex xs12 sm6 class="text-xs-center headline">
-        <v-icon large>mdi-email</v-icon>
+        <v-icon large>
+          mdi-email
+        </v-icon>
         <br>
         <a :href="`mailto:${contact.mail}`" class="white--text">
           <b>
@@ -30,29 +34,50 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap mb-3>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-flex shrink>
-        <v-btn icon outline large :href="`tg://resolve?domain=${contact.telegram}`" class="mx-0" aria-label="Open telegram">
+        <v-btn
+          icon
+          outlined
+          large
+          :href="`tg://resolve?domain=${contact.telegram}`"
+          class="mx-0"
+          aria-label="Open telegram"
+        >
           <v-icon>
             mdi-telegram
           </v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink>
-        <v-btn icon outline large @click="openWhats" class="mx-0" aria-label="Open whatsapp">
+        <v-btn
+          icon
+          outlined
+          large
+          class="mx-0"
+          aria-label="Open whatsapp"
+          @click="openWhats"
+        >
           <v-icon>
             mdi-whatsapp
           </v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink>
-        <v-btn icon outline large :href="`tel:${phone}`" class="mx-0" aria-label="Open phone">
+        <v-btn
+          icon
+          outlined
+          large
+          :href="`tel:${phone}`"
+          class="mx-0"
+          aria-label="Open phone"
+        >
           <v-icon>
             mdi-phone
           </v-icon>
         </v-btn>
       </v-flex>
-      <v-spacer></v-spacer>
+      <v-spacer />
     </v-layout>
   </v-container>
 </template>
@@ -62,6 +87,11 @@ export default {
   props: {
     contact: {
       type: Object
+    }
+  },
+  computed: {
+    phone () {
+      return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
   },
   methods: {
@@ -77,11 +107,6 @@ export default {
       } else {
         window.open(`https://web.whatsapp.com/send?phone=${this.phone}`, '_blank')
       }
-    }
-  },
-  computed: {
-    phone () {
-      return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
   }
 }

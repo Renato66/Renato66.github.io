@@ -1,8 +1,8 @@
 <template>
   <v-container grid-list-md>
     <v-layout row wrap align-center>
-      <v-spacer class="hidden-sm-and-up"></v-spacer>
-      <v-flex shrink v-for="(social, index) in socialNetworks" :key="index">
+      <v-spacer class="hidden-sm-and-up" />
+      <v-flex v-for="(social, index) in socialNetworks" :key="index" shrink>
         <a class="social-icon" rel="noopener" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
           <img
             :src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=png`"
@@ -12,9 +12,18 @@
           >
         </a>
       </v-flex>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-        <v-btn download="Renato-CV.pdf" aria-label="download Renato-CV.pdf" round large color="white" light class="text-none" @click="$emit('print-resume')">
+        <v-btn
+          download="Renato-CV.pdf"
+          aria-label="download Renato-CV.pdf"
+          rounded
+          large
+          color="white"
+          light
+          class="text-none"
+          @click="$emit('print-resume')"
+        >
           {{ $t('downloadResume') }}
         </v-btn>
       </v-flex>

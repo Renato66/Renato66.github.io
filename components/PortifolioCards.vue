@@ -8,7 +8,7 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap class="portifolio-wrapper">
-      <v-flex xs12 sm6 md4 v-for="(app, index) in portifolio" :key="index">
+      <v-flex v-for="(app, index) in portifolio" :key="index" xs12 sm6 md4>
         <v-hover>
           <v-card
             slot-scope="{ hover }"
@@ -27,9 +27,9 @@
                   v-if="hover"
                   class="transition-fast-in-fast-out card-overlay darken-2"
                 >
-                  <v-tooltip bottom v-for="(tech, index) in app.technologies" :key="index">
+                  <v-tooltip v-for="(tech, index) in app.technologies" :key="index" bottom>
                     <template v-slot:activator="{ on }">
-                      <v-btn icon color="white" flat v-on="on" class="ma-1">
+                      <v-btn icon color="white" flat class="ma-1" v-on="on">
                         <v-icon small>
                           mdi-{{ tech }}
                         </v-icon>
@@ -39,7 +39,17 @@
                   </v-tooltip>
                   <v-tooltip bottom>
                     <template v-slot:activator="{ on }">
-                      <v-btn icon color="white" flat v-on="on" :href="app.link" target="_blank" rel="noopener" :aria-label="`Open ${app.name}`" class="ma-1">
+                      <v-btn
+                        icon
+                        color="white"
+                        flat
+                        :href="app.link"
+                        target="_blank"
+                        rel="noopener"
+                        :aria-label="`Open ${app.name}`"
+                        class="ma-1"
+                        v-on="on"
+                      >
                         <v-icon small>
                           mdi-open-in-new
                         </v-icon>

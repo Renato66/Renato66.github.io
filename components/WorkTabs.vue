@@ -8,9 +8,9 @@
       </v-flex>
     </v-layout>
     <v-layout align-center>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-flex shrink>
-        <v-btn flat icon @click="prev" :disabled="selected === 0" aria-label="Previus">
+        <v-btn flat icon :disabled="selected === 0" aria-label="Previus" @click="prev">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </v-flex>
@@ -18,11 +18,11 @@
         {{ revertExperiences[selected].company }}
       </v-flex>
       <v-flex shrink>
-        <v-btn flat icon @click="next" :disabled="revertExperiences.length === selected + 1" aria-label="Next">
+        <v-btn flat icon :disabled="revertExperiences.length === selected + 1" aria-label="Next" @click="next">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </v-flex>
-      <v-spacer></v-spacer>
+      <v-spacer />
     </v-layout>
     <v-layout>
       <v-flex xs12>
@@ -32,25 +32,25 @@
             :key="work.id"
             style="min-height: 200px;"
           >
-              <v-layout class="text-xs-center mt-4  mb-3" row wrap>
-                <v-flex xs12 class="primary--text title">
-                  {{ $t(`work.${work.id}`).position }}
-                </v-flex>
-              </v-layout>
-              <v-layout class="text-xs-center subtitle-1">
-                <v-spacer></v-spacer>
-                <v-flex xs10 sm8>
-                  {{ $t(`work.${work.id}`).description }}<br>
-                  <span v-if="work.endDate === null">
-                    {{ $t('actual') }}
-                  </span>
-                  <span v-else>
-                    {{ $tc('year', howLong(work).years) }}
-                    {{ $tc('month', howLong(work).months) }}
-                  </span>
-                </v-flex>
-                <v-spacer></v-spacer>
-              </v-layout>
+            <v-layout class="text-xs-center mt-4  mb-3" row wrap>
+              <v-flex xs12 class="primary--text title">
+                {{ $t(`work.${work.id}`).position }}
+              </v-flex>
+            </v-layout>
+            <v-layout class="text-xs-center subtitle-1">
+              <v-spacer />
+              <v-flex xs10 sm8>
+                {{ $t(`work.${work.id}`).description }}<br>
+                <span v-if="work.endDate === null">
+                  {{ $t('actual') }}
+                </span>
+                <span v-else>
+                  {{ $tc('year', howLong(work).years) }}
+                  {{ $tc('month', howLong(work).months) }}
+                </span>
+              </v-flex>
+              <v-spacer />
+            </v-layout>
           </v-window-item>
         </v-window>
       </v-flex>
@@ -71,6 +71,14 @@ export default {
       selected: 0
     }
   },
+  computed: {
+    revertExperiences () {
+      return [...this.experiences].reverse()
+    }
+  },
+  mounted () {
+    this.selected = this.experiences.length - 1
+  },
   methods: {
     next () {
       this.selected = this.selected + 1 === this.revertExperiences.lenght
@@ -89,14 +97,6 @@ export default {
         months: months % 12
       }
     }
-  },
-  computed: {
-    revertExperiences () {
-      return [...this.experiences].reverse()
-    }
-  },
-  mounted () {
-    this.selected = this.experiences.length - 1
   }
 }
 </script>
