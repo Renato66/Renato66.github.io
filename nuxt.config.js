@@ -37,7 +37,7 @@ export default {
   },
 
   generate: {
-    routes: ['/', '/en']
+    routes: ['/', '/resume/', '/en', '/en/resume/']
   },
   /*
   ** Nuxt.js dev-modules
