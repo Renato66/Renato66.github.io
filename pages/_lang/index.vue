@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-content v-if="!$route.query.print">
+    <v-content>
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
       </header>
@@ -27,16 +27,7 @@
       </section>
       <Footer :contact="contact" />
       <ChatMessage :contact="contact" @print-resume="printResume" />
-      <iframe id="printf" title="Print iframe" name="printf" :src="location" style="opacity: 0; height:0px" />
     </v-content>
-    <ResumePDF
-      v-if="$route.query.print"
-      :contact="contact"
-      :work="work"
-      :skills="skills"
-      :social-networks="socialNetworks"
-      :timeline="timeline"
-    />
   </v-app>
 </template>
 
@@ -52,7 +43,6 @@ import Footer from '@/components/Footer'
 import Timeline from '@/components/Timeline'
 import Presentation from '@/components/Presentation'
 import ChatMessage from '@/components/ChatMessage'
-import ResumePDF from '@/components/resume/Index'
 
 export default {
   name: 'App',
@@ -66,12 +56,10 @@ export default {
     PortifolioCards,
     ContactLinks,
     Presentation,
-    ResumePDF,
     ChatMessage
   },
   data () {
     return {
-      location: '',
       menu: [
         'hi',
         'about',
@@ -335,22 +323,17 @@ export default {
       return this.skills.filter(elem => elem.main)
     }
   },
-  watch: {
-    $route () {
-      this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
-    }
-  },
-  mounted () {
-    this.location = `${this.baseUrl}/${this.$i18n.locale}/?print=true`
-    document.dispatchEvent(new Event('render-event'))
-    // setTimeout(() => {
-    //   this.pageLoading = false
-    // })
-  },
   methods: {
     printResume () {
-      window.frames.printf.focus()
-      window.frames.printf.print()
+      const a = document.createElement('a')
+      a.style.display = 'none'
+      document.body.appendChild(a)
+      a.target = '_blank'
+      a.href = 'https://renato66.github.io/Renato-CV.pdf'
+      a.download = 'https://renato66.github.io/Renato-CV.pdf'
+      // a.setAttribute('download', `renato-vicente-cv-${this.$i18n.locale}`)
+      a.click()
+      document.body.removeChild(a)
     }
   }
 }

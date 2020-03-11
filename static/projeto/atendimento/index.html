@@ -1,0 +1,1130 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <style media="screen">
+    body{
+      font-family: Calibri;
+      background-color: #efefef;
+    }
+    *:focus {
+      outline: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .status{
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin-top: 7px;
+      margin-right: 5px;
+    }
+    .andamento .status{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 0 5px 9px;
+      border-color: transparent transparent transparent #f5e104;
+    }
+    .concluido .status{
+      background-color: green;
+      border-radius: 100%;
+    }
+    .sandamento .status{
+      background-color: red;
+      border-radius: 2px;
+    }
+    .filtro{
+      background-color: #dddddd;
+      border-radius: 20px;
+      width: auto;
+      padding-top: 1px;
+      padding-left: 9px;
+      padding-bottom: 2px;
+      padding-right: 10px;
+      margin-top: 9px;
+      margin-left: 4px;
+      color: #afafaf;
+      font-size: 11px;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: .3s;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    .filtro::after{
+      content: 'x';
+      padding-left: 6px;
+      font-size: 14px;
+    }
+    .btn-filtro{
+      background-color: #a71a1e;
+      border-radius: 3px;
+      color: #fff;
+      float: left;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 33px;
+      background-repeat: no-repeat;
+      width: 75px;
+      background-image: url(img/filtro.png);
+      background-size: 16px;
+      background-position: 7px;
+    }
+    .lupa i {
+      width: 20px;
+      height: 20px;
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px;
+      position: absolute;
+
+    }
+    .nome-oc{
+      color: #5a5859;
+      font-size: 18px;
+      padding: 10px;
+      padding-bottom: 0;
+    }
+
+    .cartao{
+      background-color: #fffdfe;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .concluido{
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .concluido .encerrar-oc{
+      display: none;
+    }
+    .solicitacao{
+      color: #3a9fde;
+      padding-left: 10px;
+    }
+    .descricao-oc{
+      display: block;
+      display: -webkit-box;
+      height: 55px;
+      margin: 0 auto;
+      padding: 10px;
+      color: #828282;
+      font-size: 16px;
+      line-height: 1.4;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 48px;
+    }
+    .encerrar-oc{
+      background-color: #f5f5f5;
+      color: #969696;
+      padding-left: 10px;
+      border-top: #e2e2e2 solid 1px;
+      padding: 10px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .drop-lista{
+      position: absolute;
+      top: 35px;
+      width: 150px!important;
+    }
+    .triangulo{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0px 10.5px 6px 10.5px;
+      border-color: transparent transparent #a71a1e transparent;
+      content: ' ';
+      position: absolute;
+      top: 5px;
+      left: 22px;
+    }
+    .lista-filtro{
+      background-color: #a71a1e;
+      padding-right: 10px;
+      padding-left:10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      white-space: nowrap;
+    }
+    .lista-filtro li{
+      list-style: none;
+      border-top: 1px solid #fff;
+      padding: 5px;
+      margin-left:5px;
+      margin-right: 5px;
+      color: #f1f1f1;
+      white-space: nowrap;
+      overflow: hidden;
+      min-height: 20px!important;
+    }
+    .lista-filtro li:first-child{
+      border: 0px;
+    }
+    .dropdown-content{
+      background-color: transparent;
+      box-shadow: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .filtro-aplicado{
+      min-height: 30px;
+      position: absolute;
+      z-index: 2;
+    }
+    .dropdown-content li:hover{
+      background-color: #a71a1e;
+    }
+    .filtro-atendimento .concluido, .filtro-atendimento .andamento, .filtro-atendimento .sandamento{
+      display: none;
+    }
+    .filtro-concluido .concluido{
+      display: block!important;
+    }
+    .filtro-andamento .andamento{
+      display: block!important;
+    }
+    .filtro-sandamento .sandamento{
+      display: block!important;
+    }
+    .barra-pesquisa{
+      max-height: 40px;
+          margin-top: 20px;
+    }
+    .pesquisar{
+      position: relative;
+      top: -35px;
+    }
+    .lupa{
+      position: relative;
+      z-index: 1;
+      height: 38px;
+      margin-left: calc(100% - 38px);
+    }
+
+    .adicionar{
+      font-size: 36px;
+    }
+    .topoAdicionar{
+      padding:10px;
+    }
+    .bt-administradora,.bt-sindico{
+      width:50%;
+      float:left;
+      background-color:#dadada;
+      color:#b2b0b1;
+      padding: 10px;
+      text-align: center;
+    }
+    .ativo.bt-administradora,.ativo.bt-sindico{
+      background-color:#df3734;
+      color:#fff;
+    }
+    .bt-administradora{
+      border-bottom-left-radius:5px;
+      border-top-left-radius:5px;
+    }
+    .bt-sindico{
+      border-bottom-right-radius:5px;
+      border-top-right-radius:5px;
+    }
+    #novaMensagem{
+      background-color: #fff;
+    }
+    #yesno .titulo{
+      margin-top: -19px;
+      margin-left: -19px;
+      font-size: 16px;
+      color: #af3d42;
+    }
+    #yesno .close{
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+    #yesno p{
+      text-align: center;
+    }
+    #yesno .botao{
+      width: calc(50% - 10px);
+      float: left;
+      padding: 10px;
+      text-align: center;
+      margin: 5px;
+      text-transform: uppercase;
+    }
+    #yesno .no{
+      color: #3e3e3e;
+      background-color: #efefef;
+    }
+    #yesno .yes{
+      color: #fff;
+      background-color: #01bfa5;
+    }
+    .triangle{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 24px;
+      border-color: transparent transparent transparent #ffffff;
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+    .triangle::after{
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 35px;
+      border-color: transparent transparent transparent #26a69a;
+      position: relative;
+      top: -4px;
+      left: -44px;
+    }
+    .modal{
+        max-height: 100%!important;
+    }
+    .bottom-sheet{
+      height:100%!important;
+      max-height: 100%!important;
+    }
+    #chat{
+      height: 100%;
+      background: #fff;
+    }
+    #chat .ocorrencia{
+      height: 50%;
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-weight: bold;
+      overflow-y: auto;
+    }
+    #chat .ocorrencia hr{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #chat .ocorrencia span,#chat .ocorrencia .atendimento-desc,#chat .ocorrencia-desc{
+      font-weight: 500;
+    }
+    #chat .ocorrencia .atendimento-desc{
+      margin-bottom: 10px;
+      font-size:20px;
+    }
+    #chat .inbox{
+      height: 30%;
+      background-color: #d8d8d8;
+      overflow-y: auto;
+    }
+    #chat .resposta{
+      background-color:#fffde8;
+      margin: 10px;
+      padding: 10px;
+      margin-left: 30px;
+    }
+    #chat .mensagem{
+      background-color: #ebfefc;
+      margin: 10px;
+      padding: 10px;
+      margin-right: 30px;
+    }
+    #chat .encerrar{
+      height: 30px;
+      background-color: #ebebeb;
+      padding-left: 20px;
+      text-transform: uppercase;
+    }
+    #chat .encerrar span{
+      position: relative;
+      top: -5px;
+    }
+    #chat .encerrar i{
+      position: relative;
+      top: 6px;
+    }
+    #chat .status{
+      margin-top: 10px;
+    }
+    #chat .chat{
+      height: calc(20% - 30px);
+    }
+    #chat .inbox>div>span{
+      white-space: nowrap;
+      overflow: hidden;
+      width: 262px;
+      display: block;
+      text-overflow: ellipsis;
+      font-weight: bold;
+    }
+
+    .enviar{
+      position: absolute;
+      border: 10px;
+      right: 0px;
+      bottom: 15px;
+      padding: 10px;
+    }
+    .mensagem-input{
+      height: 100%;
+      width: 100%;
+      border: 0px!important;
+      margin: 0;
+      padding: 5px;
+      transition: inherit;
+    }
+    textarea:focus,input:focus{
+      -khtml-user-select:inherit;
+      outline: none;
+      /*-webkit-touch-callout: none;*/
+      -webkit-user-select: inherit;
+      /*-moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;*/
+    }
+    .mensagem-input:focus{
+      width: 100%;
+      border: none!important;
+      margin: 0!important;
+    }
+    .concluido .encerrar, .digitando .encerrar,.digitando .txtarea-label{
+      display: none;
+    }
+    .concluido .chat, .digitando .chat{
+      height: 20%!important;
+    }
+    textarea{
+      height: 100%;
+      border: 0px;
+      padding: 10px;
+      padding-right: 60px;
+    }
+    .close-chat{
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      font-size: 26px;
+      color: #6d6d6d;
+      text-shadow: 1px 1px 2px #c3c3c3;
+    }
+    .label{
+      padding-left: 10px;
+      padding-top: 10px;
+      color: #545454;
+      display: block;
+    }
+    #adicionar select{
+      display: block;
+    }
+    #adicionar .novaMensagem{
+      height: calc(100% - 300px);
+    }
+    #adicionar .topoAdicionar{
+      height: 300px;
+      background-color: #efefef
+    }
+    .digitando #ocorrencia{
+      height: 100%;
+
+    }
+    .no-scroll{
+      overflow: hidden;
+    }
+    #ocorrencia{
+      height: calc(100% - 4px);
+    }
+    .loading{
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.20);
+      z-index: 2;
+    }
+    .atendimento.modal {
+    background-color: #fff;
+    top:0;
+    bottom: 0;
+    }
+    .modal-overlay{
+     overflow: hidden
+    }
+    .loader {
+      color: #ffffff;
+      font-size: 90px;
+      text-indent: -9999em;
+      overflow: hidden;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      margin: 72px auto;
+      position: relative;
+      top: 30%;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+      animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    }
+    @-webkit-keyframes load6 {
+      0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+      5%,
+      95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+      10%,
+      59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+      }
+      20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+      }
+      38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+      }
+      100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+    }
+    @keyframes load6 {
+      0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+      5%,
+      95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+      10%,
+      59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+      }
+      20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+      }
+      38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+      }
+      100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+    }
+    @-webkit-keyframes round {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes round {
+        0% {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+    }
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+    html, body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     font-family: 'Helvetica', 'Arial', sans-serif;
+   }
+   .tela {
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     position: relative;
+   }
+
+   .view {
+     will-change: transform;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     transition: -webkit-transform 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+     transition: transform 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+   }
+
+   .lista {
+     height: 100%;
+     width: 100%;
+     position: relative;
+     overflow-y: auto;
+     overflow-x: hidden;
+     -webkit-overflow-scrolling: touch;
+   }
+   .novoAtendimento{
+     -webkit-transform: translateY(100%);
+     transform: translateY(100%);
+     height: 100%;
+     z-index: 1;
+     background: #efefef;
+     box-sizing: border-box;
+   }
+   .detalhes {
+     -webkit-transform: translateY(100%);
+     transform: translateY(100%);
+     height: 100%;
+     z-index: 1;
+     box-sizing: border-box;
+   }
+
+   /*.view-detalhes .lista {
+     -webkit-transform: translateX(-100%);
+     transform: translateX(-100%);
+   }*/
+
+   .view-detalhes .detalhes {
+     -webkit-transform: translateY(0);
+     transform: translateY(0);
+   }
+   .view-detalhes .adicionar,.view-novo .adicionar{
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform .2s !important;
+    transition: transform .2s !important;
+    transition: transform .2s, -webkit-transform .2s !important;
+    }
+   /*.view-novo .lista {
+     -webkit-transform: translateX(-100%);
+     transform: translateX(-100%);
+   }*/
+
+   .view-novo .novoAtendimento {
+     -webkit-transform: translateY(0);
+     transform: translateY(0);
+   }
+  </style>
+  <body>
+    <div class="tela">
+      <div class="fixed-action-btn adicionar">
+        <div class="btn-floating red mais">
+          <i class="material-icons">add</i>
+        </div>
+      </div>
+      <div class="view lista">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <div class="barra-pesquisa">
+                <div class="btn-filtro scale-transition scale-in waves-effect" data-activates='filtro'>Filtro</div>
+                <div id='filtro' class="drop-lista dropdown-content">
+                  <div class="triangulo"></div>
+                  <ul class="lista-filtro">
+                    <li id='filtro-aberto'>Em aberta</li>
+                    <li id='filtro-sandamento'>Sem andamento</li>
+                    <li id='filtro-andamento'>Em andamento</li>
+                    <li id='filtro-concluido'>Concluídos</li>
+                    <li id='filtro-todos' style='display:none;'>Todos</li>
+                  </ul>
+                </div>
+                <span class="filtro-aplicado"></span>
+                <div class="lupa" onclick="pesquisar()"><i class="material-icons scale-transition scale-in">search</i><i class="material-icons scale-transition scale-out">close</i></div>
+                <input id="pesquisa" type="text" name="" value="" placeholder="Pesquisar" class="pesquisar scale-transition s12 scale-out">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="atendimento" class="container">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+      <div class="view detalhes">
+        <div id="chat" class="atendimento">
+        </div>
+      </div>
+      <div class="view novoAtendimento">
+        <div id="adicionar">
+          <div class="topoAdicionar">
+            <div class="label">
+              Falar com
+            </div>
+            <div class="selecao">
+              <div class="ativo bt-administradora">
+                Administradora
+              </div>
+              <div class="bt-sindico">
+                Sí­ndico
+              </div>
+            </div>
+            <div class="select-box administradora">
+              <div class="label">
+                Tema
+              </div>
+              <select id="tema">
+                <option value="">Selecione...</option>
+                <option value="1">Administrativo </option>
+                <option value="2">Cobrança </option>
+                <option value="3">Compras </option>
+                <option value="24">Compromissos ( Calendário ) </option>
+                <option value="4">Comunidade / Vizinhança </option>
+                <option value="13">Construtora </option>
+                <option value="5">Contas à  Pagar </option>
+                <option value="12">Despesas </option>
+                <option value="55">Diretoria </option>
+                <option value="7">Financeiro </option>
+                <option value="8">Jurí­dico </option>
+                <option value="106">Locação </option>
+                <option value="75">Ombudsman </option>
+                <option value="9">Operacional </option>
+                <option value="10">Recursos Humanos </option>
+                <option value="11">Sistemas </option>
+              </select>
+              <div class="label">
+                Assunto:
+              </div>
+              <select id="assunto">
+                <option value="">Selecione...</option>
+                <option value="Informação">Informação</option>
+                <option value="Solicitação">Solicitação</option>
+                <option value="Reclamação">Reclamação</option>
+                <option value="Comentário">Comentário</option>
+                <option value="Sugestão">Sugestão</option>
+                <option value="Dúvida">Dúvida</option>
+                <option value="Crítica">Crítica</option>
+                <option value="Elogio">Elogio</option>
+              </select>
+            </div>
+          </div>
+          <div class="novaMensagem">
+            <div class="enviar" onclick="novoAtendimento()">
+              <div class="btn-floating btn" ><i class="material-icons">send</i></div>
+            </div>
+            <textarea id="novaMensagem" class="textarea" name="mensagem" rows="6" placeholder="Digite um parecer"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+      <div id="yesno" class="modal">
+        <div class="modal-content">
+          <div class="titulo">Encerrar Atendimento</div>
+          <div class="close"><span class="modal-action modal-close"><i class="material-icons">close</i></span></div>
+          <p>Deseja realmente<br>encerrar este atendimento?</p>
+        </div>
+        <div class="modal-footer">
+          <div class="modal-action modal-close waves-effect botao no">Não</div>
+          <div class="modal-action modal-close waves-effect botao yes">Sim</div>
+        </div>
+      </div>
+      <div id="loading" class="loading">
+        <div class="loader"></div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+      <script src="js/dateFormat.js"></script>
+
+      <script type="text/javascript">
+      var nomeUsuario = "Gustavo Martins";
+      var sindicoResposta = false;
+      var gambiarraNumeroOcorrencia = 0;
+      var administradora = true;
+      $( document ).ready(function() {
+        $('.modal').modal();
+        //$('#adicionar').modal('open');
+        //$('#chat').modal('open');
+        $('.btn-filtro').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrainWidth: true, // Does not change width of dropdown to that of the activator
+            hover: false, // Activate on hover
+            gutter: 0, // Spacing from edge
+            belowOrigin: true, // Displays dropdown below the button
+            alignment: 'left', // Displays dropdown with edge aligned to the left of button
+            stopPropagation: false // Stops event propagation
+          });
+          $(".selecao div").on("click", function() {
+            $(".selecao div").toggleClass("ativo");
+            administradora = !administradora;
+          });
+          $( "#pesquisa" ).keyup(function() {
+            search($( this ).val());
+          });
+
+          $("#filtro-concluido").on("click", function() {
+            adicionaFiltro('concluido','Concluidos');
+            $('#filtro-aberto').hide();
+
+          });
+          $("#filtro-andamento").on("click", function() {
+            adicionaFiltro('andamento','Em andamento');
+            $('#filtro-aberto').hide();
+          });
+          $("#filtro-sandamento").on("click", function() {
+            adicionaFiltro('sandamento','Sem andamento');
+            $('#filtro-aberto').hide();
+          });
+          $("#filtro-aberto").on("click", function() {
+            adicionaFiltro('andamento','Em andamento');
+            adicionaFiltro('sandamento','Sem andamento');
+            $('#filtro-aberto').hide();
+          });
+          $(".adicionar").on("click", function() {
+            $('body').addClass('view-novo');
+          });
+          $("#filtro-todos").on("click", function() {
+            semFiltro();
+            $('.btn-filtro').dropdown('close');
+          });
+
+
+
+          $.extend($.expr[":"], {
+              "MyCaseInsensitiveContains": function(elem, i, match, array) {
+                return (elem.textContent || elem.innerText || "").toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+              }
+          });
+
+          onload();
+        });
+
+        var quantidade = 0;
+        function pesquisar(){
+        // $('.btn-filtro').toggleClass("scale-out scale-in");
+        // $('.pesquisar').toggleClass("scale-out scale-in");
+          setTimeout(function(){
+             $('.btn-filtro').toggleClass("scale-out scale-in");
+             $('.pesquisar').toggleClass("scale-out scale-in");
+             $('.lupa i').toggleClass("scale-out scale-in");
+             $('.adicionar').toggleClass("hide");
+
+             if($('#pesquisa').hasClass("scale-in")){
+               $('#pesquisa').focus();
+               $('#pesquisa').click();
+             }else{
+               $('#pesquisa').val('');
+               search('');
+             }
+          }, 100);
+        }
+        function adicionaFiltro(elemento, nome){
+          $('.btn-filtro').dropdown('close');
+          if (quantidade == 0){
+            $('.lupa i:first-child').toggleClass("scale-out scale-in");
+          }else{
+            $("#filtro-todos").show();
+            $("#filtro-concluido").hide();
+            $("#filtro-andamento").hide();
+            $("#filtro-sandamento").hide();
+            $('#filtro-aberto').hide();
+          }
+          if(!$('#' + elemento).length){
+              quantidade++;
+              $('.filtro-aplicado').append('<span id="'+ elemento +'" onclick="removeFiltro(\''+ elemento +'\')" class="filtro scale-transition scale-out">'+ nome +'</span>');
+              $('#atendimento').addClass('filtro-atendimento');
+              $('#atendimento').addClass('filtro-' + elemento);
+              $('#filtro-' + elemento).hide();
+              setTimeout(function(){ $('#'+elemento).toggleClass("scale-out scale-in"); }, 100);
+          }
+        }
+        function semFiltro(){
+          $('.filtro').each(function( ) {
+            removeFiltro($( this ).attr('id'));
+          });
+        }
+        function removeFiltro(elemento){
+          $('#atendimento').removeClass('filtro-' + elemento);
+          $('#filtro-' + elemento).show();
+          if(elemento=='andamento' || elemento=='sandamento'){
+            $('#filtro-aberto').show();
+          }
+          $('#' + elemento).toggleClass("scale-out scale-in");
+          setTimeout(function(){ $('#' + elemento).remove(); }, 200);
+          quantidade--;
+          if(quantidade==1){
+            $('#filtro-aberto').hide();
+          }
+          if(quantidade==0){
+            $('#atendimento').removeClass('filtro-atendimento');
+            $("#filtro-todos").hide();
+            $("#filtro-concluido").show();
+            $("#filtro-andamento").show();
+            $("#filtro-sandamento").show();
+            $('#filtro-aberto').show();
+            $('.lupa i:first-child').toggleClass("scale-out scale-in");
+          }
+        }
+        function search(valor){
+          $( ".oc:visible:not(:MyCaseInsensitiveContains('"+ valor +"'))" ).parent('.cartao').fadeOut();
+          $( ".oc .solicitacao:MyCaseInsensitiveContains('"+ valor +"'):not(:visible)" ).parent('.solicitacao').parent('.oc').parent('.cartao').fadeIn();
+          $( ".oc .nome-oc:MyCaseInsensitiveContains('"+ valor +"'):not(:visible)" ).parent('.oc').parent('.cartao').fadeIn();
+          $( ".oc .descricao-oc:MyCaseInsensitiveContains('"+ valor +"'):not(:visible)" ).parent('.oc').parent('.cartao').fadeIn();
+        }
+        function clickBind(){
+            var mensagens;
+            $(".encerrar-oc").off("click").on("click", function() {
+              $('#yesno').modal('open');
+              var x = $(this).parent('.cartao').attr("data-atendimento");
+              $('#yesno .yes').attr("onclick","encerrarAtendimento('"+ x +"');");
+            });
+            $(".oc").off("click").on("click", function() {
+              $('.loading').show();
+              var oc = $(this).parent('.cartao').attr("data-atendimento");
+              mensagens = "";
+              $.ajax({
+                type: "GET",
+                url: 'https://atendimento-ff781.firebaseio.com/mensagem/'+ oc +'/.json',
+                //data: form.serialize()
+                dataType: "json"
+              }).done(function(dataMensagem) {
+                if(dataMensagem!=null){
+                  $.each( dataMensagem, function( key, value ) {
+                    if(value.resposta){
+                      mensagens = mensagens + '\
+                      <div class="mensagem">\
+                      <span>'+ value.dataResposta +' - '+ value.autor +'</span>\
+                      '+ value.descricao +'\
+                      </div>';
+                    }else{
+                      mensagens = mensagens + '\
+                      <div class="resposta">\
+                      <span>'+ value.dataResposta +' - '+ value.autor +'</span>\
+                      '+ value.descricao +'\
+                      </div>';
+                    }
+                  });
+
+                }
+            var ocorencia="";
+            $.ajax({
+              type: "GET",
+              url: 'https://atendimento-ff781.firebaseio.com/ocorrencia/'+ oc +'/.json',
+              //data: form.serialize()
+              dataType: "json"
+            }).done(function(data) {
+
+                detalhes = data;
+                console.log('https://atendimento-ff781.firebaseio.com/ocorrencia/'+ oc +'/.json');
+                gambiarraNumeroOcorrencia = gambiarraNumeroOcorrencia + 1;
+                $('#chat').attr('data-atendimento', oc);
+                $("#chat #ocorrencia").removeClass("concluido sandamento andamento");
+                $("#chat #ocorrencia").addClass(detalhes.status);
+                $('#chat').empty();
+              ocorrencia = '<div id="ocorrencia" class="'+ detalhes.status +'" >\
+              <div class="ocorrencia">\
+              <div class="close-chat"><i class="material-icons">close</i></div>\
+              <div class="atendimento-desc"><div class="status"></div> Atendimento: <span>'+ detalhes.numeroOcorrencia +'</span></div>\
+              <div class="tema-desc">Tema: <span>'+ detalhes.tema +'</span></div>\
+              <div class="assunto-desc">Assunto: <span>'+ detalhes.assunto +'</span></div>\
+              <div class="autor-desc">Autor: <span>'+ detalhes.autor +'</span></div>\
+              <div class="data-desc">Data: <span>'+ detalhes.data +'</span></div>\
+              <hr>\
+              <div class="ocorrencia-desc">\
+              '+ detalhes.descricao +'\
+              </div>\
+              </div>\
+              <div id="inbox" class="inbox">\
+              <span class="label">Andamento</span>\
+              '+ mensagens +'\
+              </div>\
+              <div class="encerrar">\
+              <span><i class="material-icons">done</i> encerrar atendimento</span>\
+              </div>\
+              <div class="chat">\
+              <div class="enviar">\
+              <div class="btn-floating btn" ><i class="material-icons">send</i></div>\
+              </div>\
+              <textarea id="mensagem" class="textarea" name="mensagem" rows="6" placeholder="Mensagem..."></textarea>\
+              </div></div>';
+
+              $('#chat').append(ocorrencia);
+              $(".enviar").off("click").on("click", function() {
+                if ($("#mensagem").val()!="") {
+                  var dataResposta = dateFormat(new Date(), "dd/mm/yyyy  HH:MM:ss");
+                  $.ajax({
+                    type: "POST",
+                    url: "https://atendimento-ff781.firebaseio.com/mensagem/"+ oc +"/.json",
+                    data: JSON.stringify({
+                      "autor": nomeUsuario,
+                      "dataResposta": dataResposta,
+                      "descricao": $("#mensagem").val(),
+                      "resposta": sindicoResposta
+                    })
+                  }).done(function(data) {
+                    console.log(data);
+                  });
+                  if(sindicoResposta){
+                    var resposta = "mensagem"
+                  }else{
+                    var resposta = "resposta"
+                  }
+                  $(".inbox").append("<div class='"+ resposta +"'><b>" + dataResposta + " - "+ nomeUsuario +"</b><br>"+ $("#mensagem").val() +"</div>");
+                  $("#mensagem").val("");
+                  var inbox = $("#inbox");
+                  var height = inbox[0].scrollHeight;
+                  inbox.scrollTop(height);
+                  if($("#chat #ocorrencia").hasClass( "concluido" ) || $("#chat #ocorrencia").hasClass( "sandamento" )){
+                    $.ajax({
+                      type: "PATCH",
+                      url: 'https://atendimento-ff781.firebaseio.com/ocorrencia/'+ oc +'/.json',
+                      data: JSON.stringify({
+                        "status":"andamento"
+                      })
+                    }).done(function(data) {
+                      console.log(data);
+                    });
+                    $("#chat #ocorrencia").removeClass("concluido sandamento");
+                    $("#chat #ocorrencia").addClass("andamento");
+                    $(".cartao[data-atendimento='" + oc +"']").removeClass("concluido sandamento");
+                    $(".cartao[data-atendimento='" + oc +"']").addClass("andamento");
+                  }
+                }
+              });
+              $(".encerrar").off("click").on("click", function() {
+                $('#yesno').modal('open');
+                var x = $('#chat').attr("data-atendimento");
+                $('#yesno .yes').attr("onclick","encerrarAtendimento('"+ oc +"');");
+              });
+              // $(".textarea").focus(function() {
+              //   $('#chat').addClass('digitando');
+              // });
+              // $(".textarea").focusout(function() {
+              //   $('#chat').removeClass('digitando');
+              // });
+              $('.tela').toggleClass('view-detalhes');
+              $('.loading').hide();
+              $('.close-chat').off("click").on("click", function() {
+                $('.tela').toggleClass('view-detalhes');
+              });
+
+              var inbox = $("#inbox");
+              var height = inbox[0].scrollHeight;
+              inbox.scrollTop(height);
+
+            }).fail(function(data) {
+              $('.loading').hide();
+            });
+            //ajax alert("Oc " + atendimento + " em andamento");
+            });
+          });
+        }
+        function encerrarAtendimento(oc){
+            $.ajax({
+              type: "PATCH",
+              url: 'https://atendimento-ff781.firebaseio.com/ocorrencia/'+ oc +'/.json',
+              data: JSON.stringify({
+                "status":"concluido"
+              })
+            }).done(function(data) {
+              console.log(data);
+              $(".cartao[data-atendimento='" + oc +"']").attr('class', 'cartao concluido');
+              if($("#chat[data-atendimento='" + oc +"']").length){
+                $("#chat #ocorrencia").attr('class', 'concluido');
+              }
+            });
+        }
+        function novoAtendimento(){
+          //ajax
+            $('.loading').show();
+            gambiarraNumeroOcorrencia = gambiarraNumeroOcorrencia + 1;
+            var numeroOcorrencia = gambiarraNumeroOcorrencia;
+            var assunto = $( "#assunto option:selected" ).text();
+            var tema = $( "#tema option:selected" ).text();
+            var dataOcorencia = dateFormat(new Date(), "dd/mm/yyyy");
+            var descricao = $("#novaMensagem").val();
+          $.ajax({
+            type: "POST",
+            url: "https://atendimento-ff781.firebaseio.com/ocorrencia/.json",
+            data: JSON.stringify({
+              "numeroOcorrencia":numeroOcorrencia,
+              "status":"sandamento",
+              "administradora":administradora,
+              "autor":nomeUsuario,
+              "assunto":assunto,
+              "tema":tema,
+              "data":dataOcorencia,
+              "descricao":descricao
+            })
+          }).done(function(data) {
+
+            // APPEND ELEMENT
+            console.log(data);
+            adicionaLista("sandamento",data.name,parseInt(gambiarraNumeroOcorrencia),assunto,tema,dataOcorencia,descricao);
+            clickBind();
+            $('.loading').hide();
+            $('body').removeClass('view-novo');
+          });
+        }
+        //ajax
+        function adicionaLista(status,key,numeroOcorrencia,assunto,tema,data,descricao){
+          ocorrencia = '<div class="col s12"> \
+            <div class="cartao '+ status +'" data-atendimento="'+ key +'">\
+              <div class="oc">\
+                <div class="nome-oc">\
+                  <div class="status"></div>\
+                  '+ numeroOcorrencia +' - '+ assunto +'\
+                </div>\
+                <div class="solicitacao">\
+                  '+ tema +' ('+ data +')\
+                </div>\
+                <div class="descricao-oc">\
+                  '+ descricao +'\
+                </div>\
+              </div>\
+              <div class="encerrar-oc">\
+                ENCERRAR ATENDIMENTO\
+              </div>\
+            </div>\
+          </div>';
+          $("#atendimento .row").append(ocorrencia);
+        }
+        function onload() {
+          var ocorrencia;
+          $('.loading').show();
+          $.ajax({
+            type: "GET",
+            url: "https://atendimento-ff781.firebaseio.com/ocorrencia.json",
+            //data: form.serialize()
+            dataType: "json"
+          }).done(function(data) {
+              $('.loading').hide();
+              $.each( data, function( key, value ) {
+                adicionaLista(value.status,key,value.numeroOcorrencia,value.assunto,value.tema,value.data,value.descricao);
+              });
+              clickBind();
+          }).fail(function(data) {
+              $('.loading').hide();
+              $("#atendimento .row").append("<p>Erro ao carregar a lista de atendimentos</p>");
+          });
+        }
+      </script>
+  </body>
+</html>
