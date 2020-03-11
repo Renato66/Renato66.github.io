@@ -55,7 +55,7 @@
                         </v-icon>
                       </v-btn>
                     </template>
-                    <span>Abrir em nova</span>
+                    <span>{{ $t('openProject') }}</span>
                   </v-tooltip>
                 </div>
               </v-expand-transition>
