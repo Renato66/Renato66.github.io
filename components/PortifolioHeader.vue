@@ -49,12 +49,12 @@
     </v-layout>
     <v-layout class="mt-6 pb-6" row wrap>
       <v-flex xs12 class="text-center">
-        <h1 class="font-weight-thin" :class="{'display-4': $vuetify.breakpoint.smAndUp, 'display-2': $vuetify.breakpoint.xsOnly}">
+        <h1 class="font-weight-thin" :class="{'display-4': !mobile, 'display-2': mobile}">
           {{ contact.shortName }}
         </h1>
       </v-flex>
       <v-flex xs12 class="text-center mt-4">
-        <h2 :class="{'display-1': $vuetify.breakpoint.smAndUp, 'headline': $vuetify.breakpoint.xsOnly}">
+        <h2 :class="{'display-1': !mobile, 'headline': mobile}">
           {{ $t('description') }}
         </h2>
       </v-flex>
@@ -218,6 +218,7 @@ export default {
   },
   data () {
     return {
+      mobile: false,
       followScroll: false
     }
   },
@@ -228,6 +229,7 @@ export default {
   },
   beforeMount () {
     if (process.browser) {
+      this.mobile = $vuetify.breakpoint.xsOnly
       window.addEventListener('scroll', this.handleScroll)
     }
   },

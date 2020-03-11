@@ -9,7 +9,7 @@
     </v-layout>
     <v-layout>
       <v-flex xs12>
-        <v-timeline align-top light :dense="$vuetify.breakpoint.xs">
+        <v-timeline align-top light :dense="mobile">
           <v-timeline-item
             v-for="item in timeline"
             :key="item.id"
@@ -100,11 +100,17 @@ export default {
   },
   data () {
     return {
+      mobile: false,
       colombia: 8,
       open: {
         fatec: false,
         colombia: false
       }
+    }
+  },
+  beforeMount () {
+    if (process.browser) {
+      this.mobile = this.$vuetify.breakpoint.xsOnly
     }
   },
   mounted () {
