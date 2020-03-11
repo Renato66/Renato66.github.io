@@ -19,7 +19,7 @@
       <section id="portifolio" class="white">
         <PortifolioCards :portifolio="portifolio" />
       </section>
-      <section id="resume" class="primary py-5">
+      <section id="resume" class="primary py-12">
         <SocialNetworks :social-networks="socialNetworks" @print-resume="printResume" />
       </section>
       <section class="background-section">

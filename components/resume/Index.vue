@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md>
     <v-layout row wrap>
-      <v-flex xs12 class="display-2 mb-3">
+      <v-flex xs12 class="display-2 mb-4">
         {{ contact.name }}
       </v-flex>
       <v-flex shrink>
@@ -47,12 +47,12 @@
         </a>
       </v-flex>
     </v-layout>
-    <v-layout mt-3>
+    <v-layout mt-4>
       <v-flex xs12 class="display-1">
         {{ $t('work.title') }}
       </v-flex>
     </v-layout>
-    <v-layout v-for="experience in work" :key="experience.id" row wrap mt-3>
+    <v-layout v-for="experience in work" :key="experience.id" row wrap mt-4>
       <v-flex xs12>
         <strong class="title">{{ experience.company }}</strong>
         <span v-if="experience.endDate === null" class="caption">
@@ -68,25 +68,25 @@
         {{ $t(`work.${experience.id}.description`) }}
       </v-flex>
     </v-layout>
-    <v-layout mt-3>
+    <v-layout mt-4>
       <v-flex xs12 class="display-1">
         {{ $t('skills.title') }}
       </v-flex>
     </v-layout>
-    <v-layout row wrap mt-3>
+    <v-layout row wrap mt-4>
       <v-flex xs12>
         <v-chip v-for="skill in skills" :key="skill.name">
           {{ skill.name }}
         </v-chip>
       </v-flex>
     </v-layout>
-    <div style="page-break-after: always;" class="ma-5" />
-    <v-layout mt-3>
+    <div style="page-break-after: always;" class="ma-12" />
+    <v-layout mt-4>
       <v-flex xs12 class="display-1">
         {{ $t('about.title') }}
       </v-flex>
     </v-layout>
-    <v-layout mt-3>
+    <v-layout mt-4>
       <v-flex xs12 class="pt-2">
         <p>
           {{ $t('about.paragraph.1') }}
@@ -99,12 +99,12 @@
         </p>
       </v-flex>
     </v-layout>
-    <v-layout mt-3>
+    <v-layout mt-4>
       <v-flex xs12 class="display-1">
         {{ $t('formation.title') }}
       </v-flex>
     </v-layout>
-    <v-layout v-for="item in timeline.filter(elem => elem.resume)" :key="item.id" row wrap mt-3>
+    <v-layout v-for="item in timeline.filter(elem => elem.resume)" :key="item.id" row wrap mt-4>
       <v-flex xs12>
         <strong class="title">{{ $t(`timeline.${item.id}.place`) }}</strong>
         <span v-if="item.endDate === null" class="caption">

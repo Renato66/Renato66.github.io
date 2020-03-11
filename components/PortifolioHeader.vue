@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout mt-3>
+    <v-layout mt-4>
       <v-flex shrink>
         <v-menu offset-y content-class="br-8">
           <template v-slot:activator="{ on }">
@@ -35,7 +35,7 @@
         <LocaleChange />
       </v-flex>
     </v-layout>
-    <v-layout class="mt-5">
+    <v-layout class="mt-12">
       <v-flex class="text-center">
         <v-avatar size="236">
           <v-img
@@ -47,18 +47,18 @@
         </v-avatar>
       </v-flex>
     </v-layout>
-    <v-layout class="mt-4 pb-4" row wrap>
+    <v-layout class="mt-6 pb-6" row wrap>
       <v-flex xs12 class="text-center">
         <h1 class="font-weight-thin" :class="{'display-4': $vuetify.breakpoint.smAndUp, 'display-2': $vuetify.breakpoint.xsOnly}">
           {{ contact.shortName }}
         </h1>
       </v-flex>
-      <v-flex xs12 class="text-center mt-3">
+      <v-flex xs12 class="text-center mt-4">
         <h2 :class="{'display-1': $vuetify.breakpoint.smAndUp, 'headline': $vuetify.breakpoint.xsOnly}">
           {{ $t('description') }}
         </h2>
       </v-flex>
-      <v-flex class="text-center mt-3">
+      <v-flex class="text-center mt-4">
         <h3 class="grey--text font-weight-light">
           {{ contact.city }} - {{ contact.birthday | age }} {{ $t('age') }} {{ $t('aditional') }}
         </h3>
@@ -138,7 +138,7 @@
                     @{{ contact.telegram }}
                   </v-flex>
                 </v-layout>
-                <v-layout pt-3>
+                <v-layout pt-4>
                   <v-flex>
                     <v-divider />
                   </v-flex>

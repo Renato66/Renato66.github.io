@@ -8,20 +8,20 @@
       </v-btn>
     </template>
     <v-list dense>
-       <v-list-item>
+      <v-list-item>
         <v-avatar size="24" tile @click="selectLocale(selectedLocale.id)">
           <v-img :src="selectedLocale.flag" />
         </v-avatar>
       </v-list-item>
       <v-list-item
-         v-for="locale in filteredLocales"
+        v-for="locale in filteredLocales"
         :key="locale.id"
         :aria-label="`Choose ${locale.name} language`"
         @click="selectLocale(locale.id)"
       >
-         <v-avatar size="24" tile>
-            <v-img :src="locale.flag" />
-          </v-avatar>
+        <v-avatar size="24" tile>
+          <v-img :src="locale.flag" />
+        </v-avatar>
       </v-list-item>
     </v-list>
   </v-menu>

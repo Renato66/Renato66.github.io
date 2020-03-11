@@ -6,11 +6,11 @@
           {{ $t('contact.title') }}
         </h2>
       </v-flex>
-      <v-flex xs4 offset-xs4 mb-4>
+      <v-flex xs4 offset-xs4 mb-6>
         <v-divider class="primary" />
       </v-flex>
     </v-layout>
-    <v-layout row wrap mb-4>
+    <v-layout row wrap mb-6>
       <v-flex xs12 sm6 class="text-center headline">
         <v-icon large>
           mdi-map-marker
@@ -33,7 +33,7 @@
         </a>
       </v-flex>
     </v-layout>
-    <v-layout row wrap mb-3>
+    <v-layout row wrap mb-4>
       <v-spacer />
       <v-flex shrink>
         <v-btn

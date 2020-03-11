@@ -32,7 +32,7 @@
             :key="work.id"
             style="min-height: 200px;"
           >
-            <v-layout class="text-center mt-4  mb-3" row wrap>
+            <v-layout class="text-center mt-6  mb-4" row wrap>
               <v-flex xs12 class="primary--text title">
                 {{ $t(`work.${work.id}`).position }}
               </v-flex>

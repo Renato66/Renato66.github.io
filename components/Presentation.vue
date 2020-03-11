@@ -21,7 +21,7 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex v-for="quote in quotes" :key="quote.id" xs12 sm4 class="text-center pa-4">
+      <v-flex v-for="quote in quotes" :key="quote.id" xs12 sm4 class="text-center pa-6">
         <img
           :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=png`"
           :srcset="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=webp`"
