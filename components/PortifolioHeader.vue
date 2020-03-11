@@ -229,7 +229,7 @@ export default {
   },
   beforeMount () {
     if (process.browser) {
-      this.mobile = $vuetify.breakpoint.xsOnly
+      this.mobile = this.$vuetify.breakpoint.xsOnly
       window.addEventListener('scroll', this.handleScroll)
     }
   },
