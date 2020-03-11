@@ -343,8 +343,8 @@ export default {
 .br-8{
   border-radius: 8px;
 }
-html {
-  color: red
+section, footer {
+  padding: 20px
 }
 a.white--text {
   text-decoration: none;

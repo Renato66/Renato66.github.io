@@ -82,7 +82,7 @@
           </template>
           <v-card>
             <v-card-title
-              class="headline primary"
+              class="headline primary py-6"
               primary-title
             >
               <v-spacer />
@@ -92,9 +92,9 @@
               <v-spacer />
             </v-card-title>
 
-            <v-card-text>
+            <v-card-text style="background: #424242">
               <v-container grid-list-md pa-0>
-                <v-layout align-center>
+                <v-layout align-center pt-4>
                   <v-flex shrink>
                     <v-icon small color="grey">
                       mdi-phone
@@ -159,7 +159,7 @@
                     <v-divider />
                   </v-flex>
                 </v-layout>
-                <v-layout>
+                <v-layout pt-2>
                   <v-spacer />
                   <v-flex shrink>
                     <v-btn aria-label="Open WhatsApp" rounded class="text-none" color="#25d366">

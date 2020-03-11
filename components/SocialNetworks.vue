@@ -13,7 +13,7 @@
         </a>
       </v-flex>
       <v-spacer />
-      <v-flex xs12 sm6 class="text-center text-sm-right">
+      <v-flex xs12 sm6 class="text-center text-sm-right py-6">
         <v-btn
           download="Renato-CV.pdf"
           aria-label="download Renato-CV.pdf"
