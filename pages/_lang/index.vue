@@ -16,8 +16,8 @@
       <section id="work" class="background-section">
         <WorkTabs :experiences="work" />
       </section>
-      <section id="portifolio" class="white">
-        <PortifolioCards :portifolio="portifolio" />
+      <section id="portfolio" class="white">
+        <PortifolioCards :portfolio="portfolio" />
       </section>
       <section id="resume" class="primary py-12">
         <SocialNetworks :social-networks="socialNetworks" @print-resume="printResume" />
@@ -66,7 +66,7 @@ export default {
         'skills',
         'timeline',
         'work',
-        'portifolio',
+        'portfolio',
         'resume'
       ],
       skills: [
@@ -140,7 +140,7 @@ export default {
           name: 'Go'
         }
       ],
-      portifolio: [
+      portfolio: [
         {
           name: 'Lista',
           link: 'https://marvelapp.com/18fhc5hg',

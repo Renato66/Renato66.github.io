@@ -27,7 +27,7 @@ export default {
         'skills',
         'timeline',
         'work',
-        'portifolio',
+        'portfolio',
         'resume'
       ],
       skills: [
@@ -101,7 +101,7 @@ export default {
           name: 'Go'
         }
       ],
-      portifolio: [
+      portfolio: [
         {
           name: 'Lista',
           link: 'https://marvelapp.com/18fhc5hg',

@@ -5,7 +5,7 @@
     "skills": "Skills",
     "timeline": "Timeline",
     "work": "Experiences",
-    "portifolio": "Portifolio",
+    "portfolio": "Portifolio",
     "resume": "Resume"
   },
   "getInTouch": "Get in touch",
@@ -69,7 +69,7 @@
     }
   },
   "liveIn": "Living in",
-  "footer": "This is my portifolio, I hope you have enjoyed it.",
+  "footer": "This is my portfolio, I hope you have enjoyed it.",
   "about": {
     "title": "About me",
     "paragraph": {
@@ -96,7 +96,7 @@
   "skills": {
     "title": "Skills"
   },
-  "portifolio": {
+  "portfolio": {
     "title": "Portifolio"
   },
   "contact": {

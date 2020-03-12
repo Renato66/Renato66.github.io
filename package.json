@@ -1,7 +1,7 @@
 {
-  "name": "portifolio",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "personal portifolio",
+  "description": "personal portfolio",
   "author": "Renato66",
   "private": true,
   "scripts": {

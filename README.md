@@ -1,6 +1,6 @@
-# portifolio
+# portfolio
 
-> personal portifolio
+> personal portfólio
 
 ## Build Setup
 

@@ -4,8 +4,8 @@
     "about": "Sobre mim",
     "skills": "Habilidades",
     "timeline": "Linha do tempo",
-    "work": "Experiencias",
-    "portifolio": "Portifólio",
+    "work": "Experiências",
+    "portfolio": "Portfólio",
     "resume": "Curriculum"
   },
   "getInTouch": "Entre em contato",
@@ -14,7 +14,7 @@
   "email": "E-mail",
   "age": "anos",
   "description": "Programador. DJ. Criativo. Inovador.",
-  "aditional": ", Apaixonado por musica",
+  "aditional": ", apaixonado por música",
   "timeline": {
     "title": "Linha do tempo",
     "colombia": {
@@ -45,7 +45,7 @@
     "title": "Experiências",
     "boxnet": {
       "position": "Front end",
-      "description": "Antes trabalhava na boxnet como terceirizado pela coddera e fui absorvido para continuar o trabalho; Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway."
+      "description": "Antes, trabalhava na boxnet como terceirizado pela Coddera e fui contratado para continuação o trabalho; Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway."
     },
     "coddera": {
       "position": "Front end",
@@ -53,7 +53,7 @@
     },
     "athos": {
       "position": "Front end",
-      "description": "Atuação no desenvolvimento front-end de aplicativos WebApps. Participação do desenvolvimento de melhorias e manutenção do aplicativo webapp App minha adm. Criação de skins personalizadas do sistema de gestão condominial webminio. Criação de hotsites responsivos usando mobile-first."
+      "description": "Atuação no desenvolvimento front-end de aplicativos WebApps. Participação do desenvolvimento de melhorias e manutenção do aplicativo Webapp App Minha adm. Criação de skins personalizadas do sistema de gestão condominial Webmínio. Criação de hotsites responsivos usando mobile-first."
     },
     "cgm": {
       "position": "Estágiario",
@@ -69,13 +69,13 @@
     }
   },
   "liveIn": "Moro em",
-  "footer": "Este é meu portifólio, espero que tenha gostado.",
+  "footer": "Este é meu portfólio, espero que tenha gostado.",
   "about": {
     "title": "Sobre mim",
     "paragraph": {
-      "1": "Formado em Análise e desenvolvimento de sistemas pela FATEC São Caetano do Sul, desenvolvi alguns projetos em PHP porem me aprofundei na area de front end, aplicando nos meu trabalhos: SPA, performance, desing responsivo, mobile first, offline first.",
+      "1": "Formado em Análise e Desenvolvimento de Sistemas pela FATEC São Caetano do Sul, desenvolvi alguns projetos em PHP. Porém, me aprofundei na área de front end, aplicando nos meus trabalhos: SPA, performance, desing responsivo, mobile first, offline first.",
       "2": "Atualmente trabalho com Vue.js e AWS stack na",
-      "3": "Em alguns finais de semana trabalho como DJ, aproveitando a festa, fazendo do meu trabalho um hobbie."
+      "3": "Em alguns finais de semana, trabalho como DJ, aproveitando a festa, fazendo do meu trabalho um hobbie."
     },
     "quotes": {
       "programming": {
@@ -84,11 +84,11 @@
       },
       "creativity": {
         "title": "Criatividade",
-        "description": "Você não consegue esgotar ela. quanto mais você usa, mais você tem."
+        "description": "Você não consegue esgotá-la. Quanto mais você usa, mais você tem."
       },
       "inovation": {
         "title": "Inovação",
-        "description": "Um barco no porto está seguro, mas não foi pra isso que barcos foram construidos."
+        "description": "Um barco está seguro no porto. Mas não é para isso que os barcos são feitos"
       }
     }
   },
@@ -96,8 +96,8 @@
   "skills": {
     "title": "Habilidades"
   },
-  "portifolio": {
-    "title": "Portifólio"
+  "portfolio": {
+    "title": "Portfólio"
   },
   "contact": {
     "title": "Contato"

@@ -3,12 +3,12 @@
     <v-layout>
       <v-flex class="primary--text">
         <h2 class="primary--text display-3 font-weight-thin">
-          {{ $t('portifolio.title') }}
+          {{ $t('portfolio.title') }}
         </h2>
       </v-flex>
     </v-layout>
-    <v-layout row wrap class="portifolio-wrapper">
-      <v-flex v-for="(app, index) in portifolio" :key="index" xs12 sm6 md4>
+    <v-layout row wrap class="portfolio-wrapper">
+      <v-flex v-for="(app, index) in portfolio" :key="index" xs12 sm6 md4>
         <v-hover>
           <v-card
             slot-scope="{ hover }"
@@ -71,7 +71,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   props: {
-    portifolio: {
+    portfolio: {
       type: Array,
       default: () => {
         return []
@@ -92,7 +92,7 @@ export default {
   text-align: right;
   background: linear-gradient(#00000000, #00000090)
 }
-.portifolio-wrapper .v-card{
+.portfolio-wrapper .v-card{
   border-radius: 4px;
 }
 </style>
