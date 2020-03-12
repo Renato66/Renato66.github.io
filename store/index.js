@@ -1,3 +1,5 @@
+import info from './info'
+
 export const state = () => ({
   locales: ['pt', 'en'],
   locale: 'pt',
@@ -22,5 +24,6 @@ export const getters = {
   },
   imageOutput (state) {
     return state.webpSupport ? 'webp' : 'png'
-  }
+  },
+  ...info
 }
