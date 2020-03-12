@@ -13,9 +13,8 @@
           <v-flex shrink pr-0>
             <v-avatar size="40" tile>
               <img
-                :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=png&h=40&w=40`"
-                :srcset="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=webp&h=40&w=40`"
-                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=20&h=40&w=40`"
+                :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=${imageOutput}&h=40&w=40`"
+                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=10&h=40&w=40output=jpg`"
                 :alt="skill.name"
               >
             </v-avatar>
@@ -47,7 +46,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['baseUrl'])
+    ...mapGetters(['baseUrl', 'imageOutput'])
   },
   methods: {
     color (value) {

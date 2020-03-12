@@ -39,9 +39,9 @@
       <v-flex class="text-center">
         <v-avatar size="236">
           <v-img
-            :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=png`"
-            :srcset="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=webp`"
-            :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=20&output=webp`"
+            :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=${imageOutput}`"
+            :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=10&output=jpg`"
+            @error="SET_WEBP_SUPPORT(false)"
             :alt="contact.shortName"
           />
         </v-avatar>
@@ -182,6 +182,7 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex'
 import LocaleChange from '@/components/LocaleChange'
 export default {
   components: {
@@ -223,6 +224,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['imageOutput']),
     phone () {
       return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
@@ -239,6 +241,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['SET_WEBP_SUPPORT']),
     handleScroll () {
       if (process.browser) {
         this.followScroll = window.scrollY > 400

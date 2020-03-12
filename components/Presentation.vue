@@ -23,9 +23,8 @@
     <v-layout row wrap>
       <v-flex v-for="quote in quotes" :key="quote.id" xs12 sm4 class="text-center pa-6">
         <img
-          :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=png`"
-          :srcset="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=webp`"
-          :lazy-src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&q=20`"
+          :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=${imageOutput}`"
+          :lazy-src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&q=10&output=jpg`"
           :alt="quote.id"
         >
         <h4 class="primary--text text--darken-2 display-1">
@@ -64,7 +63,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['baseUrl'])
+    ...mapGetters(['baseUrl', 'imageOutput'])
   }
 }
 </script>

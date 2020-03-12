@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark :class="{'no-webp': imageOutput !== 'webp'}">
     <v-content>
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
@@ -318,12 +318,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['baseUrl']),
+    ...mapGetters(['baseUrl', 'imageOutput']),
     mainSkills () {
       return this.skills.filter(elem => elem.main)
     }
   },
   methods: {
+    onImgError (event) {
+      this.webpSupport = false
+    },
     printResume () {
       const a = document.createElement('a')
       a.style.display = 'none'
@@ -340,6 +343,10 @@ export default {
 </script>
 
 <style>
+.invisible {
+  opacity: 0;
+  position: absolute;
+}
 .br-8{
   border-radius: 8px;
 }
@@ -355,5 +362,8 @@ a.white--text {
 }
 .background-section{
   background-image: url('/img/background.webp');
+}
+.no-webp .background-section {
+  background-image: url('/img/background.png');
 }
 </style>

@@ -18,9 +18,8 @@
           >
             <v-img
               :aspect-ratio="16/9"
-              :src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&output=png`"
-              :lazy-src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&q=20`"
-              :srcset="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&output=webp`"
+              :src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&output=${imageOutput}`"
+              :lazy-src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&q=20&output=jpg`"
             >
               <v-expand-transition>
                 <div
@@ -80,7 +79,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['baseUrl'])
+    ...mapGetters(['baseUrl', 'imageOutput'])
   }
 }
 </script>

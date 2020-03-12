@@ -32,9 +32,8 @@
               v-on="on"
             >
               <v-img
-                :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=png`"
-                :srcset="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=webp`"
-                :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&q=20&output=webp`"
+                :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=${imageOutput}`"
+                :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&q=10&output=jpg`"
                 :alt="contact.shortName"
               />
             </v-avatar>
@@ -88,6 +87,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     contact: {
@@ -106,6 +106,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['imageOutput']),
     phone () {
       return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
     }
