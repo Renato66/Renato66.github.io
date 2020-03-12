@@ -19,7 +19,7 @@
             <v-img
               :aspect-ratio="16/9"
               :src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&output=${imageOutput}`"
-              :lazy-src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&q=20&output=jpg`"
+              :lazy-src="`https://images.weserv.nl/?url=${baseUrl + app.img}.webp&q=20&output=webp`"
             >
               <v-expand-transition>
                 <div

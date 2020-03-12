@@ -6,7 +6,7 @@
         <a class="social-icon" rel="noopener" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
           <img
             :src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=${imageOutput}`"
-            :lazy-src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&q=10&output=jpg`"
+            :lazy-src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&q=10&output=webp`"
             :alt="social.name"
           >
         </a>

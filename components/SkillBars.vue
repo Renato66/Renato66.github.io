@@ -14,7 +14,7 @@
             <v-avatar size="40" tile>
               <img
                 :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=${imageOutput}&h=40&w=40`"
-                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=10&h=40&w=40output=jpg`"
+                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=10&h=40&w=40output=webp`"
                 :alt="skill.name"
               >
             </v-avatar>

@@ -33,7 +33,7 @@
             >
               <v-img
                 :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&output=${imageOutput}`"
-                :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&q=10&output=jpg`"
+                :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=50&q=10&output=webp`"
                 :alt="contact.shortName"
               />
             </v-avatar>
