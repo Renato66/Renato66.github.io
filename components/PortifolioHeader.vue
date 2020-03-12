@@ -41,8 +41,8 @@
           <v-img
             :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=${imageOutput}`"
             :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=10&output=webp`"
-            @error="SET_WEBP_SUPPORT(false)"
             :alt="contact.shortName"
+            @error="SET_WEBP_SUPPORT(false)"
           />
         </v-avatar>
       </v-flex>

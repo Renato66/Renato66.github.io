@@ -236,6 +236,9 @@ export default {
         linkedin: 'renato-vicente-961a7b90',
         city: 'Santo André',
         state: 'SP',
+        region: 'São Paulo',
+        postalCode: '09210-300',
+        country: 'BR',
         birthday: new Date(1993, 5, 9, 0, 0, 0, 0)
       },
       work: [
@@ -321,6 +324,22 @@ export default {
     ...mapGetters(['baseUrl', 'imageOutput']),
     mainSkills () {
       return this.skills.filter(elem => elem.main)
+    },
+    structuredData () {
+      return {
+        '@context': 'http://schema.org',
+        '@type': 'Person',
+        name: this.contact.name,
+        url: this.baseUrl,
+        image: this.contact.avatar,
+        sameAs: this.socialNetworks.map(elem => elem.url),
+        address: {
+          '@type': 'PostalAddress',
+          addressRegion: this.contact.region,
+          postalCode: this.contact.postalCode,
+          addressCountry: this.contact.country
+        }
+      }
     }
   },
   methods: {
@@ -329,14 +348,30 @@ export default {
     },
     printResume () {
       const a = document.createElement('a')
+      const url = `${this.baseUrl}/download/renato-vicente-cv-${this.$i18n.locale}.pdf`
       a.style.display = 'none'
       document.body.appendChild(a)
       a.target = '_blank'
-      a.href = 'https://renato66.github.io/Renato-CV.pdf'
-      a.download = 'https://renato66.github.io/Renato-CV.pdf'
-      // a.setAttribute('download', `renato-vicente-cv-${this.$i18n.locale}`)
+      a.href = url
+      a.download = url
       a.click()
       document.body.removeChild(a)
+    }
+  },
+  head () {
+    return {
+      __dangerouslyDisableSanitizers: ['script'],
+      script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
+      title: this.$t('seo.description'),
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: 'description', content: this.$t('seo.description') },
+        { hid: 'og:description', name: 'og:description', content: this.$t('seo.og.description') },
+        { hid: 'keywords', name: 'keywords', content: this.$t('seo.keywords') },
+        { hid: 'og:image', name: 'og:image', content: this.contact.avatar },
+        { hid: 'og:title', name: 'description', content: this.$t('seo.og.title') },
+        { hid: 'og:url', name: 'description', content: this.baseUrl }
+      ]
     }
   }
 }

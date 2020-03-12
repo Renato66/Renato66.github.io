@@ -5,16 +5,16 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'robots', content: 'index, follow' },
+      { hid: 'type', name: 'type', content: 'website' },
+      { hid: 'author', name: 'author', content: 'Renato Vicente - https://renato66.github.io' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ] //  <link href="/update.css" rel="stylesheet">
   },
   /*
   ** Customize the progress-bar color
