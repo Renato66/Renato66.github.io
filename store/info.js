@@ -72,6 +72,12 @@ const info = {
   ],
   portfolio: [
     {
+      name: 'Auto Label',
+      link: 'https://github.com/Renato66/auto-label',
+      img: '/img/auto-label',
+      technologies: ['github', 'nodejs', 'language-typescript']
+    },
+    {
       name: 'Lista',
       link: 'https://marvelapp.com/18fhc5hg',
       img: '/img/lista',
