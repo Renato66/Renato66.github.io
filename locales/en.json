@@ -116,7 +116,7 @@
     "title": "Qualifications"
   },
   "chat": {
-    "who": "<strong>{name}</strong> sent a message:",
+    "who": "New message from",
     "message": "Would you like to have my resume?",
     "actions": {
       "download": "Download",

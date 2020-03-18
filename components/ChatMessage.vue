@@ -41,14 +41,14 @@
         </template>
         <v-card>
           <v-card-text>
-            <v-layout row wrap>
+            <v-layout row wrap class="ml-2">
               <v-flex xs12>
                 <p class="grey--text caption mb-1">
-                  {{ $t('chat.who', { name: contact.shortName }) }}
+                  {{ $t('chat.who') }} <strong>{{ contact.shortName }}</strong>:
                 </p>
               </v-flex>
               <v-flex xs12>
-                <p class="mb-1">
+                <p class="mb-2">
                   {{ $t('chat.message') }}
                 </p>
               </v-flex>
@@ -66,7 +66,7 @@
                   {{ $t('chat.actions.reject') }}
                 </v-btn>
               </v-flex>
-              <v-flex shrink>
+              <v-flex shrink class="ml-2">
                 <v-btn
                   color="primary"
                   class="text-none"

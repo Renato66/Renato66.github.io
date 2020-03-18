@@ -116,7 +116,7 @@
     "title": "Formação"
   },
   "chat": {
-    "who": "Mensagem de <strong>{name}</strong>:",
+    "who": "Mensagem de ",
     "message": "Gostaria de baixar o meu curriculum?",
     "actions": {
       "download": "Download",
