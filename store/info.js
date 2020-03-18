@@ -72,6 +72,12 @@ const info = {
   ],
   portfolio: [
     {
+      name: 'Waitress',
+      link: 'https://waitress.netlify.com/',
+      img: '/img/waitress',
+      technologies: ['github', 'vuejs']
+    },
+    {
       name: 'Auto Label',
       link: 'https://github.com/Renato66/auto-label',
       img: '/img/auto-label',
