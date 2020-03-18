@@ -23,7 +23,7 @@
             >
               <v-expand-transition>
                 <div
-                  v-if="hover"
+                  v-show="hover"
                   class="transition-fast-in-fast-out card-overlay darken-2"
                 >
                   <v-tooltip v-for="(tech, index2) in app.technologies" :key="index2" bottom>
@@ -56,6 +56,23 @@
                     </template>
                     <span>{{ $t('openProject') }}</span>
                   </v-tooltip>
+                  <v-tooltip v-if="app.youtube" bottom>
+                    <template v-slot:activator="{ on }">
+                      <v-btn
+                        icon
+                        color="red"
+                        text
+                        class="ma-1"
+                        v-on="on"
+                        @click.stop="youtube(app.youtube)"
+                      >
+                        <v-icon small>
+                          mdi-youtube
+                        </v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Youtube</span>
+                  </v-tooltip>
                 </div>
               </v-expand-transition>
             </v-img>
@@ -80,6 +97,13 @@ export default {
   },
   computed: {
     ...mapGetters(['baseUrl', 'imageOutput'])
+  },
+  methods: {
+    youtube (id) {
+      if (process.browser) {
+        window.open(`https://youtu.be/${id}`)
+      }
+    }
   }
 }
 </script>

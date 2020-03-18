@@ -87,6 +87,7 @@ const info = {
       name: 'Icondominio',
       link: 'https://renato66.github.io/projeto/icondominio',
       img: '/img/icondominio',
+      youtube: 'zeouqNyYZJk',
       technologies: ['vuejs', 'apple', 'google-play']
     },
     {
