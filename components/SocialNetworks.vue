@@ -21,7 +21,7 @@
           color="white"
           light
           class="text-none"
-          @click="$emit('print-resume')"
+          @click="download"
         >
           {{ $t('downloadResume') }}
         </v-btn>
@@ -44,6 +44,12 @@ export default {
   },
   computed: {
     ...mapGetters(['baseUrl', 'imageOutput'])
+  },
+  methods: {
+    download () {
+      this.$ga.event('resume', 'download', 'bar')
+      this.$emit('print-resume')
+    }
   }
 }
 </script>

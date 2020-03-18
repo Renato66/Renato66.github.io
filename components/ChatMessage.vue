@@ -61,7 +61,7 @@
                   outlined
                   rounded
                   small
-                  @click="menu = false"
+                  @click="reject"
                 >
                   {{ $t('chat.actions.reject') }}
                 </v-btn>
@@ -73,7 +73,7 @@
                   outlined
                   rounded
                   small
-                  @click="$emit('print-resume')"
+                  @click="accept"
                 >
                   {{ $t('chat.actions.download') }}
                 </v-btn>
@@ -115,6 +115,9 @@ export default {
     menu (value) {
       this.willNotify = false
       this.notification = false
+      if (value) {
+        this.$ga.event('chat', 'open')
+      }
     },
     show (value) {
       if (value) {
@@ -133,6 +136,14 @@ export default {
     }
   },
   methods: {
+    reject () {
+      this.$ga.event('resume', 'reject', 'chat')
+      this.menu = false
+    },
+    accept () {
+      this.$ga.event('resume', 'download', 'chat')
+      this.$emit('print-resume')
+    },
     notificationAlert () {
       if (this.willNotify) {
         this.willNotify = false
@@ -151,21 +162,6 @@ export default {
           this.show = false
         } else {
           this.show = true
-        }
-      }
-    },
-    openWhats () {
-      if (process.browser) {
-        if (navigator.userAgent.match(/Android/i) ||
-          navigator.userAgent.match(/webOS/i) ||
-          navigator.userAgent.match(/iPhone/i) ||
-          navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/iPod/i) ||
-          navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i)) {
-          window.open(`https://api.whatsapp.com/send?phone=${this.phone}`, '_blank')
-        } else {
-          window.open(`https://web.whatsapp.com/send?phone=${this.phone}`, '_blank')
         }
       }
     }

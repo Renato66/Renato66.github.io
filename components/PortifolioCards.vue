@@ -101,6 +101,7 @@ export default {
   methods: {
     youtube (id) {
       if (process.browser) {
+        this.$ga.event('portfolio', 'click', 'youtube')
         window.open(`https://youtu.be/${id}`)
       }
     }
