@@ -176,6 +176,7 @@ export default {
 <style>
 .chat-avatar{
   position: fixed;
+  z-index:2;
   bottom: 25px;
   left: 25px;
 }
