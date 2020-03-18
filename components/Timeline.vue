@@ -108,20 +108,9 @@ export default {
       }
     }
   },
-  beforeMount () {
+  mounted () {
     if (process.browser) {
       this.mobile = this.$vuetify.breakpoint.xsOnly
-    }
-  },
-  mounted () {
-    if (process.env.NODE_ENV !== 'production') {
-      this.timeline.forEach((elem) => {
-        if (elem.dialog) {
-          if (this.open[elem.id] !== false) {
-            // console.warn(`No dialog set for id: '${elem.id}' at Timeline.vue`)
-          }
-        }
-      })
     }
   }
 }
