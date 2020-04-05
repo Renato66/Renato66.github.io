@@ -36,7 +36,7 @@
                     </template>
                     <span class="text-capitalize">{{ tech }}</span>
                   </v-tooltip>
-                  <v-tooltip bottom>
+                  <v-tooltip bottom v-if="app.link">
                     <template v-slot:activator="{ on }">
                       <v-btn
                         icon
