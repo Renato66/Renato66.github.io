@@ -113,15 +113,15 @@ export default {
     return {
       __dangerouslyDisableSanitizers: ['script'],
       script: [{ innerHTML: JSON.stringify(this.structuredData), type: 'application/ld+json' }],
-      title: this.$t('seo.description'),
+      title: this.$t('seo.og.title'),
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         { hid: 'description', name: 'description', content: this.$t('seo.description') },
         { hid: 'og:description', name: 'og:description', content: this.$t('seo.og.description') },
         { hid: 'keywords', name: 'keywords', content: this.$t('seo.keywords') },
         { hid: 'og:image', name: 'og:image', content: this.contact.avatar },
-        { hid: 'og:title', name: 'description', content: this.$t('seo.og.title') },
-        { hid: 'og:url', name: 'description', content: this.baseUrl }
+        { hid: 'og:title', name: 'og:title', content: this.$t('seo.og.title') },
+        { hid: 'og:url', name: 'og:url', content: this.baseUrl }
       ]
     }
   }

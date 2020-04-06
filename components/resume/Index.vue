@@ -32,7 +32,7 @@
         <strong>
           Github:
         </strong>
-        <a :href="`${socialNetworks.find(elem => elem.name === 'github').url}`">
+        <a rel="noopener" target="_blank" :href="`${socialNetworks.find(elem => elem.name === 'github').url}`">
           {{ socialNetworks.find(elem => elem.name === 'github').url }}
         </a>
       </v-flex>
@@ -42,7 +42,7 @@
         <strong>
           Linkedin:
         </strong>
-        <a :href="`${socialNetworks.find(elem => elem.name === 'linkedin').url}`">
+        <a rel="noopener" target="_blank" :href="`${socialNetworks.find(elem => elem.name === 'linkedin').url}`">
           {{ socialNetworks.find(elem => elem.name === 'linkedin').url }}
         </a>
       </v-flex>

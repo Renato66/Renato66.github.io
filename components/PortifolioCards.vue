@@ -36,7 +36,7 @@
                     </template>
                     <span class="text-capitalize">{{ tech }}</span>
                   </v-tooltip>
-                  <v-tooltip bottom v-if="app.link">
+                  <v-tooltip v-if="app.link" bottom>
                     <template v-slot:activator="{ on }">
                       <v-btn
                         icon
@@ -63,8 +63,11 @@
                         color="red"
                         text
                         class="ma-1"
+                        :href="app.youtube"
+                        rel="noopener"
+                        target="_blank"
                         v-on="on"
-                        @click.stop="youtube(app.youtube)"
+                        @click="youtube(app.name)"
                       >
                         <v-icon small>
                           mdi-youtube
@@ -102,7 +105,6 @@ export default {
     youtube (id) {
       if (process.browser) {
         this.$ga.event('portfolio', 'click', 'youtube')
-        window.open(`https://youtu.be/${id}`)
       }
     }
   }

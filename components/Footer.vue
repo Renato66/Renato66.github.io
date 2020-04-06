@@ -10,6 +10,8 @@
           <gh-btns-star
             slug="renato66/Renato66.github.io"
             href="https://github.com/renato66/Renato66.github.io"
+            rel="noopener"
+            target="_blank"
             show-count
             data-icon="octicon-star"
             data-size="large"

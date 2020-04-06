@@ -17,7 +17,7 @@
         </v-icon>
         <br>
         {{ $t('liveIn') }}
-        <a :href="`https://www.google.com.br/maps/place/${contact.city}, ${contact.state}`" class="white--text">
+        <a :href="`https://www.google.com.br/maps/place/${contact.city}, ${contact.state}`" rel="noopener" target="_blank" class="white--text">
           <b>{{ contact.city }}</b>
         </a>
       </v-flex>
@@ -42,6 +42,8 @@
           large
           :href="`tg://resolve?domain=${contact.telegram}`"
           class="mx-0"
+          rel="noopener"
+          target="_blank"
           aria-label="Open telegram"
         >
           <v-icon>
