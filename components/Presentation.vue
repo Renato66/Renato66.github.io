@@ -22,11 +22,19 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex v-for="quote in quotes" :key="quote.id" xs12 sm4 class="text-center pa-6">
-        <img
-          :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=${imageOutput}`"
-          :lazy-src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&q=10&output=webp`"
-          :alt="quote.id"
+        <v-lazy
+          :options="{
+            threshold: .5
+          }"
+          min-height="128"
+          transition="fade-transition"
         >
+          <img
+            :src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&output=${imageOutput}`"
+            :lazy-src="`https://images.weserv.nl/?url=${baseUrl + quote.img}.webp&q=10&output=webp`"
+            :alt="quote.id"
+          >
+        </v-lazy>
         <h4 class="primary--text text--darken-2 display-1">
           {{ $t(`about.quotes.${quote.id}.title`) }}
         </h4>

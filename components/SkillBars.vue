@@ -11,13 +11,21 @@
       <v-flex v-for="(skill, index) in skills" :key="index" xs12 sm6>
         <v-layout align-end>
           <v-flex shrink pr-0>
-            <v-avatar size="40" tile>
-              <img
-                :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=${imageOutput}&h=40&w=40`"
-                :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=10&h=40&w=40output=webp`"
-                :alt="skill.name"
-              >
-            </v-avatar>
+            <v-lazy
+              :options="{
+                threshold: .5
+              }"
+              min-height="40"
+              transition="fade-transition"
+            >
+              <v-avatar size="40" tile>
+                <img
+                  :src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&output=${imageOutput}&h=40&w=40`"
+                  :lazy-src="`https://images.weserv.nl/?url=${baseUrl + skill.img}.webp&q=10&h=40&w=40output=webp`"
+                  :alt="skill.name"
+                >
+              </v-avatar>
+            </v-lazy>
           </v-flex>
           <v-flex>
             <h5 class="headline">

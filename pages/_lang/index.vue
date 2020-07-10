@@ -4,7 +4,7 @@
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
       </header>
-      <section id="about" class="white" v-lazy>
+      <section id="about" class="white">
         <Presentation />
       </section>
       <section id="skills" class="background-section">
