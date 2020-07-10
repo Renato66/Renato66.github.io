@@ -52,7 +52,7 @@
         </v-timeline>
       </v-flex>
     </v-layout>
-    <v-dialog v-model="open['fatec']" content-class="text-center dialog-frame">
+    <v-dialog v-model="open['fatec']" content-class="text-center dialog-frame" max-width="500">
       <div v-if="open['fatec']">
         <iframe
           v-if="$vuetify.breakpoint.xs"
@@ -80,7 +80,7 @@
         />
       </div>
     </v-dialog>
-    <v-dialog v-model="open['colombia']" content-class="text-center">
+    <v-dialog v-model="open['colombia']" content-class="text-center" max-width="500">
       <v-carousel v-if="open['colombia']" hide-delimiters :cycle="false">
         <v-carousel-item v-for="photo in colombia" :key="photo" :src="`/img/colombia/photo${photo}.webp`" />
       </v-carousel>
