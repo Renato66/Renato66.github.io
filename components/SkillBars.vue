@@ -28,9 +28,9 @@
             </v-lazy>
           </v-flex>
           <v-flex>
-            <h5 class="headline">
+            <h3 class="headline">
               {{ skill.name }}
-            </h5>
+            </h3>
             <div class="knowledge-bar">
               <div class="knowledge-progress" :class="[`knowledge-progress--${color(skill.knowlegde)}`]" :style="{'width': `${skill.knowlegde}%`}" />
             </div>

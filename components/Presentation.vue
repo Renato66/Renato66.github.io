@@ -35,12 +35,12 @@
             :alt="quote.id"
           >
         </v-lazy>
-        <h4 class="primary--text text--darken-2 display-1">
+        <h3 class="primary--text text--darken-2 display-1">
           {{ $t(`about.quotes.${quote.id}.title`) }}
-        </h4>
-        <h5 class="grey--text text--darken-2 title pt-2 font-weight-light">
+        </h3>
+        <h4 class="grey--text text--darken-2 title pt-2 font-weight-light">
           {{ $t(`about.quotes.${quote.id}.description`) }}
-        </h5>
+        </h4>
       </v-flex>
     </v-layout>
   </v-container>
