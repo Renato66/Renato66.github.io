@@ -70,7 +70,7 @@
                           color="red"
                           text
                           class="ma-1"
-                          :href="app.youtube"
+                          :href="`https://www.youtube.com/watch?v=${app.youtube}`"
                           rel="noopener"
                           target="_blank"
                           v-on="on"
