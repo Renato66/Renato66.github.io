@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout mt-4>
+    <v-layout mt-4 style="height:44px">
       <v-flex shrink>
         <v-menu offset-y content-class="br-8">
           <template v-slot:activator="{ on }">
@@ -37,6 +37,13 @@
     </v-layout>
     <v-layout class="mt-12">
       <v-flex class="text-center">
+        <v-lazy
+            :options="{
+              threshold: .5
+            }"
+            min-height="236"
+            transition="fade-transition"
+          >
         <v-avatar size="236">
           <v-img
             :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=${imageOutput}`"
@@ -45,6 +52,7 @@
             @error="SET_WEBP_SUPPORT(false)"
           />
         </v-avatar>
+        </v-lazy>
       </v-flex>
     </v-layout>
     <v-layout class="mt-6 pb-6" row wrap>
