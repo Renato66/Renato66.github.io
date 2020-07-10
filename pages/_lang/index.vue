@@ -4,7 +4,7 @@
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
       </header>
-      <section id="about" class="white">
+      <section id="about" class="white" v-lazy>
         <Presentation />
       </section>
       <section id="skills" class="background-section">
@@ -104,7 +104,7 @@ export default {
       document.body.appendChild(a)
       a.target = '_blank'
       a.href = url
-      a.download = url
+      a.download = `Renato-Vicente-${this.$i18n.locale}.pdf`
       a.click()
       document.body.removeChild(a)
     }
