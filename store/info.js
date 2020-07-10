@@ -75,7 +75,7 @@ const info = {
       name: 'Waitress',
       link: 'https://waitress.netlify.com/',
       img: '/img/portfolio/waitress',
-      technologies: ['github', 'vuejs']
+      technologies: ['vuejs']
     },
     {
       name: 'Auto Label',
