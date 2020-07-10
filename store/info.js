@@ -166,7 +166,7 @@ const info = {
     },
     {
       name: 'linkedin',
-      url: 'https://www.linkedin.com/in/renato-vicente-961a7b90/?originalSubdomain=br',
+      url: 'https://www.linkedin.com/in/frisonrenato',
       img: '/img/linkedin',
       icon: 'mdi-linkedin'
     }
@@ -182,7 +182,7 @@ const info = {
     },
     telegram: 'irenato66',
     mail: 'Revi66@hotmail.com',
-    linkedin: 'renato-vicente-961a7b90',
+    linkedin: 'frisonrenato',
     city: 'Santo André',
     state: 'SP',
     region: 'São Paulo',
