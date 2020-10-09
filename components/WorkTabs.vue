@@ -26,13 +26,13 @@
     </v-layout>
     <v-layout>
       <v-flex xs12>
-        <v-window v-model="selected" style="min-height: 200px;">
+        <v-window v-model="selected" style="min-height: 300px;">
           <v-window-item
             v-for="work in revertExperiences"
             :key="work.id"
-            style="min-height: 200px;"
           >
-            <v-layout class="text-center mt-6  mb-4" row wrap>
+          <v-container>
+           <v-layout class="text-center mt-6  mb-4" row wrap>
               <v-flex xs12 class="primary--text title">
                 {{ $t(`work.${work.id}`).position }}
               </v-flex>
@@ -51,6 +51,7 @@
               </v-flex>
               <v-spacer />
             </v-layout>
+          </v-container>
           </v-window-item>
         </v-window>
       </v-flex>
