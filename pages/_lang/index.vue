@@ -1,6 +1,6 @@
 <template>
   <v-app dark :class="{'no-webp': imageOutput !== 'webp'}">
-    <v-content>
+    <v-main>
       <header id="hi" class="background-section" style="min-height: 100vh;">
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
       </header>
@@ -27,7 +27,7 @@
       </section>
       <Footer :contact="contact" />
       <ChatMessage :contact="contact" @print-resume="printResume" />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
