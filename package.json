@@ -20,7 +20,8 @@
     "puppeteer": "^2.1.1",
     "vue-github-button": "^1.1.2",
     "vue-github-buttons": "^3.1.0",
-    "vue-i18n": "^8.15.4"
+    "vue-i18n": "^8.15.4",
+    "vuetify": "^2.3.13"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
