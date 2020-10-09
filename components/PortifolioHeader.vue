@@ -38,20 +38,20 @@
     <v-layout class="mt-12">
       <v-flex class="text-center">
         <v-lazy
-            :options="{
-              threshold: .5
-            }"
-            min-height="236"
-            transition="fade-transition"
-          >
-        <v-avatar size="236">
-          <v-img
-            :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=${imageOutput}`"
-            :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=10&output=webp`"
-            :alt="contact.shortName"
-            @error="SET_WEBP_SUPPORT(false)"
-          />
-        </v-avatar>
+          :options="{
+            threshold: .5
+          }"
+          min-height="236"
+          transition="fade-transition"
+        >
+          <v-avatar size="236">
+            <v-img
+              :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&output=${imageOutput}`"
+              :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=236&q=10&output=webp`"
+              :alt="contact.shortName"
+              @error="SET_WEBP_SUPPORT(false)"
+            />
+          </v-avatar>
         </v-lazy>
       </v-flex>
     </v-layout>

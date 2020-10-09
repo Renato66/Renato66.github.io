@@ -31,27 +31,27 @@
             v-for="work in revertExperiences"
             :key="work.id"
           >
-          <v-container>
-           <v-layout class="text-center mt-6  mb-4" row wrap>
-              <v-flex xs12 class="primary--text title">
-                {{ $t(`work.${work.id}`).position }}
-              </v-flex>
-            </v-layout>
-            <v-layout class="text-center subtitle-1">
-              <v-spacer />
-              <v-flex xs10 sm8>
-                {{ $t(`work.${work.id}`).description }}<br>
-                <span v-if="work.endDate === null">
-                  {{ $t('actual') }}
-                </span>
-                <span v-else>
-                  {{ $tc('year', howLong(work).years) }}
-                  {{ $tc('month', howLong(work).months) }}
-                </span>
-              </v-flex>
-              <v-spacer />
-            </v-layout>
-          </v-container>
+            <v-container>
+              <v-layout class="text-center mt-6  mb-4" row wrap>
+                <v-flex xs12 class="primary--text title">
+                  {{ $t(`work.${work.id}`).position }}
+                </v-flex>
+              </v-layout>
+              <v-layout class="text-center subtitle-1">
+                <v-spacer />
+                <v-flex xs10 sm8>
+                  {{ $t(`work.${work.id}`).description }}<br>
+                  <span v-if="work.endDate === null">
+                    {{ $t('actual') }}
+                  </span>
+                  <span v-else>
+                    {{ $tc('year', howLong(work).years) }}
+                    {{ $tc('month', howLong(work).months) }}
+                  </span>
+                </v-flex>
+                <v-spacer />
+              </v-layout>
+            </v-container>
           </v-window-item>
         </v-window>
       </v-flex>
