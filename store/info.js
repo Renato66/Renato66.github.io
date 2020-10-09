@@ -192,10 +192,17 @@ const info = {
   },
   work: [
     {
+      id: 'doc88',
+      company: 'Doc88',
+      startDate: '2019-09-02',
+      endDate: null,
+      website: 'http://www.doc88.com.br'
+    },
+    {
       id: 'boxnet',
       company: 'Boxnet',
       startDate: '2019-09-02',
-      endDate: null,
+      endDate: '2020-10-05',
       website: 'http://www.boxnet.com.br'
     },
     {

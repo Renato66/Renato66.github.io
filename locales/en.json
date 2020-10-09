@@ -52,9 +52,13 @@
   "month": " | {n} month | {n} months",
   "work": {
     "title": "Experiences",
+    "doc88": {
+      "position": "Front end",
+      "description": "Working as front dev (Vue/Nuxt)"
+    },
     "boxnet": {
       "position": "Front end",
-      "description": "I used to work at boxnet as a third party for coddera and was absorbed to continue the work; Creating a project from scratch in vue.js, defining apis architecture, deploys, testing, analytics and integrations using some AWS tools, cognito, lambdas, api gateway."
+      "description": "Before, I worked at boxnet as an outsourcer for Coddera and I was hired to continue the work; I've worked with front-end focusing on Vue, giving maintenance and creating new features, made some small adjustments in a legacy application in angular, refactored the app to a react native version, realized some node services on AWS and GCP and interacted with whats app business api"
     },
     "coddera": {
       "position": "Front end",

@@ -52,9 +52,13 @@
   "month": " | {n} mês | {n} meses",
   "work": {
     "title": "Experiências",
+    "doc88": {
+      "position": "Front end",
+      "description": "Atuação com front (Vue/Nuxt)"
+    },
     "boxnet": {
       "position": "Front end",
-      "description": "Antes, trabalhava na boxnet como terceirizado pela Coddera e fui contratado para continuação o trabalho; Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway."
+      "description": "Antes, trabalhava na boxnet como terceirizado pela Coddera e fui contratado para continuação o trabalho; Trabalho com front end Foco em Vue, dando manutenção e criando novas features, realizei alguns ajustes pequenos em uma aplicação legada em angular, refatorei o app para um versão em react native, participei de alguns micro serviços em node na AWS e na GCP e interagi com a api do whats app business"
     },
     "coddera": {
       "position": "Front end",
