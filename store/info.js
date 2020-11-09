@@ -4,70 +4,87 @@ const info = {
       name: 'Vue',
       main: true,
       img: '/img/vuejs',
-      knowlegde: 100
+      knowlegde: 100,
+      time: 4
     },
     {
       name: 'Node.js',
       main: true,
       img: '/img/nodejs',
-      knowlegde: 70
+      knowlegde: 70,
+      time: 2
     },
     {
       name: 'Cypress',
       main: true,
       img: '/img/cypress',
-      knowlegde: 70
+      knowlegde: 70,
+      time: 2
     },
     {
       name: 'GraphQL',
       main: true,
       img: '/img/graphQL',
-      knowlegde: 50
+      knowlegde: 50,
+      time: 0
     },
     {
       name: 'Laravel',
       main: true,
       img: '/img/laravel',
-      knowlegde: 40
+      knowlegde: 40,
+      time: 0
     },
     {
       name: 'Firebase',
       main: true,
       img: '/img/firebase',
-      knowlegde: 80
+      knowlegde: 80,
+      time: 3
     },
     {
-      name: 'Javascript es6+'
+      name: 'Javascript',
+      time: 6
     },
     {
-      name: 'Stylus'
+      name: 'Stylus',
+      time: 2
     },
     {
-      name: 'Git'
+      name: 'Git',
+      time: 4
     },
     {
-      name: 'SEO'
+      name: 'SEO',
+      time: 2
     },
     {
-      name: 'Scrum'
+      name: 'Scrum',
+      time: 2
     },
     {
-      name: 'Agile'
+      name: 'Agile',
+      time: 2
     },
     {
-      name: 'Jasmine'
+      name: 'Jasmine',
+      time: 1
     },
     {
-      name: 'Jest'
+      name: 'Jest',
+      time: 2
     },
     {
-      name: 'PHP'
+      name: 'PHP',
+      time: 2
     },
     {
-      name: 'Python'
+      name: 'Python',
+      time: 0
     },
     {
-      name: 'Go'
+      name: 'Go',
+      time: 0
     }
   ],
   portfolio: [
@@ -154,7 +171,7 @@ const info = {
   socialNetworks: [
     {
       name: 'facebook',
-      url: 'https://www.facebook.com/renato.vicente.3344',
+      url: 'https://www.facebook.com/FrisonVicente',
       img: '/img/facebook',
       icon: 'mdi-facebook'
     },
@@ -166,7 +183,7 @@ const info = {
     },
     {
       name: 'linkedin',
-      url: 'https://www.linkedin.com/in/frisonrenato',
+      url: 'https://www.linkedin.com/in/FrisonVicente',
       img: '/img/linkedin',
       icon: 'mdi-linkedin'
     }

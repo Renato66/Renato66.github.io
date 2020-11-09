@@ -13,7 +13,7 @@
           {{ $t('about.paragraph.1') }}
         </p>
         <p>
-          {{ $t('about.paragraph.2') }} <a href="#work" class="primary--text">Boxnet</a>
+          {{ $t('about.paragraph.2') }} <a href="#work" class="primary--text">Doc88</a>
         </p>
         <p>
           {{ $t('about.paragraph.3') }}
