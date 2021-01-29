@@ -148,8 +148,10 @@ a.white--text {
 }
 .background-section{
   background-image: url('/img/background.webp');
+  background-size: cover;
 }
 .no-webp .background-section {
   background-image: url('/img/background.png');
+  background-size: cover;
 }
 </style>
