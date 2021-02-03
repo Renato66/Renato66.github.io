@@ -70,6 +70,13 @@
               </v-btn>
             </v-flex>
           </v-layout>
+          <v-layout>
+            <v-spacer />
+            <v-flex shrink>
+              <div ref="qrcode"></div>
+            </v-flex>
+            <v-spacer />
+          </v-layout>
         </div>
       </v-flex>
       <v-flex xs10>
@@ -176,7 +183,7 @@
 
 <script>
 import { differenceInCalendarMonths } from 'date-fns'
-
+import QRCode from 'easyqrcodejs'
 export default {
   props: {
     timeline: {
@@ -208,9 +215,23 @@ export default {
       default: () => {
         return []
       }
+    },
+    qrcode: {
+      type: String
     }
   },
   methods: {
+    mountQrcode () {
+      if (this.qrcode) {
+        new QRCode(this.$refs.qrcode, {
+          width: 110,
+          height: 110,
+          text: this.qrcode,
+          logo: "//images.weserv.nl/?w=400&bg=2ec6a0&url=ui-avatars.com/api/%3Fbackground%3D2ec6a0%26name%3Dw%26color=ffffff&mask=circle",
+          logoBackgroundTransparent: true
+        })
+      }
+    },
     howLong (value) {
       const months = differenceInCalendarMonths(value.endDate, value.startDate)
       return {
@@ -218,6 +239,9 @@ export default {
         months: months % 12
       }
     }
+  },
+  mounted () {
+    this.mountQrcode()
   }
 }
 </script>

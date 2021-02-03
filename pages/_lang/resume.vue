@@ -6,6 +6,7 @@
       :skills="skills"
       :social-networks="socialNetworks"
       :timeline="timeline"
+      :qrcode="qrcodeUrl"
     />
   </v-app>
 </template>
@@ -20,7 +21,13 @@ export default {
     ResumePDF
   },
   computed: {
-    ...mapGetters(['skills', 'portfolio', 'socialNetworks', 'contact', 'work', 'timeline'])
+    ...mapGetters(['skills', 'portfolio', 'socialNetworks', 'contact', 'work', 'timeline', 'baseUrl']),
+    qrcodeUrl () {
+      if (app.i18n.locale === this.$i18n.fallbackLocale) {
+        return this.baseUrl
+      }
+      return `${this.baseUrl}/${this.$i18n.locale}`
+    }
   },
   mounted () {
     this.$vuetify.theme.dark = false
