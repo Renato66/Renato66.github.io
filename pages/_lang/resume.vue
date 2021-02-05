@@ -23,7 +23,7 @@ export default {
   computed: {
     ...mapGetters(['skills', 'portfolio', 'socialNetworks', 'contact', 'work', 'timeline', 'baseUrl']),
     qrcodeUrl () {
-      if (app.i18n.locale === this.$i18n.fallbackLocale) {
+      if (this.$i18n.locale === this.$i18n.fallbackLocale) {
         return this.baseUrl
       }
       return `${this.baseUrl}/${this.$i18n.locale}`

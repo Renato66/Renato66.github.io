@@ -10,8 +10,12 @@
               style="cursor:pointer;"
             >
               <v-img
-                :src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=100&output=webp`"
-                :lazy-src="`https://images.weserv.nl/?url=${contact.avatar}%3Fsize=100&q=10&output=webp`"
+                :src="
+                  `https://images.weserv.nl/?url=${contact.avatar}%3Fsize=100&output=webp`
+                "
+                :lazy-src="
+                  `https://images.weserv.nl/?url=${contact.avatar}%3Fsize=100&q=10&output=webp`
+                "
                 :alt="contact.shortName"
               />
             </v-avatar>
@@ -27,11 +31,7 @@
             px-3
           >
             <v-flex shrink>
-              <a
-                rel="noopener"
-                target="_blank"
-                :href="network.url"
-              >
+              <a rel="noopener" target="_blank" :href="network.url">
                 <v-icon color="white">
                   {{ network.icon }}
                 </v-icon>
@@ -44,13 +44,15 @@
                 class="white--text"
                 :href="network.url"
               >
-                {{ network.url.split('/')[network.url.split('/').length - 1] }}
+                {{ network.url.split("/")[network.url.split("/").length - 1] }}
               </a>
             </v-flex>
           </v-layout>
           <div class="py-2" />
           <v-layout
-            v-for="skill in skills.sort(function(a, b) {return b.time - a.time})"
+            v-for="skill in skills.sort(function(a, b) {
+              return b.time - a.time;
+            })"
             :key="skill.name"
             row
             wrap
@@ -64,16 +66,18 @@
               </v-chip>
             </v-flex>
             <v-spacer />
-            <v-flex shrink class="white--text" v-if="skill.time !== 0">
+            <v-flex v-if="skill.time !== 0" shrink class="white--text">
               <v-btn icon class="text-none" x-small color="white darken-2">
                 {{ skill.time }}
               </v-btn>
             </v-flex>
           </v-layout>
-          <v-layout>
+          <v-layout class="mt-4">
             <v-spacer />
             <v-flex shrink>
-              <div ref="qrcode"></div>
+              <a :href="qrcode" class="qrcode-wrapper">
+                <div ref="qrcode" />
+              </a>
             </v-flex>
             <v-spacer />
           </v-layout>
@@ -183,7 +187,7 @@
 
 <script>
 import { differenceInCalendarMonths } from 'date-fns'
-import QRCode from 'easyqrcodejs'
+import * as QRCode from 'easyqrcodejs'
 export default {
   props: {
     timeline: {
@@ -217,18 +221,22 @@ export default {
       }
     },
     qrcode: {
-      type: String
+      type: String,
+      default: ''
     }
+  },
+  mounted () {
+    this.mountQrcode()
   },
   methods: {
     mountQrcode () {
       if (this.qrcode) {
-        new QRCode(this.$refs.qrcode, {
+        new QRCode(this.$refs.qrcode, { // eslint-disable-line no-new
           width: 110,
           height: 110,
-          text: this.qrcode,
-          logo: "//images.weserv.nl/?w=400&bg=2ec6a0&url=ui-avatars.com/api/%3Fbackground%3D2ec6a0%26name%3Dw%26color=ffffff&mask=circle",
-          logoBackgroundTransparent: true
+          colorDark: '#ffffff',
+          colorLight: 'transparent',
+          text: this.qrcode
         })
       }
     },
@@ -239,9 +247,6 @@ export default {
         months: months % 12
       }
     }
-  },
-  mounted () {
-    this.mountQrcode()
   }
 }
 </script>
@@ -251,21 +256,24 @@ export default {
   font-size: 2.6rem;
 }
 .side-bar {
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0px;
-    width: 120px;
-    height: calc(1120px * 2);
-
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  width: 120px;
+  height: calc(296.6mm * 2);
 }
 .v-chip {
   -webkit-print-color-adjust: exact;
 }
-
+.qrcode-wrapper {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
 @media print {
   @page {
+    size: A4;
     margin: 0;
   }
   body {
