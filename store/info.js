@@ -170,22 +170,28 @@ const info = {
   ],
   socialNetworks: [
     {
-      name: 'facebook',
-      url: 'https://www.facebook.com/FrisonVicente',
-      img: '/img/facebook',
-      icon: 'mdi-facebook'
-    },
-    {
       name: 'github',
       url: 'https://github.com/Renato66',
       img: '/img/github',
       icon: 'mdi-github'
     },
     {
+      name: 'facebook',
+      url: 'https://www.facebook.com/FrisonVicente',
+      img: '/img/facebook',
+      icon: 'mdi-facebook'
+    },
+    {
       name: 'linkedin',
       url: 'https://www.linkedin.com/in/FrisonVicente',
       img: '/img/linkedin',
       icon: 'mdi-linkedin'
+    },
+    {
+      name: 'twitter',
+      url: 'https://twitter.com/FrisonVicente',
+      img: '/img/twitter',
+      icon: 'mdi-twitter'
     }
   ],
   contact: {

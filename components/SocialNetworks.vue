@@ -2,18 +2,18 @@
   <v-container grid-list-md>
     <v-layout row wrap align-center>
       <v-spacer class="hidden-sm-and-up" />
-      <v-flex v-for="(social, index) in socialNetworks" :key="index" shrink style="min-width:86px;">
+      <v-flex v-for="(social, index) in socialNetworks" :key="index" shrink >
         <a class="social-icon" rel="noopener" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
           <v-lazy
             :options="{
               threshold: .5
             }"
-            min-height="40"
+            min-height="20"
             transition="fade-transition"
           >
             <v-img
-              width="40"
-              height="40"
+              width="20"
+              height="20"
               class="mx-auto"
               :src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&output=${imageOutput}`"
               :lazy-src="`https://images.weserv.nl/?url=${baseUrl + social.img}.webp&q=10&output=webp`"
