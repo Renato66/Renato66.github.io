@@ -2,7 +2,7 @@
   <v-container grid-list-md>
     <v-layout row wrap align-center>
       <v-spacer class="hidden-sm-and-up" />
-      <v-flex v-for="(social, index) in socialNetworks" :key="index" shrink >
+      <v-flex v-for="(social, index) in socialNetworks" :key="index" shrink>
         <a class="social-icon" rel="noopener" target="_blank" :href="social.url" :aria-label="`Open ${social.name}`">
           <v-lazy
             :options="{
