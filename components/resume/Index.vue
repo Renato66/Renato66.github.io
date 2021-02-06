@@ -1,14 +1,10 @@
 <template>
   <v-container class="pa-0">
     <v-layout>
-      <v-flex xs2 class="">
+      <v-flex xs2 class>
         <div class="side-bar primary elevation-1">
           <v-flex xs12 class="text-center mb-4">
-            <v-avatar
-              size="100"
-              class="elevation-2 mt-3"
-              style="cursor:pointer;"
-            >
+            <v-avatar size="100" class="elevation-2 mt-3" style="cursor:pointer;">
               <v-img
                 :src="
                   `https://images.weserv.nl/?url=${contact.avatar}%3Fsize=100&output=webp`
@@ -32,9 +28,7 @@
           >
             <v-flex shrink>
               <a rel="noopener" target="_blank" :href="network.url">
-                <v-icon color="white">
-                  {{ network.icon }}
-                </v-icon>
+                <v-icon color="white">{{ network.icon }}</v-icon>
               </a>
             </v-flex>
             <v-flex shrink class="caption mt-1 ml-1">
@@ -43,9 +37,7 @@
                 target="_blank"
                 class="white--text"
                 :href="network.url"
-              >
-                {{ network.url.split("/")[network.url.split("/").length - 1] }}
-              </a>
+              >{{ network.url.split("/")[network.url.split("/").length - 1] }}</a>
             </v-flex>
           </v-layout>
           <div class="py-2" />
@@ -90,18 +82,16 @@
               {{ contact.name }}
             </v-flex>
             <v-flex xs12>
-              <strong> {{ $t("address") }}: </strong>
+              <strong>{{ $t("address") }}:</strong>
               {{ contact.city }} - {{ contact.state }}
             </v-flex>
             <v-flex xs12>
-              <strong> {{ $t("phone") }}: </strong>
+              <strong>{{ $t("phone") }}:</strong>
               +{{ contact.phone.country }} ({{ contact.phone.area }})
               {{ contact.phone.number }}
             </v-flex>
             <v-flex xs12>
-              <strong>
-                Email:
-              </strong>
+              <strong>Email:</strong>
               {{ contact.mail }}
             </v-flex>
           </v-layout>
@@ -110,13 +100,7 @@
               {{ $t("work.title") }}
             </v-flex>
           </v-layout>
-          <v-layout
-            v-for="experience in work"
-            :key="experience.id"
-            row
-            wrap
-            mt-4
-          >
+          <v-layout v-for="experience in work" :key="experience.id" row wrap mt-4>
             <v-flex xs12>
               <strong class="title">{{ experience.company }}</strong>
               <span v-if="experience.endDate === null" class="caption">
@@ -128,9 +112,7 @@
                 {{ $tc("month", howLong(experience).months) }}
               </span>
             </v-flex>
-            <v-flex>
-              {{ $t(`work.${experience.id}.description`) }}
-            </v-flex>
+            <v-flex>{{ $t(`work.${experience.id}.description`) }}</v-flex>
           </v-layout>
           <div style="page-break-after: always;" class="ma-12" />
           <v-layout mt-4>
@@ -140,13 +122,9 @@
           </v-layout>
           <v-layout mt-4>
             <v-flex xs12 class="pt-2">
-              <p>
-                {{ $t("about.paragraph.1") }}
-              </p>
+              <p>{{ $t("about.paragraph.1") }}</p>
               <p>{{ $t("about.paragraph.2") }} Doc88</p>
-              <p>
-                {{ $t("about.paragraph.3") }}
-              </p>
+              <p>{{ $t("about.paragraph.3") }}</p>
             </v-flex>
           </v-layout>
           <v-layout mt-4>
@@ -162,9 +140,11 @@
             mt-4
           >
             <v-flex xs12>
-              <strong class="title">{{
-                $t(`timeline.${item.id}.place`)
-              }}</strong>
+              <strong class="title">
+                {{
+                  $t(`timeline.${item.id}.place`)
+                }}
+              </strong>
               <span v-if="item.endDate === null" class="caption">
                 {{ item.startDate }}
                 ({{ $t("doing") }})
@@ -261,13 +241,12 @@ export default {
   bottom: 0;
   left: 0px;
   width: 120px;
-  height: calc(296.6mm * 2);
 }
 .v-chip {
   -webkit-print-color-adjust: exact;
 }
 .qrcode-wrapper {
-  position: fixed;
+  position: absolute;
   bottom: 10px;
   left: 10px;
 }
@@ -275,6 +254,12 @@ export default {
   @page {
     size: A4;
     margin: 0;
+  }
+  .qrcode-wrapper {
+    position: fixed;
+  }
+  .side-bar {
+    height: calc(296.6mm * 2);
   }
   body {
     margin: 0cm 0cm;
