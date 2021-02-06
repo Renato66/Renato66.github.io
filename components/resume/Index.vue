@@ -2,7 +2,7 @@
   <v-container class="pa-0">
     <v-layout>
       <v-flex xs2 class>
-        <div class="side-bar primary elevation-1">
+        <div class="side-bar primary">
           <v-flex xs12 class="text-center mb-4">
             <v-avatar size="100" class="elevation-2 mt-3" style="cursor:pointer;">
               <v-img
@@ -241,6 +241,7 @@ export default {
   bottom: 0;
   left: 0px;
   width: 120px;
+  box-shadow: inset -3px 0px 3px #0000003d;
 }
 .v-chip {
   -webkit-print-color-adjust: exact;
