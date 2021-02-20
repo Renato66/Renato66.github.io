@@ -18,8 +18,10 @@ export default {
       { hid: 'author', name: 'author', content: 'Renato Vicente - https://renato66.github.io' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ] //  <link href="/update.css" rel="stylesheet">
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap' }
+    ]
   },
   /*
   ** Customize the progress-bar color
@@ -28,7 +30,8 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
+  css : [
+    '@mdi/font/css/materialdesignicons.min.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -93,7 +96,9 @@ export default {
     },
     icons: {
       iconfont: 'mdi'
-    }
+    },
+    defaultAssets: false,
+    treeShake: true
   },
   /*
   ** Build configuration
