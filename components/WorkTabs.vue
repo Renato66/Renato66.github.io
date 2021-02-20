@@ -11,7 +11,7 @@
       <v-spacer />
       <v-flex shrink>
         <v-btn text icon :disabled="selected === 0" aria-label="Previus" @click="prev">
-          <v-icon>mdi-chevron-left</v-icon>
+          <v-icon>mdiChevronLeft</v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink class="headline text-center" style="min-width:150px;">
@@ -19,7 +19,7 @@
       </v-flex>
       <v-flex shrink>
         <v-btn text icon :disabled="revertExperiences.length === selected + 1" aria-label="Next" @click="next">
-          <v-icon>mdi-chevron-right</v-icon>
+          <v-icon>{{ mdiChevronRight }}</v-icon>
         </v-btn>
       </v-flex>
       <v-spacer />
@@ -61,6 +61,7 @@
 
 <script>
 import { differenceInCalendarMonths } from 'date-fns'
+import { mdiChevronLeft, mdiChevronRight } from '@mdi/js'
 export default {
   props: {
     experiences: {
@@ -72,7 +73,9 @@ export default {
   },
   data () {
     return {
-      selected: 0
+      selected: 0,
+      mdiChevronLeft,
+      mdiChevronRight
     }
   },
   computed: {

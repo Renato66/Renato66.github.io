@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout mt-4 style="height:44px">
+    <v-layout mt-4 style="height: 44px">
       <v-flex shrink>
         <v-menu offset-y content-class="br-8">
           <template v-slot:activator="{ on }">
@@ -10,12 +10,12 @@
               :outlined="!followScroll"
               :color="followScroll ? 'black' : 'white'"
               large
-              :class="{'follow-scroll': followScroll}"
+              :class="{ 'follow-scroll': followScroll }"
               class="ml-0"
               v-on="on"
             >
               <v-icon>
-                mdi-menu
+                {{ mdiMenu }}
               </v-icon>
             </v-btn>
           </template>
@@ -39,7 +39,7 @@
       <v-flex class="text-center">
         <v-lazy
           :options="{
-            threshold: .5
+            threshold: 0.5,
           }"
           min-height="236"
           transition="fade-transition"
@@ -57,18 +57,22 @@
     </v-layout>
     <v-layout class="mt-6 pb-6" row wrap>
       <v-flex xs12 class="text-center">
-        <h1 class="font-weight-thin" :class="{'display-4': !mobile, 'display-2': mobile}">
+        <h1
+          class="font-weight-thin"
+          :class="{ 'display-4': !mobile, 'display-2': mobile }"
+        >
           {{ contact.shortName }}
         </h1>
       </v-flex>
       <v-flex xs12 class="text-center mt-4">
-        <h2 :class="{'display-1': !mobile, 'headline': mobile}">
-          {{ $t('description') }}
+        <h2 :class="{ 'display-1': !mobile, headline: mobile }">
+          {{ $t("description") }}
         </h2>
       </v-flex>
       <v-flex class="text-center mt-4">
         <h3 class="grey--text font-weight-light">
-          {{ contact.city }} - {{ contact.birthday | age }} {{ $t('age') }} {{ $t('aditional') }}
+          {{ contact.city }} - {{ contact.birthday | age }} {{ $t("age") }}
+          {{ $t("aditional") }}
         </h3>
       </v-flex>
     </v-layout>
@@ -85,17 +89,14 @@
               color="primary"
               v-on="on"
             >
-              {{ $t('getInTouch') }}
+              {{ $t("getInTouch") }}
             </v-btn>
           </template>
           <v-card>
-            <v-card-title
-              class="headline primary py-6"
-              primary-title
-            >
+            <v-card-title class="headline primary py-6" primary-title>
               <v-spacer />
               <span class="text-uppercase">
-                {{ $t('getInTouch') }}
+                {{ $t("getInTouch") }}
               </span>
               <v-spacer />
             </v-card-title>
@@ -105,28 +106,23 @@
                 <v-layout align-center pt-4>
                   <v-flex shrink>
                     <v-icon small color="grey">
-                      mdi-phone
+                      {{ mdiPhone }}
                     </v-icon>
                   </v-flex>
-                  <v-flex>
-                    {{ $t('phone') }}:
-                  </v-flex>
+                  <v-flex> {{ $t("phone") }}: </v-flex>
                   <v-spacer />
                   <v-flex shrink>
-                    +{{ contact.phone.country }}
-                    ({{ contact.phone.area }})
+                    +{{ contact.phone.country }} ({{ contact.phone.area }})
                     {{ contact.phone.number }}
                   </v-flex>
                 </v-layout>
                 <v-layout align-center>
                   <v-flex shrink>
                     <v-icon small color="grey">
-                      mdi-mail
+                      {{ mdiMail }}
                     </v-icon>
                   </v-flex>
-                  <v-flex>
-                    {{ $t('email') }}:
-                  </v-flex>
+                  <v-flex> {{ $t("email") }}: </v-flex>
                   <v-spacer />
                   <v-flex shrink>
                     {{ contact.mail }}
@@ -135,12 +131,10 @@
                 <v-layout align-center>
                   <v-flex shrink>
                     <v-icon small color="grey">
-                      mdi-telegram
+                      {{ mdiTelegram }}
                     </v-icon>
                   </v-flex>
-                  <v-flex>
-                    Telegram:
-                  </v-flex>
+                  <v-flex> Telegram: </v-flex>
                   <v-spacer />
                   <v-flex shrink>
                     @{{ contact.telegram }}
@@ -153,8 +147,18 @@
                 </v-layout>
                 <v-layout>
                   <v-spacer />
-                  <v-flex v-for="network in socialNetworks" :key="network.name" shrink>
-                    <v-btn icon :href="network.url" rel="noopener" target="_blank" :aria-label="`Open ${network.name}`">
+                  <v-flex
+                    v-for="network in socialNetworks"
+                    :key="network.name"
+                    shrink
+                  >
+                    <v-btn
+                      icon
+                      :href="network.url"
+                      rel="noopener"
+                      target="_blank"
+                      :aria-label="`Open ${network.name}`"
+                    >
                       <v-icon>
                         {{ network.icon }}
                       </v-icon>
@@ -170,10 +174,15 @@
                 <v-layout pt-2>
                   <v-spacer />
                   <v-flex shrink>
-                    <v-btn aria-label="Open WhatsApp" rounded class="text-none" color="#25d366">
+                    <v-btn
+                      aria-label="Open WhatsApp"
+                      rounded
+                      class="text-none"
+                      color="#25d366"
+                    >
                       WhatsApp
                       <v-icon class="ml-2">
-                        mdi-whatsapp
+                        {{ mdiWhatsapp }}
                       </v-icon>
                     </v-btn>
                   </v-flex>
@@ -191,6 +200,7 @@
 
 <script>
 import { mapMutations, mapGetters } from 'vuex'
+import { mdiMenu, mdiTelegram, mdiMail, mdiPhone, mdiWhatsapp } from '@mdi/js'
 import LocaleChange from '@/components/LocaleChange'
 export default {
   components: {
@@ -228,13 +238,21 @@ export default {
   data () {
     return {
       mobile: false,
-      followScroll: false
+      followScroll: false,
+      mdiMenu,
+      mdiTelegram,
+      mdiMail,
+      mdiPhone,
+      mdiWhatsapp
     }
   },
   computed: {
     ...mapGetters(['imageOutput']),
     phone () {
-      return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(/[^0-9]/g, '')
+      return `${this.contact.phone.country}${this.contact.phone.area}${this.contact.phone.number}`.replace(
+        /[^0-9]/g,
+        ''
+      )
     }
   },
   beforeMount () {
@@ -257,16 +275,24 @@ export default {
     },
     openWhats () {
       if (process.browser) {
-        if (navigator.userAgent.match(/Android/i) ||
+        if (
+          navigator.userAgent.match(/Android/i) ||
           navigator.userAgent.match(/webOS/i) ||
           navigator.userAgent.match(/iPhone/i) ||
           navigator.userAgent.match(/iPad/i) ||
           navigator.userAgent.match(/iPod/i) ||
           navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i)) {
-          window.open(`https://api.whatsapp.com/send?phone=${this.phone}`, '_blank')
+          navigator.userAgent.match(/Windows Phone/i)
+        ) {
+          window.open(
+            `https://api.whatsapp.com/send?phone=${this.phone}`,
+            '_blank'
+          )
         } else {
-          window.open(`https://web.whatsapp.com/send?phone=${this.phone}`, '_blank')
+          window.open(
+            `https://web.whatsapp.com/send?phone=${this.phone}`,
+            '_blank'
+          )
         }
       }
     }
@@ -280,9 +306,9 @@ export default {
   top: 45px;
 }
 .follow-scroll {
-  position: fixed!important;
+  position: fixed !important;
   z-index: 2;
   /* transition: .3s cubic-bezier(.25,.8,.5,1),color 1ms; */
-  transform: rotate(360deg)
+  transform: rotate(360deg);
 }
 </style>

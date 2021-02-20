@@ -23,7 +23,7 @@
                 dark
                 size="12"
               >
-                mdi-bell
+                {{ mdiBell }}
               </v-icon>
             </template>
             <v-avatar
@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import { mdiBell } from '@mdi/js'
 import { mapGetters } from 'vuex'
 export default {
   props: {
@@ -102,7 +103,8 @@ export default {
       notification: false,
       show: false,
       willNotify: true,
-      menu: false
+      menu: false,
+      mdiBell
     }
   },
   computed: {

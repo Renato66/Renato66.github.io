@@ -36,7 +36,7 @@
                     @click="open[item.id] = true"
                   >
                     <v-icon small>
-                      mdi-camera-outline
+                      {{ mdiCameraOutline }}
                     </v-icon>
                   </v-btn>
                 </v-flex>
@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import { mdiCameraOutline } from '@mdi/js'
 export default {
   props: {
     timeline: {
@@ -105,7 +106,8 @@ export default {
       open: {
         fatec: false,
         colombia: false
-      }
+      },
+      mdiCameraOutline
     }
   },
   mounted () {

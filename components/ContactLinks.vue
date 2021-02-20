@@ -13,7 +13,7 @@
     <v-layout row wrap mb-6>
       <v-flex xs12 sm6 class="text-center headline">
         <v-icon large>
-          mdi-map-marker
+          {{ mdiMapMarker }}
         </v-icon>
         <br>
         {{ $t('liveIn') }}
@@ -23,7 +23,7 @@
       </v-flex>
       <v-flex xs12 sm6 class="text-center headline">
         <v-icon large>
-          mdi-email
+          {{ mdiEmail }}
         </v-icon>
         <br>
         <a :href="`mailto:${contact.mail}`" class="white--text">
@@ -47,7 +47,7 @@
           aria-label="Open telegram"
         >
           <v-icon>
-            mdi-telegram
+            {{ mdiTelegram }}
           </v-icon>
         </v-btn>
       </v-flex>
@@ -61,7 +61,7 @@
           @click="openWhats"
         >
           <v-icon>
-            mdi-whatsapp
+            {{ mdiWhatsapp }}
           </v-icon>
         </v-btn>
       </v-flex>
@@ -75,7 +75,7 @@
           aria-label="Open phone"
         >
           <v-icon>
-            mdi-phone
+            {{ mdiPhone }}
           </v-icon>
         </v-btn>
       </v-flex>
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import { mdiMapMarker, mdiPhone, mdiWhatsapp, mdiEmail, mdiTelegram } from '@mdi/js'
 export default {
   props: {
     contact: {
@@ -92,6 +93,15 @@ export default {
       default: () => {
         return {}
       }
+    }
+  },
+  data () {
+    return {
+      mdiMapMarker,
+      mdiPhone,
+      mdiWhatsapp,
+      mdiEmail,
+      mdiTelegram
     }
   },
   computed: {
