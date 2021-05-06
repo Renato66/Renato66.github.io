@@ -205,7 +205,7 @@ const info = {
     },
     telegram: 'irenato66',
     mail: 'Revi66@hotmail.com',
-    linkedin: 'frisonrenato',
+    linkedin: 'frisonvicente',
     city: 'Santo André',
     state: 'SP',
     region: 'São Paulo',
@@ -215,25 +215,32 @@ const info = {
   },
   work: [
     {
+      id: 'airbank',
+      company: 'Airbank',
+      startDate: '2021-04-26',
+      endDate: null,
+      website: 'https://joinairbank.com'
+    },
+    {
       id: 'doc88',
       company: 'Doc88',
-      startDate: '2019-09-02',
-      endDate: null,
-      website: 'http://www.doc88.com.br'
+      startDate: '2020-10-05',
+      endDate: '2021-04-25',
+      website: 'https://www.doc88.com.br'
     },
     {
       id: 'boxnet',
       company: 'Boxnet',
       startDate: '2019-09-02',
       endDate: '2020-10-05',
-      website: 'http://www.boxnet.com.br'
+      website: 'https://www.boxnet.com.br'
     },
     {
       id: 'coddera',
       company: 'Coddera',
       startDate: '2018-10-01',
       endDate: '2019-08-31',
-      website: 'http://www.coddera.com'
+      website: 'https://www.coddera.com'
     },
     {
       id: 'athos',
