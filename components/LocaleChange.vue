@@ -36,12 +36,12 @@ export default {
         {
           id: 'pt',
           name: 'Portugues',
-          flag: 'https://www.countryflags.io/BR/flat/24.png'
+          flag: 'https://flagicons.lipis.dev/flags/4x3/br.svg'
         },
         {
           id: 'en',
           name: 'English',
-          flag: 'https://www.countryflags.io/US/flat/24.png'
+          flag: 'https://flagicons.lipis.dev/flags/4x3/um.svg'
         }
       ]
     }
