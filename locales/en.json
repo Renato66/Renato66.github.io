@@ -52,6 +52,10 @@
   "month": " | {n} month | {n} months",
   "work": {
     "title": "Experiences",
+    "airbank": {
+      "position": "Fullstack",
+      "description": "Working as front dev (Vue/Nuxt) and Node with graphql"
+    },
     "doc88": {
       "position": "Front end",
       "description": "Working as front dev (Vue/Nuxt)"

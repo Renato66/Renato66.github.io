@@ -52,6 +52,10 @@
   "month": " | {n} mês | {n} meses",
   "work": {
     "title": "Experiências",
+    "airbank": {
+      "position": "Fullstack",
+      "description": "Atuação como fullstack (Vue/Nuxt) no front e Node com graphql no back"
+    },
     "doc88": {
       "position": "Front end",
       "description": "Atuação com front (Vue/Nuxt)"
