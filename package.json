@@ -24,7 +24,7 @@
     "vue-github-button": "^1.1.2",
     "vue-github-buttons": "^3.1.0",
     "vue-i18n": "^8.15.4",
-    "vuetify": "^2.3.13"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
