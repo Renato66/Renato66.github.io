@@ -1,0 +1,25 @@
+
+name: Check build
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Check lint
+        run: yarn lint --max-warnings 0
+
+      - name: Check build
+        run: yarn build
