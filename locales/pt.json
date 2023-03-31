@@ -52,13 +52,13 @@
   "month": " | {n} mês | {n} meses",
   "work": {
     "title": "Experiências",
-    "airbank": {
+    "fridayFinance": {
       "position": "Fullstack",
-      "description": "Atuação como fullstack (Vue/Nuxt) no front e Node com graphql no back"
+      "description": "Comecei minha carreira aqui como desenvolvedor front-end, utilizando Cypress e Vue.js 3. Com o tempo, expandi minhas habilidades para ser um desenvolvedor full-stack com Node e Postgres. Atualmente, estou em uma posição de Tech Lead."
     },
     "doc88": {
       "position": "Front end",
-      "description": "Atuação com front (Vue/Nuxt)"
+      "description": "Tenho experiência trabalhando como desenvolvedor sênior em uma equipe de front-end, onde tomei decisões de arquiteture sobre como entregar código Vue.js e jQuery legado em uma aplicação monolítica."
     },
     "boxnet": {
       "position": "Front end",

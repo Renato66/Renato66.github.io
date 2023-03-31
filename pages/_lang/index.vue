@@ -5,7 +5,7 @@
         <PortifolioHeader :menu="menu" :contact="contact" :social-networks="socialNetworks" />
       </header>
       <section id="about" class="white">
-        <Presentation />
+        <Presentation :latest-work="work[0]" />
       </section>
       <section id="skills" class="background-section">
         <SkillBars :skills="mainSkills" />
