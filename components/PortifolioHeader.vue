@@ -207,12 +207,14 @@ export default {
     LocaleChange
   },
   filters: {
-    age (value) {
-      const currentDate = new Date()
-      const age = currentDate.getFullYear() - value.getFullYear()
-      const month = currentDate.getMonth() - value.getMonth()
-      const day = currentDate.getDate() - value.getDate()
-      return (month < 0 || month === 0) && day < 0 ? age - 1 : age
+    age (birth) {
+      const today = new Date()
+      let myAge = today.getFullYear() - birth.getFullYear()
+      const monthDiff = today.getMonth() - birth.getMonth()
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        myAge--
+      }
+      return myAge
     }
   },
   props: {
