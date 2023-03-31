@@ -2,7 +2,7 @@
   <v-app :dark="false">
     <ResumePDF
       :contact="contact"
-      :work="work"
+      :work="work.slice(0, 5)"
       :skills="skills"
       :social-networks="socialNetworks"
       :timeline="timeline"

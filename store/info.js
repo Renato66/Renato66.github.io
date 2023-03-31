@@ -5,28 +5,28 @@ const info = {
       main: true,
       img: '/img/vuejs',
       knowlegde: 100,
-      time: 4
+      time: 6
     },
     {
       name: 'Node.js',
       main: true,
       img: '/img/nodejs',
       knowlegde: 70,
-      time: 2
+      time: 4
     },
     {
       name: 'Cypress',
       main: true,
       img: '/img/cypress',
       knowlegde: 70,
-      time: 2
+      time: 3
     },
     {
       name: 'GraphQL',
       main: true,
       img: '/img/graphQL',
-      knowlegde: 50,
-      time: 0
+      knowlegde: 80,
+      time: 2
     },
     {
       name: 'Laravel',
@@ -44,7 +44,7 @@ const info = {
     },
     {
       name: 'Javascript',
-      time: 6
+      time: 8
     },
     {
       name: 'Stylus',
@@ -215,11 +215,11 @@ const info = {
   },
   work: [
     {
-      id: 'airbank',
-      company: 'Airbank',
+      id: 'fridayFinance',
+      company: 'Friday Finance',
       startDate: '2021-04-26',
       endDate: null,
-      website: 'https://joinairbank.com'
+      website: 'https://fridayfinance.com'
     },
     {
       id: 'doc88',
@@ -262,14 +262,14 @@ const info = {
       startDate: '2013-02-01',
       endDate: '2014-04-01',
       website: 'https://vanzolini.org.br'
+    },
+    {
+      id: 'blazing',
+      company: 'Blazing produções',
+      startDate: '2013-03-01',
+      endDate: '2020-04-01',
+      website: 'http://blazing.com.br/blazing/'
     }
-    // {
-    //   id: 'blazing',
-    //   company: 'Blazing produções',
-    //   startDate: '2013-03-01',
-    //   endDate: null,
-    //   website: 'http://blazing.com.br/blazing/'
-    // }
   ],
   timeline: [
     {

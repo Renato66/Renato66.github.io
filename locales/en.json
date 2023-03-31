@@ -52,13 +52,13 @@
   "month": " | {n} month | {n} months",
   "work": {
     "title": "Experiences",
-    "airbank": {
-      "position": "Fullstack",
-      "description": "Working as front dev (Vue/Nuxt) and Node with graphql"
+    "fridayFinance": {
+      "position": "Tech lead",
+      "description": "I've begin my career here as a front-end developer, utilizing Cypress and Vue.js 3. Over time, I did expanded my skills to be a full-stack developer with Node and Postgres. Currently, I'm at a Tech Lead position."
     },
     "doc88": {
       "position": "Front end",
-      "description": "Working as front dev (Vue/Nuxt)"
+      "description": "I have experience working as a senior developer in a front-end team, where I made architectural decisions on how to delivery/deploy Vue.js code and legacy jQuery code in the same monolithic application."
     },
     "boxnet": {
       "position": "Front end",
@@ -91,7 +91,7 @@
     "title": "About me",
     "paragraph": {
       "1": "Graduated in Systems Analysis and Development by FATEC São Caetano do Sul, I developed some projects in PHP but I deepened in the front end area, applying in my work: SPA, performance, responsive design, mobile first, offline first.",
-      "2": "I currently work with Vue.js and Nuxt stack at",
+      "2": "I currently work with Vue.js, GraphQl, Nuxt, Node and Postgres stack at | My last job was with Vue.js, GraphQl, Nuxt, Node and Postgres stack at",
       "3": "On some weekends I work as a DJ, enjoying the party, making my work a hobby."
     },
     "quotes": {

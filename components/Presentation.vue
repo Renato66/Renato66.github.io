@@ -12,8 +12,8 @@
         <p>
           {{ $t('about.paragraph.1') }}
         </p>
-        <p>
-          {{ $t('about.paragraph.2') }} <a href="#work" class="primary--text">Doc88</a>
+        <p v-if="latestWork">
+          {{ $tc('about.paragraph.2', latestWork.endDate) }} <a href="#work" class="primary--text">{{ latestWork.company }}</a>
         </p>
         <p>
           {{ $t('about.paragraph.3') }}
@@ -49,6 +49,12 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  props: {
+    latestWork: {
+      type: Object,
+      default: () => null
+    }
+  },
   data () {
     return {
       quotes: [
@@ -65,7 +71,7 @@ export default {
         {
           id: 'inovation',
           img: '/img/rocket',
-          autor: 'S. Brown'
+          author: 'S. Brown'
         }
       ]
     }
