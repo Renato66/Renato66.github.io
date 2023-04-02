@@ -28,7 +28,7 @@
           >
             <v-flex shrink>
               <a rel="noopener" target="_blank" :href="network.url">
-                <v-icon color="white">{{ network.icon }}</v-icon>
+                <v-icon color="white" small>{{ iconList[network.icon] }}</v-icon>
               </a>
             </v-flex>
             <v-flex shrink class="caption mt-1 ml-1">
@@ -48,7 +48,7 @@
             :key="skill.name"
             row
             wrap
-            mb-2
+            mb-4
             pr-5
             align-center
           >
@@ -167,6 +167,13 @@
 
 <script>
 import { differenceInCalendarMonths } from 'date-fns'
+import {
+  mdiGithub,
+  mdiFacebook,
+  mdiLinkedin,
+  mdiTwitter
+} from '@mdi/js'
+
 import * as QRCode from 'easyqrcodejs'
 export default {
   props: {
@@ -203,6 +210,16 @@ export default {
     qrcode: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    iconList () {
+      return {
+        'mdi-github': mdiGithub,
+        'mdi-facebook': mdiFacebook,
+        'mdi-linkedin': mdiLinkedin,
+        'mdi-twitter': mdiTwitter
+      }
     }
   },
   mounted () {
