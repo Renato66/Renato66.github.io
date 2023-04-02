@@ -10,8 +10,8 @@
     <v-layout align-center>
       <v-spacer />
       <v-flex shrink>
-        <v-btn text icon :disabled="selected === 0" aria-label="Previus" @click="prev">
-          <v-icon>mdiChevronLeft</v-icon>
+        <v-btn text icon :disabled="selected === 0" aria-label="Previous" @click="prev">
+          <v-icon>{{ mdiChevronLeft }}</v-icon>
         </v-btn>
       </v-flex>
       <v-flex shrink class="headline text-center" style="min-width:150px;">

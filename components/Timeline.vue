@@ -14,10 +14,14 @@
             v-for="item in timeline"
             :key="item.id"
             color="primary"
-            :icon="item.icon"
             fill-dot
             large
           >
+            <template slot="icon">
+              <v-icon small color="white">
+                {{ iconList[item.icon] }}
+              </v-icon>
+            </template>
             <v-card style="position:relative">
               <v-card-title class="title pb-0 pt-2">
                 <v-flex shrink class="primary--text pt-1">
@@ -89,7 +93,14 @@
 </template>
 
 <script>
-import { mdiCameraOutline } from '@mdi/js'
+import {
+  mdiCameraOutline,
+  mdiAirplane,
+  mdiSchool,
+  mdiChat,
+  mdiBookOpenPageVariant
+} from '@mdi/js'
+
 export default {
   props: {
     timeline: {
@@ -108,6 +119,16 @@ export default {
         colombia: false
       },
       mdiCameraOutline
+    }
+  },
+  computed: {
+    iconList () {
+      return {
+        'mdi-airplane': mdiAirplane,
+        'mdi-school': mdiSchool,
+        'mdi-chat': mdiChat,
+        'mdi-book-open-page-variant': mdiBookOpenPageVariant
+      }
     }
   },
   mounted () {
