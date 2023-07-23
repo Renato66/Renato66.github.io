@@ -10,35 +10,35 @@
     "name": "Node.js",
     "main": true,
     "img": "/img/nodejs",
-    "knowlegde": 70,
+    "knowledge": 70,
     "time": 4
   },
   {
     "name": "Cypress",
     "main": true,
     "img": "/img/cypress",
-    "knowlegde": 70,
+    "knowledge": 70,
     "time": 3
   },
   {
     "name": "GraphQL",
     "main": true,
     "img": "/img/graphQL",
-    "knowlegde": 80,
+    "knowledge": 80,
     "time": 2
   },
   {
     "name": "Laravel",
     "main": true,
     "img": "/img/laravel",
-    "knowlegde": 40,
+    "knowledge": 40,
     "time": 0
   },
   {
     "name": "Firebase",
     "main": true,
     "img": "/img/firebase",
-    "knowlegde": 80,
+    "knowledge": 80,
     "time": 3
   },
   {
