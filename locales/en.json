@@ -1,0 +1,135 @@
+{
+  "seo": {
+    "description": "Front end programer specialist in Vue, also have some skills on Node & PHP, Brazil, Santo André - SP, ex-DJ and traveler.",
+    "title": "Renato Vicente - Portfolio",
+    "keywords": "programer, freelancer developer, front end, font-end senior, front end vue, front end vue senior, back- nd, web, frontend, backend, html, css, javascript, php, jquery, mysql, sites, websites, são paulo, brasil, brazil, santo andré, vue, react-native, node, nodejs, aws, firebase, app, apps",
+    "og": {
+      "description": "Front end programer specialist in Vue, also have some skills on Node & PHP, Brazil, Santo André - SP, ex-DJ and traveler.",
+      "title": "Renato Vicente Frison"
+    }
+  },
+  "menu": {
+    "hi": "Hello",
+    "about": "About me",
+    "skills": "Skills",
+    "timeline": "Timeline",
+    "work": "Experiences",
+    "portfolio": "Portifolio",
+    "resume": "Resume"
+  },
+  "getInTouch": "Get in touch",
+  "phone": "Phone",
+  "address": "Address",
+  "email": "Email",
+  "age": "years",
+  "description": "Programmer. DJ. Creative. Innovator.",
+  "aditional": ", In love with music",
+  "timeline": {
+    "title": "Timeline",
+    "colombia": {
+      "title": "Vacation",
+      "description": "First international travel",
+      "place": "Colômbia"
+    },
+    "fatec": {
+      "title": "College",
+      "description": "Analysis and systems development",
+      "place": "FATEC"
+    },
+    "fisk": {
+      "title": "Language",
+      "description": "English course",
+      "place": "FISK"
+    },
+    "clovis": {
+      "title": "Course",
+      "description": "High School with computer technician course",
+      "place": "Clovis Bevilacqua"
+    }
+  },
+  "actual": "Actual",
+  "year": "{n} year and | {n} year and | {n} years and",
+  "month": "{n} month | {n} month | {n} months",
+  "work": {
+    "title": "Experiences",
+    "fridayFinance": {
+      "position": "Tech lead",
+      "description": "I've begin my career here as a front-end developer, utilizing Cypress and Vue.js 3. Over time, I did expanded my skills to be a full-stack developer with Node and Postgres. Currently, I'm at a Tech Lead position."
+    },
+    "doc88": {
+      "position": "Front end",
+      "description": "I have experience working as a senior developer in a front-end team, where I made architectural decisions on how to delivery/deploy Vue.js code and legacy jQuery code in the same monolithic application."
+    },
+    "boxnet": {
+      "position": "Front end",
+      "description": "Before, I worked at boxnet as an outsourcer for Coddera and I was hired to continue the work; I've worked with front-end focusing on Vue, giving maintenance and creating new features, made some small adjustments in a legacy application in angular, refactored the app to a react native version, realized some node services on AWS and GCP and interacted with whats app business api"
+    },
+    "coddera": {
+      "position": "Front end",
+      "description": "Creating a project from scratch in vue.js, defining apis architecture, deploys, testing, analytics and integrations using some AWS tools, cognito, lambdas, api gateway."
+    },
+    "athos": {
+      "position": "Front end",
+      "description": "Expertise in front end development of WebApps applications. Participation in the development of improvements and maintenance of the webapp App App my adm. Creation of custom skins of the webminio condominium management system. Creating responsive hotsites using mobile-first."
+    },
+    "cgm": {
+      "position": "Intern",
+      "description": "Creation of Excel / VBA programs for handling and reporting to the transparency portal."
+    },
+    "vanzoline": {
+      "position": "Intern",
+      "description": "Support for correspondence course, intranet network configuration, proxy and ip."
+    },
+    "blazing": {
+      "position": "DJ",
+      "description": "Hobbie DJ."
+    }
+  },
+  "liveIn": "Living in",
+  "footer": "This is my portfolio, I hope you have enjoyed it.",
+  "about": {
+    "title": "About me",
+    "paragraph": {
+      "1": "Graduated in Systems Analysis and Development by FATEC São Caetano do Sul, I developed some projects in PHP but I deepened in the front end area, applying in my work: SPA, performance, responsive design, mobile first, offline first.",
+      "2": "I currently work with Vue.js, GraphQl, Nuxt, Node and Postgres stack at | My last job was with Vue.js, GraphQl, Nuxt, Node and Postgres stack at",
+      "3": "On some weekends I work as a DJ, enjoying the party, making my work a hobby."
+    },
+    "quotes": {
+      "programming": {
+        "title": "Programming",
+        "description": "First, solve the problem. Then, write the code."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "You can’t use it all up. The more you use, the more you have."
+      },
+      "inovation": {
+        "title": "Inovation",
+        "description": "A ship in harbor is safe, but that is not what ships are built for."
+      }
+    }
+  },
+  "downloadResume": "Download my resume",
+  "skills": {
+    "title": "Skills"
+  },
+  "portfolio": {
+    "title": "Portifolio"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "doing": "Doing",
+  "formation": {
+    "title": "Qualifications"
+  },
+  "chat": {
+    "who": "New message from",
+    "message": "Would you like to have my resume?",
+    "actions": {
+      "download": "Download",
+      "reject": "No thanks"
+    }
+  },
+  "openProject": "Open project"
+}

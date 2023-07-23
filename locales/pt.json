@@ -1,0 +1,135 @@
+{
+  "seo": {
+    "description": "Programador front-end especialista em Vue, tambem tenho algumas skills em Node & PHP, Santo André - SP, ex-Dj e viajante nas horas vagas.",
+    "title": "Renato Vicente - Portfolio",
+    "keywords": "programador, desenvolvedor freelancer, front-end, font-end senior, front-end vue, front-end vue senior, back-end, web, frontend, backend, html, css, javascript, php, jquery, mysql, sites, websites, são paulo, santo andré, vue, react-native, node, nodejs, aws, firebase, app, apps",
+    "og": {
+      "description": "Programador front-end especialista em Vue, tambem tenho algumas skills em Node & PHP, Santo André - SP, ex-Dj e viajante nas horas vagas.",
+      "title": "Renato Vicente Frison"
+    }
+  },
+  "menu": {
+    "hi": "Olá",
+    "about": "Sobre mim",
+    "skills": "Habilidades",
+    "timeline": "Linha do tempo",
+    "work": "Experiências",
+    "portfolio": "Portfólio",
+    "resume": "Curriculum"
+  },
+  "getInTouch": "Entre em contato",
+  "phone": "Telefone",
+  "address": "Endereço",
+  "email": "E-mail",
+  "age": "anos",
+  "description": "Programador. DJ. Criativo. Inovador.",
+  "aditional": ", apaixonado por música",
+  "timeline": {
+    "title": "Linha do tempo",
+    "colombia": {
+      "title": "Férias",
+      "description": "Primeira viagem internacional",
+      "place": "Colômbia"
+    },
+    "fatec": {
+      "title": "Faculdade",
+      "description": "Analise e desenvolvimento de sistemas",
+      "place": "FATEC"
+    },
+    "fisk": {
+      "title": "Idioma",
+      "description": "Curso de inglês",
+      "place": "FISK"
+    },
+    "clovis": {
+      "title": "Curso",
+      "description": "Ensino médio e técnico em informática",
+      "place": "Clovis Bevilacqua"
+    }
+  },
+  "actual": "Atual",
+  "year": "{n} ano | {n} ano | {n} anos",
+  "month": "{n} mês | {n} mês | {n} meses",
+  "work": {
+    "title": "Experiências",
+    "fridayFinance": {
+      "position": "Fullstack",
+      "description": "Comecei minha carreira aqui como desenvolvedor front-end, utilizando Cypress e Vue.js 3. Com o tempo, expandi minhas habilidades para ser um desenvolvedor full-stack com Node e Postgres. Atualmente, estou em uma posição de Tech Lead."
+    },
+    "doc88": {
+      "position": "Front end",
+      "description": "Tenho experiência trabalhando como desenvolvedor sênior em uma equipe de front-end, onde tomei decisões de arquiteture sobre como entregar código Vue.js e jQuery legado em uma aplicação monolítica."
+    },
+    "boxnet": {
+      "position": "Front end",
+      "description": "Antes, trabalhava na boxnet como terceirizado pela Coddera e fui contratado para continuação o trabalho; Trabalho com front end Foco em Vue, dando manutenção e criando novas features, realizei alguns ajustes pequenos em uma aplicação legada em angular, refatorei o app para um versão em react native, participei de alguns micro serviços em node na AWS e na GCP e interagi com a api do whats app business"
+    },
+    "coddera": {
+      "position": "Front end",
+      "description": "Criação de um projeto do zero em vue.js, definindo a arquitetura, deploys, testes, analytics e integrações de apis, utilizando algumas ferramentas da AWS, cognito, lambdas, api gateway."
+    },
+    "athos": {
+      "position": "Front end",
+      "description": "Atuação no desenvolvimento front-end de aplicativos WebApps. Participação do desenvolvimento de melhorias e manutenção do aplicativo Webapp App Minha adm. Criação de skins personalizadas do sistema de gestão condominial Webmínio. Criação de hotsites responsivos usando mobile-first."
+    },
+    "cgm": {
+      "position": "Estágiario",
+      "description": "Criação de programas em Excel/VBA para o tratamento e geração de relatórios para o portal da transparência."
+    },
+    "vanzoline": {
+      "position": "Estágiario",
+      "description": "Suporte presencial nas atividades de ensino a distância, configuração da rede intranet, proxy e ip."
+    },
+    "blazing": {
+      "position": "DJ",
+      "description": "DJ por hobbie."
+    }
+  },
+  "liveIn": "Moro em",
+  "footer": "Este é meu portfólio, espero que tenha gostado.",
+  "about": {
+    "title": "Sobre mim",
+    "paragraph": {
+      "1": "Formado em Análise e Desenvolvimento de Sistemas pela FATEC São Caetano do Sul, desenvolvi alguns projetos em PHP. Porém, me aprofundei na área de front end, aplicando nos meus trabalhos: SPA, performance, desing responsivo, mobile first, offline first.",
+      "2": "Atualmente trabalho com Vue.js e Nuxt stack na",
+      "3": "Em alguns finais de semana, trabalho como DJ, aproveitando a festa, fazendo do meu trabalho um hobbie."
+    },
+    "quotes": {
+      "programming": {
+        "title": "Programação",
+        "description": "Primeiro, resolva o problema. Depois, escreva o código."
+      },
+      "creativity": {
+        "title": "Criatividade",
+        "description": "Você não consegue esgotá-la. Quanto mais você usa, mais você tem."
+      },
+      "inovation": {
+        "title": "Inovação",
+        "description": "Um barco está seguro no porto. Mas não é para isso que os barcos são feitos"
+      }
+    }
+  },
+  "downloadResume": "Baixe meu curriculum",
+  "skills": {
+    "title": "Habilidades"
+  },
+  "portfolio": {
+    "title": "Portfólio"
+  },
+  "contact": {
+    "title": "Contato"
+  },
+  "doing": "Cursando",
+  "formation": {
+    "title": "Formação"
+  },
+  "chat": {
+    "who": "Mensagem de ",
+    "message": "Gostaria de baixar o meu curriculum?",
+    "actions": {
+      "download": "Download",
+      "reject": "Não obrigado"
+    }
+  },
+  "openProject": "Abrir Projeto"
+}

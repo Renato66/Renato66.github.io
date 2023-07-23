@@ -1,3 +1,4 @@
 {
-    "cSpell.language": "en,en-EN,pt,pt-BR"
+  "cSpell.language": "en,en-EN,pt,pt-BR",
+  "i18n-ally.localesPaths": ["locales"]
 }

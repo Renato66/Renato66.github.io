@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "description": "06-10",
+    "time": {
+      "start": "06:00",
+      "end": "10:00"
+    },
+    "avaliable": false
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fridayFinance",
+    "company": "Friday Finance",
+    "startDate": "2021-04-26",
+    "endDate": "2023-06-31",
+    "website": "https://fridayfinance.com"
+  },
+  {
+    "id": "doc88",
+    "company": "Doc88",
+    "startDate": "2020-10-05",
+    "endDate": "2021-04-25",
+    "website": "https://www.doc88.com.br"
+  },
+  {
+    "id": "boxnet",
+    "company": "Boxnet",
+    "startDate": "2019-09-02",
+    "endDate": "2020-10-05",
+    "website": "https://www.boxnet.com.br"
+  },
+  {
+    "id": "coddera",
+    "company": "Coddera",
+    "startDate": "2018-10-01",
+    "endDate": "2019-08-31",
+    "website": "https://www.coddera.com"
+  },
+  {
+    "id": "athos",
+    "company": "Athos",
+    "startDate": "2016-12-01",
+    "endDate": "2018-04-04",
+    "website": "https://www.athos.com.br"
+  },
+  {
+    "id": "cgm",
+    "company": "CGM SP",
+    "startDate": "2014-12-01",
+    "endDate": "2015-06-01",
+    "website": "https://www.prefeitura.sp.gov.br/cidade/secretarias/controladoria_geral/"
+  },
+  {
+    "id": "vanzoline",
+    "company": "Vanzoline",
+    "startDate": "2013-02-01",
+    "endDate": "2014-04-01",
+    "website": "https://vanzolini.org.br"
+  },
+  {
+    "id": "blazing",
+    "company": "Blazing produções",
+    "startDate": "2013-03-01",
+    "endDate": "2020-04-01",
+    "website": "http://blazing.com.br/blazing/"
+  }
+]

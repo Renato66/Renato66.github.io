@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Waitress",
+    "link": "https://waitress.netlify.com/",
+    "img": "/img/portfolio/waitress",
+    "technologies": [
+      "vuejs"
+    ]
+  },
+  {
+    "name": "Auto Label",
+    "link": "https://github.com/Renato66/auto-label",
+    "img": "/img/portfolio/auto-label",
+    "technologies": [
+      "github",
+      "nodejs",
+      "language-typescript"
+    ]
+  },
+  {
+    "name": "Boxnet App",
+    "youtube": "FizYPaBkKOg",
+    "img": "/img/portfolio/boxnet-app",
+    "technologies": [
+      "react",
+      "apple",
+      "google-play"
+    ]
+  },
+  {
+    "name": "Lista",
+    "link": "https://marvelapp.com/18fhc5hg",
+    "img": "/img/portfolio/lista",
+    "technologies": [
+      "vuejs",
+      "vuetify",
+      "firebase"
+    ]
+  },
+  {
+    "name": "Icondominio",
+    "img": "/img/portfolio/icondominio",
+    "youtube": "zeouqNyYZJk",
+    "technologies": [
+      "vuejs",
+      "apple",
+      "google-play"
+    ]
+  },
+  {
+    "name": "Atendimento",
+    "link": "https://renato66.github.io/projeto/atendimento",
+    "youtube": "6AYI0DYWuhQ",
+    "img": "/img/portfolio/atendimento",
+    "technologies": [
+      "jquery",
+      "firebase"
+    ]
+  },
+  {
+    "name": "Building infra",
+    "link": "https://building-infra.netlify.com/",
+    "img": "/img/portfolio/building-infra",
+    "technologies": [
+      "nuxt",
+      "vuejs"
+    ]
+  },
+  {
+    "name": "Administradora Sell",
+    "link": "http://www.sellimoveis.com.br/",
+    "img": "/img/portfolio/sell",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  },
+  {
+    "name": "GVale imóveis",
+    "link": "http://gvaleimoveis.com.br/home/",
+    "img": "/img/portfolio/gvale",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  },
+  {
+    "name": "BR imóveis",
+    "link": "http://www.brimovel.com.br/home/index.asp",
+    "img": "/img/portfolio/brimovel",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  },
+  {
+    "name": "Icone administradora",
+    "link": "http://icone.adm.br/home/",
+    "img": "/img/portfolio/iconeadm",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  },
+  {
+    "name": "Francis imóveis",
+    "link": "http://francisimoveis.com.br/home/",
+    "img": "/img/portfolio/francis",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  },
+  {
+    "name": "Clube dos Salgados",
+    "link": "http://www.clubedossalgados.com.br/",
+    "img": "/img/portfolio/clube",
+    "technologies": [
+      "bootstrap",
+      "jquery"
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "colombia",
+    "dialog": true,
+    "icon": "mdi-airplane",
+    "startDate": "2019-05-29",
+    "endDate": "2019-06-08"
+  },
+  {
+    "id": "fatec",
+    "icon": "mdi-school",
+    "dialog": true,
+    "resume": true,
+    "startDate": "2012-01-01",
+    "endDate": "2016-01-01"
+  },
+  {
+    "id": "fisk",
+    "icon": "mdi-chat",
+    "year": "2016",
+    "resume": true,
+    "startDate": "2005-01-01",
+    "endDate": "2011-01-01"
+  },
+  {
+    "id": "clovis",
+    "icon": "mdi-book-open-page-variant",
+    "year": "2016",
+    "resume": true,
+    "startDate": "2007-01-01",
+    "endDate": "2010-01-01"
+  }
+]
