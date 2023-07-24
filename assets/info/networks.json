@@ -3,24 +3,24 @@
     "name": "github",
     "url": "https://github.com/Renato66",
     "img": "/img/github",
-    "icon": "mdi-github"
+    "icon": "uil:github"
   },
   {
     "name": "facebook",
     "url": "https://www.facebook.com/FrisonVicente",
     "img": "/img/facebook",
-    "icon": "mdi-facebook"
+    "icon": "uil:facebook"
   },
   {
     "name": "linkedin",
     "url": "https://www.linkedin.com/in/FrisonVicente",
     "img": "/img/linkedin",
-    "icon": "mdi-linkedin"
+    "icon": "uil:linkedin"
   },
   {
     "name": "twitter",
     "url": "https://twitter.com/FrisonVicente",
     "img": "/img/twitter",
-    "icon": "mdi-twitter"
+    "icon": "uil:twitter"
   }
 ]
