@@ -23,8 +23,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <button
-    type="button"
+  <BaseButton
     :commandFor="props.id"
     command="toggle-popover"
     :aria-label="props.label"
@@ -34,25 +33,24 @@ const props = withDefaults(defineProps<{
     :style="{
       'anchor-name': `--${props.id}`,
     }"
-    class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors text-sm text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
   >
-    <img
-      v-if="model?.image"
-      :src="model.image"
-      :alt="model.text"
-      class="w-5 h-4 object-cover rounded-sm"
-    />
+      <img
+        v-if="model?.image"
+        :src="model.image"
+        :alt="model.text"
+        class="w-5 h-4 object-cover rounded-sm"
+      />
     <span>{{ model?.text ?? props.label }}</span>
-    <svg
-      class="w-3 h-3"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-    </svg>
-  </button>
+      <svg
+        class="w-3 h-3"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+      </svg>
+  </BaseButton>
 
   <ul
     ref="popoverRef"
@@ -72,22 +70,21 @@ const props = withDefaults(defineProps<{
       :aria-selected="item.id === model?.id"
       class="flex items-center"
     >
-      <button
-        type="button"
+      <BaseButton
         :commandFor="props.closeOnClick && props.id"
         command="hide-popover"
-        class="flex items-center gap-3 w-full px-3 py-2 text-sm text-white hover:bg-gray-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+        class="gap-3 w-full rounded-none"
         :class="{ 'bg-gray-700/60': item.id === model?.id }"
         @click="model = item"
       >
         <img :src="item.image" :alt="item.text" class="w-5 h-4 object-cover rounded-sm" />
         {{ item.text }}
-      </button>
+      </BaseButton>
     </li>
   </ul>
 </template>
 
-<style scoped>
+<style>
 button[command="toggle-popover"] svg {
   transition: transform 200ms;
 }
