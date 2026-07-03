@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<{
 
 <template>
   <BaseButton
-    :command-for="props.id"
+    :commandFor="props.id"
     command="toggle-popover"
     :aria-label="props.label"
     :aria-expanded="false"
@@ -77,7 +77,7 @@ const props = withDefaults(defineProps<{
       class="flex items-center"
     >
       <BaseButton
-        :command-for="props.closeOnClick && props.id"
+        :commandFor="props.closeOnClick && props.id"
         command="hide-popover"
         class="gap-3 w-full rounded-none"
         :class="{ 'bg-gray-700/60': item.id === model?.id }"

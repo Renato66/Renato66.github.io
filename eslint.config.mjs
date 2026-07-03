@@ -28,6 +28,10 @@ export default tseslint.config(
       'no-undef': 'off',
       'no-console': 'warn',
       'vue/multi-word-component-names': 'off',
+      'vue/attribute-hyphenation': ['error', 'always', {
+        ignore: ['commandFor'],
+        ignoreTags: [],
+      }],
     },
   },
 )
