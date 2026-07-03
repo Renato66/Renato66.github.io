@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { locale } = useI18n()
-</script>
-
 <template>
   <main class="min-h-screen bg-gray-950 text-white">
     <header class="fixed top-0 right-0 z-50 p-4">

@@ -1,18 +1,18 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends {
+  id: string
+  image: string
+  text: string
+}">
 defineOptions({
   name: 'BaseSelect',
 })
 
-export interface SelectItem {
-  id: string
-  image: string
-  text: string
-}
+
+const model = defineModel<T | undefined>()
 
 const props = withDefaults(defineProps<{
   id?: string
-  items: SelectItem[]
-  current?: SelectItem
+  items: readonly T[]
   closeOnClick?: boolean
   label?: string
 }>(), {
@@ -20,10 +20,6 @@ const props = withDefaults(defineProps<{
   closeOnClick: true,
   label: 'Select an option'
 })
-
-const emit = defineEmits<{
-  select: [item: SelectItem]
-}>()
 </script>
 
 <template>
@@ -41,12 +37,12 @@ const emit = defineEmits<{
     class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors text-sm text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
   >
     <img
-      v-if="current?.image"
-      :src="current.image"
-      :alt="current.text"
+      v-if="model?.image"
+      :src="model.image"
+      :alt="model.text"
       class="w-5 h-4 object-cover rounded-sm"
     />
-    <span>{{ current?.text ?? props.label }}</span>
+    <span>{{ model?.text ?? props.label }}</span>
     <svg
       class="w-3 h-3"
       fill="none"
@@ -73,7 +69,7 @@ const emit = defineEmits<{
       v-for="item in items"
       :key="item.id"
       role="option"
-      :aria-selected="item.id === current?.id"
+      :aria-selected="item.id === model?.id"
       class="flex items-center"
     >
       <button
@@ -81,8 +77,8 @@ const emit = defineEmits<{
         :commandFor="props.closeOnClick && props.id"
         command="hide-popover"
         class="flex items-center gap-3 w-full px-3 py-2 text-sm text-white hover:bg-gray-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
-        :class="{ 'bg-gray-700/60': item.id === current?.id }"
-        @click="emit('select', item)"
+        :class="{ 'bg-gray-700/60': item.id === model?.id }"
+        @click="model = item"
       >
         <img :src="item.image" :alt="item.text" class="w-5 h-4 object-cover rounded-sm" />
         {{ item.text }}

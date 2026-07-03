@@ -1,35 +1,30 @@
 <script setup lang="ts">
-import type { SelectItem } from '~/components/Base/Select.vue'
+const { t, locale, setLocale } = useI18n()
 
-const { locale, setLocale } = useI18n()
-
-const locales: SelectItem[] = [
+const locales = [
   {
     id: 'en',
     image: 'https://flagcdn.com/us.svg',
-    text: 'English (US)',
+    text: t('language.english'),
   },
   {
     id: 'pt-BR',
     image: 'https://flagcdn.com/br.svg',
-    text: 'Português (BR)',
+    text: t('language.portuguese'),
   },
   {
     id: 'es-ES',
     image: 'https://flagcdn.com/es.svg',
-    text: 'Español (ES)',
+    text: t('language.spanish'),
   },
-]
+] as const
 
-const current = computed(() =>
-  locales.find((l) => l.id === locale.value),
-)
-
-async function handleSelect(item: SelectItem) {
-  await setLocale(item.id as 'en' | 'pt-BR' | 'es-ES')
-}
+const current = computed({
+  get: () => locales.find((l) => l.id === locale.value),
+  set: (item) => item && setLocale(item.id),
+})
 </script>
 
 <template>
-  <BaseSelect id="language-select" :items="locales" :current="current" @select="handleSelect" />
+  <BaseSelect  v-model="current" :items="locales" id="language-select" />
 </template>

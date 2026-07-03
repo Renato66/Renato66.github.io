@@ -8,5 +8,10 @@
     "work": "Trabalho",
     "portfolio": "Portfólio",
     "contact": "Contato"
+  },
+  "language": {
+    "english": "English (US)",
+    "portuguese": "Português (BR)",
+    "spanish": "Español (ES)"
   }
 }
