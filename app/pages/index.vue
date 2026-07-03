@@ -10,14 +10,16 @@
         alt="Renato Vicente"
         class="rounded-full mb-6"
       />
-      <h1 class="text-5xl font-thin mb-4">Renato Vicente</h1>
-      <h2 class="text-2xl text-gray-400 mb-2">{{ $t('description') }}</h2>
+      <h1 class="text-5xl font-thin mb-4">
+        Renato Vicente
+      </h1>
+      <h2 class="text-2xl text-gray-400 mb-2">
+        {{ $t('description') }}
+      </h2>
       <p class="mt-4 text-sm text-gray-500">
         {{ $t('currentLocale') }}: <strong class="text-gray-300">{{ $t('hrefLang') }}</strong>
       </p>
     </section>
-    <section>
-
-    </section>
+    <section />
   </main>
 </template>

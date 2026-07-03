@@ -2,7 +2,8 @@
   id: string
   image: string
   text: string
-}">
+}"
+>
 defineOptions({
   name: 'BaseSelect',
 })
@@ -24,7 +25,7 @@ const props = withDefaults(defineProps<{
 
 <template>
   <BaseButton
-    :commandFor="props.id"
+    :command-for="props.id"
     command="toggle-popover"
     :aria-label="props.label"
     :aria-expanded="false"
@@ -34,27 +35,32 @@ const props = withDefaults(defineProps<{
       'anchor-name': `--${props.id}`,
     }"
   >
-      <img
-        v-if="model?.image"
-        :src="model.image"
-        :alt="model.text"
-        class="w-5 h-4 object-cover rounded-sm"
-      />
+    <img
+      v-if="model?.image"
+      :src="model.image"
+      :alt="model.text"
+      class="w-5 h-4 object-cover rounded-sm"
+    >
     <span>{{ model?.text ?? props.label }}</span>
-      <svg
-        class="w-3 h-3"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-      </svg>
+    <svg
+      class="w-3 h-3"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2.5"
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
   </BaseButton>
 
   <ul
-    ref="popoverRef"
     :id="props.id"
+    ref="popoverRef"
     role="listbox"
     :aria-label="props.label"
     popover
@@ -71,13 +77,17 @@ const props = withDefaults(defineProps<{
       class="flex items-center"
     >
       <BaseButton
-        :commandFor="props.closeOnClick && props.id"
+        :command-for="props.closeOnClick && props.id"
         command="hide-popover"
         class="gap-3 w-full rounded-none"
         :class="{ 'bg-gray-700/60': item.id === model?.id }"
         @click="model = item"
       >
-        <img :src="item.image" :alt="item.text" class="w-5 h-4 object-cover rounded-sm" />
+        <img
+          :src="item.image"
+          :alt="item.text"
+          class="w-5 h-4 object-cover rounded-sm"
+        >
         {{ item.text }}
       </BaseButton>
     </li>

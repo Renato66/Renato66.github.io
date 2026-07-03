@@ -26,5 +26,9 @@ const current = computed({
 </script>
 
 <template>
-  <BaseSelect  v-model="current" :items="locales" id="language-select" />
+  <BaseSelect
+    id="language-select"
+    v-model="current"
+    :items="locales"
+  />
 </template>
