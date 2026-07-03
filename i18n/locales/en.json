@@ -1,0 +1,12 @@
+{
+  "hrefLang": "en-US",
+  "description": "Programmer. DJ. Creative. Innovator.",
+  "currentLocale": "Current language",
+  "menu": {
+    "about": "About",
+    "skills": "Skills",
+    "work": "Work",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  }
+}

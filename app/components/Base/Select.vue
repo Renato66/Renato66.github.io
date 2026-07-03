@@ -1,0 +1,126 @@
+<script setup lang="ts">
+defineOptions({
+  name: 'BaseSelect',
+})
+
+export interface SelectItem {
+  id: string
+  image: string
+  text: string
+}
+
+const props = withDefaults(defineProps<{
+  id?: string
+  items: SelectItem[]
+  current?: SelectItem
+  closeOnClick?: boolean
+  label?: string
+}>(), {
+  id: Math.random().toString(36).substring(7),
+  closeOnClick: true,
+  label: 'Select an option'
+})
+
+const emit = defineEmits<{
+  select: [item: SelectItem]
+}>()
+</script>
+
+<template>
+  <button
+    type="button"
+    :commandFor="props.id"
+    command="toggle-popover"
+    :aria-label="props.label"
+    :aria-expanded="false"
+    aria-haspopup="listbox"
+    :aria-controls="props.id"
+    :style="{
+      'anchor-name': `--${props.id}`,
+    }"
+    class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors text-sm text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+  >
+    <img
+      v-if="current?.image"
+      :src="current.image"
+      :alt="current.text"
+      class="w-5 h-4 object-cover rounded-sm"
+    />
+    <span>{{ current?.text ?? props.label }}</span>
+    <svg
+      class="w-3 h-3"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <ul
+    ref="popoverRef"
+    :id="props.id"
+    role="listbox"
+    :aria-label="props.label"
+    popover
+    :style="{
+      'position-anchor': `--${props.id}`,
+    }"
+    class="menu-position w-44 rounded-lg bg-gray-800 shadow-xl ring-1 ring-white/10 overflow-hidden z-50 m-0 p-0 list-none"
+  >
+    <li
+      v-for="item in items"
+      :key="item.id"
+      role="option"
+      :aria-selected="item.id === current?.id"
+      class="flex items-center"
+    >
+      <button
+        type="button"
+        :commandFor="props.closeOnClick && props.id"
+        command="hide-popover"
+        class="flex items-center gap-3 w-full px-3 py-2 text-sm text-white hover:bg-gray-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+        :class="{ 'bg-gray-700/60': item.id === current?.id }"
+        @click="emit('select', item)"
+      >
+        <img :src="item.image" :alt="item.text" class="w-5 h-4 object-cover rounded-sm" />
+        {{ item.text }}
+      </button>
+    </li>
+  </ul>
+</template>
+
+<style scoped>
+button[command="toggle-popover"] svg {
+  transition: transform 200ms;
+}
+
+button[command="toggle-popover"]:has(+ ul:popover-open) svg {
+  transform: rotate(180deg);
+}
+
+.menu-position {
+  margin-block-start: 2.5rem;
+  inset: unset;
+  top: anchor(top);
+  right: anchor(right);
+  position-try-fallbacks: '--left';
+}
+
+@position-try --left {
+  inset: unset;
+  top: anchor(top);
+  left: anchor(left);
+}
+
+li:first-child button {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+li:last-child button {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+</style>

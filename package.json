@@ -1,0 +1,25 @@
+{
+  "name": "renato66-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "typecheck": "nuxi typecheck"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1",
+    "@nuxtjs/i18n": "^9",
+    "@tailwindcss/vite": "^4",
+    "nuxt": "^4",
+    "tailwindcss": "^4"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher"
+  ],
+  "devDependencies": {
+    "vue-tsc": "^3.3.6"
+  }
+}

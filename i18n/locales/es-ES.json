@@ -1,0 +1,13 @@
+{
+  "hrefLang": "es-ES",
+  "currentLanguage": "Idioma actual",
+  "description": "Programador. DJ. Creativo. Innovador.",
+  "currentLocale": "Idioma actual",
+  "menu": {
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "work": "Trabajo",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  }
+}
