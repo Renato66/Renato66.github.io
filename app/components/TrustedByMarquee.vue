@@ -99,11 +99,11 @@ const trustedByCompanies: TrustedCompany[] = [
 
 <template>
   <section class="text-left">
-    <p class="m-0 text-xs font-semibold uppercase tracking-[0.35em] text-slate-300/75 md:text-sm">
+    <p class="m-0 text-xs font-semibold uppercase tracking-[0.35em] text-slate-300/75 md:text-sm text-center md:text-left">
       {{ t('trustedBy') }}
     </p>
 
-    <div class="relative overflow-hidden pt-[1.9rem] pb-2 mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]">
+    <div class="relative overflow-hidden md:pt-[1.9rem] pb-2 mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]">
       <div class="trusted-by-track flex w-max gap-3">
         <ul
           v-for="loopIndex in 2"
@@ -119,7 +119,7 @@ const trustedByCompanies: TrustedCompany[] = [
               :href="company.website"
               target="_blank"
               rel="noreferrer noopener"
-              class="group relative grid h-[5.1rem] w-[5.1rem] place-items-center overflow-visible rounded-2xl bg-slate-950/80 p-[0.2rem] text-slate-200 no-underline backdrop-blur-[6px] transition-all duration-200 ease-out hover:-translate-y-px hover:scale-[1.02] hover:bg-slate-900/90 hover:shadow-[0_6px_20px_rgba(15,23,42,0.4),inset_0_0_0_1px_rgba(45,212,191,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/85 max-md:h-[4.8rem] max-md:w-[4.8rem]"
+              class="group relative grid h-[5.1rem] w-[5.1rem] place-items-center overflow-visible rounded-2xl p-[0.2rem] text-slate-200 no-underline backdrop-blur-[6px] transition-all duration-200 ease-out hover:-translate-y-px hover:scale-[1.02] hover:bg-slate-900/90 hover:shadow-[0_6px_20px_rgba(15,23,42,0.4),inset_0_0_0_1px_rgba(45,212,191,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400/85 max-md:h-[4.8rem] max-md:w-[4.8rem]"
               :aria-label="company.name"
             >
               <img

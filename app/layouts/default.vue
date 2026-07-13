@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <main class="relative h-screen box-border px-5 pb-16 md:px-8">
+    <main class="relative h-screen box-border px-5 pb-8 md:pb-8 md:px-8 pt-20">
       <slot />
     </main>
   </div>
