@@ -18,7 +18,7 @@ const age = computed(() => {
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center pb-16 pt-8 text-center md:pt-4">
+  <div class="flex min-h-screen flex-col items-center justify-center pb-16 text-center md:pt-4">
     <NuxtImg
       src="https://www.gravatar.com/avatar/44d075eb0dc6e9d7f3528ac2de5c24c3?s=1000"
       preset="avatar"

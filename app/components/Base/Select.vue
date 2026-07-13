@@ -35,27 +35,29 @@ const props = withDefaults(defineProps<{
       'anchor-name': `--${props.id}`,
     }"
   >
-    <img
-      v-if="model?.image"
-      :src="model.image"
-      :alt="model.text"
-      class="w-5 h-4 object-cover rounded-sm"
-    >
-    <span>{{ model?.text ?? props.label }}</span>
-    <svg
-      class="w-3 h-3"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2.5"
-        d="M19 9l-7 7-7-7"
-      />
-    </svg>
+    <slot>
+      <img
+        v-if="model?.image"
+        :src="model.image"
+        :alt="model.text"
+        class="w-5 h-4 object-cover rounded-sm"
+      >
+      <span>{{ model?.text ?? props.label }}</span>
+      <svg
+        class="w-3 h-3 caret"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.5"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+    </slot>
   </BaseButton>
 
   <ul
@@ -67,7 +69,7 @@ const props = withDefaults(defineProps<{
     :style="{
       'position-anchor': `--${props.id}`,
     }"
-    class="menu-position w-44 rounded-lg bg-gray-800 shadow-xl ring-1 ring-white/10 overflow-hidden z-50 m-0 p-0 list-none"
+    class="menu-position rounded-lg bg-gray-800 shadow-xl ring-1 ring-white/10 overflow-hidden z-50 m-0 p-0 list-none"
   >
     <li
       v-for="item in items"
@@ -84,6 +86,7 @@ const props = withDefaults(defineProps<{
         @click="model = item"
       >
         <img
+          v-if="item.image"
           :src="item.image"
           :alt="item.text"
           class="w-5 h-4 object-cover rounded-sm"
@@ -95,11 +98,11 @@ const props = withDefaults(defineProps<{
 </template>
 
 <style>
-button[command="toggle-popover"] svg {
+button[command="toggle-popover"] .caret {
   transition: transform 200ms;
 }
 
-button[command="toggle-popover"]:has(+ ul:popover-open) svg {
+button[command="toggle-popover"]:has(+ ul:popover-open) .caret {
   transform: rotate(180deg);
 }
 
@@ -108,7 +111,7 @@ button[command="toggle-popover"]:has(+ ul:popover-open) svg {
   inset: unset;
   top: anchor(top);
   right: anchor(right);
-  position-try-fallbacks: '--left';
+  position-try-fallbacks: --left;
 }
 
 @position-try --left {

@@ -10,6 +10,10 @@
     "portfolio": "Portfólio",
     "contact": "Contato"
   },
+  "pages": {
+    "home": "Início",
+    "travelLog": "Diário de Viagem"
+  },
   "language": {
     "english": "English (US)",
     "portuguese": "Português (BR)",
