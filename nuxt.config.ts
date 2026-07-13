@@ -17,6 +17,14 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
+  app: {
+    head: {
+      bodyAttrs: {
+        style: 'background-color: #000;',
+      }
+    }
+  },
+
   image: {
     provider: imageProvider,
     weserv: {
