@@ -7,6 +7,8 @@ interface TrustedCompany {
   logoPath: string
 }
 
+const { t } = useI18n()
+
 const trustedByCompanies: TrustedCompany[] = [
   {
     name: 'Nexton',
@@ -98,11 +100,11 @@ const trustedByCompanies: TrustedCompany[] = [
 <template>
   <section class="text-left">
     <p class="m-0 text-xs font-semibold uppercase tracking-[0.35em] text-slate-300/75 md:text-sm">
-      Trusted by
+      {{ t('trustedBy') }}
     </p>
 
     <div class="relative overflow-hidden pt-[1.9rem] pb-2 mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]">
-      <div class="trusted-by-track flex w-max">
+      <div class="trusted-by-track flex w-max gap-3">
         <ul
           v-for="loopIndex in 2"
           :key="`trusted-loop-${loopIndex}`"
