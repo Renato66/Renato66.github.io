@@ -19,5 +19,29 @@
     "portuguese": "Português (BR)",
     "spanish": "Español (ES)"
   },
+  "travelLog": {
+    "kicker": "Travel Journal",
+    "title": "Travel Log",
+    "description": "A stitched memory wall of countries and cities I have explored over the years.",
+    "countriesVisited": "Countries visited",
+    "departures": {
+      "title": "Departures",
+      "columns": {
+        "time": "Time",
+        "destination": "Destination",
+        "status": "Status",
+        "flight": "Flight"
+      },
+      "status": {
+        "onTime": "On Time",
+        "gateOpen": "Gate Open",
+        "delayed": "Delayed"
+      },
+      "aria": {
+        "cities": "Departure cities"
+      },
+      "flagAlt": "{code} flag"
+    }
+  },
   "trustedBy": "Trusted by"
 }

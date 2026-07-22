@@ -19,5 +19,29 @@
     "portuguese": "Português (BR)",
     "spanish": "Español (ES)"
   },
+  "travelLog": {
+    "kicker": "Diário de Viagem",
+    "title": "Travel Log",
+    "description": "Um mural de memórias com países e cidades que explorei ao longo dos anos.",
+    "countriesVisited": "Países visitados",
+    "departures": {
+      "title": "Partidas",
+      "columns": {
+        "time": "Hora",
+        "destination": "Destino",
+        "status": "Status",
+        "flight": "Voo"
+      },
+      "status": {
+        "onTime": "No Horário",
+        "gateOpen": "Portão Aberto",
+        "delayed": "Atrasado"
+      },
+      "aria": {
+        "cities": "Cidades de partida"
+      },
+      "flagAlt": "Bandeira {code}"
+    }
+  },
   "trustedBy": "Confiam em mim"
 }
