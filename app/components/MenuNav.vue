@@ -5,7 +5,6 @@ const { t } = useI18n()
 interface NavPage {
   id: string
   text: string
-  image: string
   path: string
 }
 

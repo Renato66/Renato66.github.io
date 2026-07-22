@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends {
   id: string
-  image: string
+  image?: string
   text: string
 }"
 >
