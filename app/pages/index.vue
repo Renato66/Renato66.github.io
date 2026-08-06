@@ -2,6 +2,7 @@
 const birthYear = 1993
 const birthMonthIndex = 4
 const birthDay = 9
+const { rt, tm } = useI18n()
 
 const age = computed(() => {
   const now = new Date()
@@ -15,6 +16,19 @@ const age = computed(() => {
 
   return years
 })
+
+const descriptions = computed(() => {
+  const description = tm('description')
+  return Array.isArray(description)
+    ? description.map(item => rt(item))
+    : []
+})
+
+const contactModal = useTemplateRef<{ open: () => void }>('contactModal')
+
+function openContactModal() {
+  contactModal.value?.open()
+}
 </script>
 
 <template>
@@ -32,20 +46,22 @@ const age = computed(() => {
       </h1>
   
       <p class="mt-4 text-2xl font-medium leading-tight text-slate-100/95 md:text-4xl lg:text-5xl">
-        {{ $t('description') }}
+        <TypedWords :words="descriptions" />
       </p>
   
       <p class="mt-4 text-base text-slate-300/60 md:text-xl">
         {{ $t('homeIntro', { age }) }}
       </p>
-  
     </section>
     <BaseButton
       type="button"
-      class="rounded-full border-0 bg-linear-to-r from-teal-400 to-teal-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-teal-50 shadow-xl shadow-teal-500/30 hover:from-teal-300 hover:to-teal-500"
+      class="mt-4 rounded-full border-0 bg-linear-to-r from-teal-400 to-teal-500 px-8 py-3 text-sm font-bold uppercase tracking-wide text-teal-50 shadow-xl shadow-teal-500/30 hover:from-teal-300 hover:to-teal-500"
+      @click="openContactModal"
     >
       {{ $t('menu.contact') }}
     </BaseButton>
+
+    <ContactModal ref="contactModal" />
 
     <TrustedByMarquee class="mt-12 w-full max-w-6xl" />
   </div>
