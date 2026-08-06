@@ -19,7 +19,8 @@
   },
   "pages": {
     "home": "Início",
-    "travelLog": "Diário de Viagem"
+    "travelLog": "Diário de Viagem",
+    "achievements": "Conquistas"
   },
   "language": {
     "english": "English (US)",
@@ -48,6 +49,150 @@
         "cities": "Cidades de partida"
       },
       "flagAlt": "Bandeira {code}"
+    }
+  },
+  "achievements": {
+    "page": {
+      "kicker": "Arquivo de Marcos",
+      "title": "Conquistas",
+      "description": "Uma coleção de marcos de trabalho, vida e viagens, misturando memórias concluídas com objetivos que ainda esperam por uma data.",
+      "empty": "Nenhuma conquista combina com as tags selecionadas.",
+      "openLink": "Abrir link para {title}",
+      "completed": "Concluído",
+      "filtersLabel": "Filtrar conquistas por tag"
+    },
+    "tags": {
+      "work": "Trabalho",
+      "life": "Vida",
+      "travel": "Viagem"
+    },
+    "rank-up-major": {
+      "title": "Subi para Major",
+      "description": "Fui promovido a tech lead"
+    },
+    "rank-up-sergeant": {
+      "title": "Subi para Sargento",
+      "description": "Fui promovido a sênior"
+    },
+    "rank-up-corporal": {
+      "title": "Subi para Cabo",
+      "description": "Fui promovido a pleno"
+    },
+    "into-the-battle-field": {
+      "title": "No campo de batalha",
+      "description": "Consegui meu primeiro emprego"
+    },
+    "going-fast": {
+      "title": "Pisando fundo",
+      "description": "Comprei meu primeiro carro"
+    },
+    "first-stretch": {
+      "title": "Primeira corrida",
+      "description": "Corri meus primeiros 5km"
+    },
+    "fast-and-furious": {
+      "title": "Velozes e Furiosos",
+      "description": "Tirei minha carteira de motorista"
+    },
+    "passport-stamped": {
+      "title": "Passaporte carimbado",
+      "description": "Fiz minha primeira viagem internacional"
+    },
+    "first-brick": {
+      "title": "Primeiro tijolo",
+      "description": "Comprei minha primeira casa"
+    },
+    "own-boss": {
+      "title": "Meu próprio chefe",
+      "description": "Comecei meu próprio negócio"
+    },
+    "side-hustle": {
+      "title": "Projeto paralelo",
+      "description": "Criei um projeto open-source"
+    },
+    "permanent-vacation": {
+      "title": "Férias permanentes",
+      "description": "Me aposentei da carreira"
+    },
+    "the-voice": {
+      "title": "A Voz",
+      "description": "Fiz uma palestra"
+    },
+    "double-digits": {
+      "title": "Dois dígitos",
+      "description": "Corri meus primeiros 10km"
+    },
+    "finding-nemo": {
+      "title": "Procurando Nemo",
+      "description": "Fiz meu primeiro mergulho no oceano"
+    },
+    "dust-devil": {
+      "title": "Redemoinho de poeira",
+      "description": "Andei em uma pista de motocross pela primeira vez"
+    },
+    "yeti-alert": {
+      "title": "Alerta de Yeti",
+      "description": "Pratiquei snowboard pela primeira vez"
+    },
+    "degree-earned": {
+      "title": "Diploma conquistado",
+      "description": "Me formei na universidade"
+    },
+    "a-plus": {
+      "title": "A+",
+      "description": "Fiquei em primeiro lugar em uma prova"
+    },
+    "global-communicator": {
+      "title": "Comunicador global",
+      "description": "Falei inglês pela primeira vez"
+    },
+    "bilingual-boss": {
+      "title": "Chefe bilíngue",
+      "description": "Falei espanhol pela primeira vez"
+    },
+    "forever-yes": {
+      "title": "Sim para sempre",
+      "description": "Me casei"
+    },
+    "new-chapter": {
+      "title": "Novo capítulo",
+      "description": "Me tornei pai"
+    },
+    "pet-parent": {
+      "title": "Pai de pet",
+      "description": "Adotei meu primeiro pet"
+    },
+    "seven-figures": {
+      "title": "Sete dígitos",
+      "description": "Alcancei 1m em economias"
+    },
+    "world-wanderer": {
+      "title": "Cidadão do mundo",
+      "description": "Visitei mais de 10 países"
+    },
+    "two-of-five": {
+      "title": "2/5",
+      "description": "Visitei 2 continentes"
+    },
+    "three-of-five": {
+      "title": "3/5",
+      "description": "Visitei 3 continentes"
+    },
+    "four-of-five": {
+      "title": "4/5",
+      "description": "Visitei 4 continentes"
+    },
+    "five-of-five": {
+      "title": "5/5",
+      "description": "Visitei todos os 5 continentes"
+    },
+    "culture-shock": {
+      "title": "Choque cultural",
+      "description": "Morei fora"
+    },
+    "off-the-grid": {
+      "title": "Fora da rede",
+      "description": "Aluguei um motorhome"
     }
   },
   "trustedBy": "Confiam em mim",

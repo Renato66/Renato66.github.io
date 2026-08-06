@@ -19,6 +19,11 @@ const pages: NavPage[] = [
     text: t('pages.travelLog'),
     path: '/travel-log',
   },
+  {
+    id: 'achievements',
+    text: t('pages.achievements'),
+    path: '/achievements',
+  },
 ]
 
 const currentPage = computed(() => {

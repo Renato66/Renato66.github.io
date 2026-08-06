@@ -15,7 +15,7 @@ function countryFlag(code: string) {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-176.25 flex-col gap-5 px-4 md:gap-6 md:px-0">
+  <section class="mx-auto flex w-full max-w-176.25 flex-col gap-5 md:gap-6">
     <header class="flex flex-col gap-3">
       <p class="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
         {{ t('travelLog.kicker') }}

@@ -19,7 +19,8 @@
   },
   "pages": {
     "home": "Home",
-    "travelLog": "Travel Log"
+    "travelLog": "Travel Log",
+    "achievements": "Achievements"
   },
   "language": {
     "english": "English (US)",
@@ -48,6 +49,150 @@
         "cities": "Departure cities"
       },
       "flagAlt": "{code} flag"
+    }
+  },
+  "achievements": {
+    "page": {
+      "kicker": "Milestone Archive",
+      "title": "Achievements",
+      "description": "A collection of work, life, and travel milestones, mixing completed memories with goals still waiting for their date.",
+      "empty": "No achievements match the selected tags yet.",
+      "openLink": "Open link for {title}",
+      "completed": "Completed",
+      "filtersLabel": "Filter achievements by tag"
+    },
+    "tags": {
+      "work": "Work",
+      "life": "Life",
+      "travel": "Travel"
+    },
+    "rank-up-major": {
+      "title": "Rank up Major",
+      "description": "Was promoted to tech lead"
+    },
+    "rank-up-sergeant": {
+      "title": "Rank up Sergeant",
+      "description": "Was promoted to senior"
+    },
+    "rank-up-corporal": {
+      "title": "Rank up Corporal",
+      "description": "Was promoted to mid level"
+    },
+    "into-the-battle-field": {
+      "title": "Into the battle field",
+      "description": "Got my first job"
+    },
+    "going-fast": {
+      "title": "Going Fast",
+      "description": "Bought my first car"
+    },
+    "first-stretch": {
+      "title": "First Stretch",
+      "description": "Ran my first 5km"
+    },
+    "fast-and-furious": {
+      "title": "Fast and Furious",
+      "description": "Got my driver's license"
+    },
+    "passport-stamped": {
+      "title": "Passport Stamped",
+      "description": "Took my first international trip"
+    },
+    "first-brick": {
+      "title": "First Brick",
+      "description": "Bought my first house"
+    },
+    "own-boss": {
+      "title": "Own Boss",
+      "description": "Started my own business"
+    },
+    "side-hustle": {
+      "title": "Side Hustle",
+      "description": "Created an open-source project"
+    },
+    "permanent-vacation": {
+      "title": "Permanent Vacation",
+      "description": "Retired from my career"
+    },
+    "the-voice": {
+      "title": "The Voice",
+      "description": "Gave a speech"
+    },
+    "double-digits": {
+      "title": "Double Digits",
+      "description": "Ran my first 10km"
+    },
+    "finding-nemo": {
+      "title": "Finding nemo",
+      "description": "Went on my first ocean dive"
+    },
+    "dust-devil": {
+      "title": "Dust Devil",
+      "description": "Rode at a motocross track for the first time"
+    },
+    "yeti-alert": {
+      "title": "Yeti Alert",
+      "description": "Went snowboarding for the first time"
+    },
+    "degree-earned": {
+      "title": "Degree Earned",
+      "description": "Graduated from university"
+    },
+    "a-plus": {
+      "title": "A+",
+      "description": "Placed first in an exam"
+    },
+    "global-communicator": {
+      "title": "Global Communicator",
+      "description": "Spoke English for the first time"
+    },
+    "bilingual-boss": {
+      "title": "Bilingual Boss",
+      "description": "Spoke Spanish for the first time"
+    },
+    "forever-yes": {
+      "title": "Forever Yes",
+      "description": "Got married"
+    },
+    "new-chapter": {
+      "title": "New Chapter",
+      "description": "Became a parent"
+    },
+    "pet-parent": {
+      "title": "Pet Parent",
+      "description": "Adopted your first pet"
+    },
+    "seven-figures": {
+      "title": "Seven Figures",
+      "description": "Reached 1m in savings"
+    },
+    "world-wanderer": {
+      "title": "World Wanderer",
+      "description": "Visited 10+ countries"
+    },
+    "two-of-five": {
+      "title": "2/5",
+      "description": "Visited 2 continents"
+    },
+    "three-of-five": {
+      "title": "3/5",
+      "description": "Visited 3 continents"
+    },
+    "four-of-five": {
+      "title": "4/5",
+      "description": "Visited 4 continents"
+    },
+    "five-of-five": {
+      "title": "5/5",
+      "description": "Visited all 5 continents"
+    },
+    "culture-shock": {
+      "title": "Culture Shock",
+      "description": "Lived abroad"
+    },
+    "off-the-grid": {
+      "title": "Off the Grid",
+      "description": "Rented a motor home"
     }
   },
   "trustedBy": "Trusted by",
