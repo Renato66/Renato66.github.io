@@ -31,7 +31,7 @@ function countryFlag(code: string) {
     </header>
 
     <div
-      class="min-h-65 overflow-hidden md:min-h-92.5 xl:min-h-192"
+      class="aspect-376/197 min-h-48 overflow-hidden"
       aria-hidden="true"
     >
       <NuxtImg
