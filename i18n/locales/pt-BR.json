@@ -1,6 +1,13 @@
 {
   "hrefLang": "pt-BR",
-  "description": "Programador. DJ. Criativo. Inovador.",
+  "description": [
+    "DJ",
+    "programador",
+    "viajante",
+    "comunicador",
+    "comediante",
+    "criativo"
+  ],
   "homeIntro": "Santo Andre - {age} anos, apaixonado por musica",
   "currentLocale": "Idioma atual",
   "menu": {
@@ -43,5 +50,10 @@
       "flagAlt": "Bandeira {code}"
     }
   },
-  "trustedBy": "Confiam em mim"
+  "trustedBy": "Confiam em mim",
+  "contactModal": {
+    "title": "Vamos conversar",
+    "description": "Me encontre no LinkedIn, GitHub ou Instagram.",
+    "closeLabel": "Fechar modal de contato"
+  }
 }
