@@ -15,7 +15,7 @@ Languages: Portuguese (native), English (since 2012), Spanish (since 2025). This
 - [Home](https://renato66.github.io/): Current personal site with short bio and companies he has worked with
 - [Travel Log](https://renato66.github.io/travel-log): Countries and cities he has visited
 - [Achievements](https://renato66.github.io/achievements): Work, life, and travel milestones
-- [Ask AI](https://renato66.github.io/llm): Copiable prompt that tells another assistant to read this file first
+- [Ask AI](https://renato66.github.io/llm): Copyable prompt that tells another assistant to read this file first
 
 ## Profiles
 - [GitHub](https://github.com/Renato66): Open-source work and code, handle @Renato66
