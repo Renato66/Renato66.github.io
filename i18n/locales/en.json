@@ -32,6 +32,10 @@
     "title": "Travel Log",
     "description": "A stitched memory wall of countries and cities I have explored over the years.",
     "countriesVisited": "Countries visited",
+    "map": "World travel map",
+    "countryMap": "{country} map",
+    "selectCountry": "Show {country} map",
+    "deselectCountry": "Show world map",
     "departures": {
       "title": "Departures",
       "columns": {

@@ -1,17 +1,27 @@
 <script setup lang="ts">
 import { countries } from '@/data/travel'
 
-const mapSvg = '/svg/map.svg'
-const mapLoaded = ref(false)
 const { t } = useI18n()
+const route = useRoute()
 
-function countryFlag(code: string) {
-  return code
-    .toUpperCase()
-    .split('')
-    .map(char => String.fromCodePoint(127397 + char.charCodeAt(0)))
-    .join('')
-}
+const selectedCode = computed(() => {
+  const country = route.query.country
+  const code = Array.isArray(country) ? country[0] : country
+
+  if (!code || typeof code !== 'string') {
+    return null
+  }
+
+  return countries.some(item => item.code === code) ? code : null
+})
+
+const selectedCountry = computed(() =>
+  countries.find(country => country.code === selectedCode.value) ?? null,
+)
+
+const mapSrc = computed(() =>
+  selectedCode.value ? `/svg/${selectedCode.value}.svg` : '/svg/map.svg',
+)
 </script>
 
 <template>
@@ -30,44 +40,16 @@ function countryFlag(code: string) {
       </p>
     </header>
 
-    <div
-      class="aspect-376/197 min-h-48 overflow-hidden"
-      aria-hidden="true"
-    >
-      <NuxtImg
-        :src="mapSvg"
-        alt=""
-        class="block h-full w-full scale-110 object-cover transition duration-700 md:scale-[1.12] xl:scale-[1.18]"
-        :class="mapLoaded ? 'blur-0 saturate-100 contrast-100' : 'blur-lg saturate-0 contrast-75'"
-        :placeholder="[28, 18, 8, 6]"
-        quality="92"
-        loading="lazy"
-        @load="mapLoaded = true"
-      />
-    </div>
+    <TravelLogCountryMap
+      :src="mapSrc"
+      :country-name="selectedCountry?.name ?? null"
+    />
 
     <div>
-      <ul
-        class="flex flex-wrap justify-center gap-2.5"
-        role="list"
-        :aria-label="t('travelLog.countriesVisited')"
-      >
-        <li
-          v-for="country in countries"
-          :key="country.code + country.name"
-          role="listitem"
-        >
-          <span
-            class="inline-flex items-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-xs font-medium text-cyan-50 transition hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/20 md:px-3.5 md:py-2 md:text-sm"
-          >
-            <span
-              class="text-base"
-              aria-hidden="true"
-            >{{ countryFlag(country.code) }}</span>
-            {{ country.name }}
-          </span>
-        </li>
-      </ul>
+      <TravelLogCountryChips
+        :countries="countries"
+        :selected-code="selectedCode"
+      />
     </div>
 
     <DeparturesBoard :countries="countries" />

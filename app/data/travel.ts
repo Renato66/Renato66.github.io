@@ -25,6 +25,7 @@ export const countries: Country[] = [
       { name: 'Caldas Novas' },
       { name: 'Bonito' },
       { name: 'Pipa' },
+      { name: 'São Luis' },
     ],
   },
   {
@@ -109,12 +110,6 @@ export const countries: Country[] = [
       { name: 'Peschiera del Garda' },
       { name: 'Pisa' },
     ],
-  },
-  {
-    name: 'Vatican City',
-    code: 'va',
-    region: 'Europe',
-    cities: [{ name: 'Vatican City' }],
   },
   {
     name: 'Malta',

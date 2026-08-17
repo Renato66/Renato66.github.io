@@ -33,6 +33,10 @@
     "title": "Travel Log",
     "description": "Un mural de recuerdos con países y ciudades que he explorado a lo largo de los años.",
     "countriesVisited": "Países visitados",
+    "map": "Mapa mundial de viajes",
+    "countryMap": "Mapa de {country}",
+    "selectCountry": "Mostrar mapa de {country}",
+    "deselectCountry": "Mostrar mapa mundial",
     "departures": {
       "title": "Salidas",
       "columns": {
