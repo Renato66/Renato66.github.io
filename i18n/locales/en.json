@@ -20,7 +20,8 @@
   "pages": {
     "home": "Home",
     "travelLog": "Travel Log",
-    "achievements": "Achievements"
+    "achievements": "Achievements",
+    "askAi": "Ask AI"
   },
   "language": {
     "english": "English (US)",
@@ -204,5 +205,27 @@
     "title": "Let's connect",
     "description": "Find me on LinkedIn, GitHub, or Instagram.",
     "closeLabel": "Close contact modal"
+  },
+  "askAi": {
+    "kicker": "LLM Prompt",
+    "title": "Ask AI",
+    "description": "Copy a chat prompt that tells any assistant to read my identity file before answering.",
+    "instruction": "Use {url} to respond to this:",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyAria": "Copy prompt",
+    "pasteHint": "Paste this into ChatGPT, Claude, Gemini, or any other assistant.",
+    "you": "You",
+    "assistant": "Assistant",
+    "questionLabel": "Question",
+    "questionPlaceholder": "Ask something about Renato...",
+    "suggestionsLabel": "Suggested questions",
+    "openFile": "Open llms.txt",
+    "questions": {
+      "who": "Who is Renato Vicente?",
+      "work": "What is his work experience?",
+      "travel": "Which countries has he visited?",
+      "contact": "How can I contact him?"
+    }
   }
 }

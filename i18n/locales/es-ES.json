@@ -21,7 +21,8 @@
   "pages": {
     "home": "Inicio",
     "travelLog": "Diario de Viaje",
-    "achievements": "Logros"
+    "achievements": "Logros",
+    "askAi": "Preguntar a la IA"
   },
   "language": {
     "english": "English (US)",
@@ -205,5 +206,27 @@
     "title": "Conectemos",
     "description": "Encuéntrame en LinkedIn, GitHub o Instagram.",
     "closeLabel": "Cerrar modal de contacto"
+  },
+  "askAi": {
+    "kicker": "Prompt para IA",
+    "title": "Preguntar a la IA",
+    "description": "Copia un prompt de chat que pide a cualquier asistente leer mi archivo de identidad antes de responder.",
+    "instruction": "Usa {url} para responder esto:",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyAria": "Copiar prompt",
+    "pasteHint": "Pega esto en ChatGPT, Claude, Gemini o cualquier otro asistente.",
+    "you": "Tú",
+    "assistant": "Asistente",
+    "questionLabel": "Pregunta",
+    "questionPlaceholder": "Pregunta algo sobre Renato...",
+    "suggestionsLabel": "Preguntas sugeridas",
+    "openFile": "Abrir llms.txt",
+    "questions": {
+      "who": "¿Quién es Renato Vicente?",
+      "work": "¿Cuál es su experiencia laboral?",
+      "travel": "¿Qué países ha visitado?",
+      "contact": "¿Cómo puedo contactarlo?"
+    }
   }
 }

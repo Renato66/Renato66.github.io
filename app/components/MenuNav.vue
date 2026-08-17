@@ -8,7 +8,7 @@ interface NavPage {
   path: string
 }
 
-const pages: NavPage[] = [
+const pages = computed<NavPage[]>(() => [
   {
     id: 'home',
     text: t('pages.home'),
@@ -24,11 +24,16 @@ const pages: NavPage[] = [
     text: t('pages.achievements'),
     path: '/achievements',
   },
-]
+  {
+    id: 'ask-ai',
+    text: t('pages.askAi'),
+    path: '/llm',
+  },
+])
 
 const currentPage = computed(() => {
   const route = useRoute()
-  return pages.find(p => p.path === route.path) || pages[0]
+  return pages.value.find(p => p.path === route.path) || pages.value[0]
 })
 
 const selectedPage = computed({
