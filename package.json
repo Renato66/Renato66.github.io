@@ -15,6 +15,7 @@
     "@lucide/vue": "^1.28.0",
     "@nuxt/image": "^1",
     "@nuxtjs/i18n": "^9",
+    "@nuxtjs/sitemap": "^8.3.4",
     "@tailwindcss/vite": "^4",
     "nuxt": "^4",
     "tailwindcss": "^4"

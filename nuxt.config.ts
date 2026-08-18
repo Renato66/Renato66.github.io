@@ -10,7 +10,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
   ],
+
+  site: {
+    url: siteUrl,
+    name: 'Renato Vicente',
+    trailingSlash: true,
+  },
 
   css: ['~/assets/css/main.css'],
 
@@ -72,6 +79,7 @@ export default defineNuxtConfig({
   i18n: {
     baseUrl: siteUrl,
     strategy: 'no_prefix',
+    trailingSlash: true,
     defaultLocale: 'en',
     vueI18n: './i18n.config.ts',
     lazy: true,
