@@ -30,5 +30,6 @@ const current = computed({
     id="language-select"
     v-model="current"
     :items="locales"
+    :label="t('currentLocale')"
   />
 </template>
