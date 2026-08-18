@@ -4,6 +4,11 @@ import { countries } from '@/data/travel'
 const { t } = useI18n()
 const route = useRoute()
 
+usePageSeo({
+  titleKey: 'travelLog.title',
+  descriptionKey: 'travelLog.description',
+})
+
 const selectedCode = computed(() => {
   const country = route.query.country
   const code = Array.isArray(country) ? country[0] : country

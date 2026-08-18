@@ -4,6 +4,12 @@ const birthMonthIndex = 4
 const birthDay = 9
 const { rt, tm } = useI18n()
 
+usePageSeo({
+  titleKey: 'seo.title',
+  descriptionKey: 'seo.description',
+  keywordsKey: 'seo.keywords',
+})
+
 const age = computed(() => {
   const now = new Date()
   let years = now.getUTCFullYear() - birthYear

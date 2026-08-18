@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { t } = useI18n()
+
+usePageSeo({
+  titleKey: 'askAi.title',
+  descriptionKey: 'askAi.description',
+})
 </script>
 
 <template>

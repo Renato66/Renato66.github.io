@@ -48,6 +48,11 @@ interface AchievementSource {
 
 const { t } = useI18n()
 
+usePageSeo({
+  titleKey: 'achievements.page.title',
+  descriptionKey: 'achievements.page.description',
+})
+
 const tagOptions: AchievementTag[] = ['work', 'life', 'travel']
 const activeTags = shallowRef<AchievementTag[]>([...tagOptions])
 

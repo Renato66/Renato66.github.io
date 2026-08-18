@@ -1,5 +1,11 @@
 {
   "hrefLang": "en-US",
+  "seo": {
+    "siteName": "Renato Vicente",
+    "title": "Renato Vicente",
+    "description": "Vue.js specialist and senior front-end engineer. Programmer, DJ, traveller, communicator, comedian, and creative from Santo André, Brazil.",
+    "keywords": "Renato Vicente, Vue.js, Nuxt, front-end, senior frontend engineer, tech lead, JavaScript, Node.js, Santo André, Brazil, Barcelona, DJ, traveller"
+  },
   "description": [
     "DJ",
     "programmer",
