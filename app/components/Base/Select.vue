@@ -17,29 +17,31 @@ const props = withDefaults(defineProps<{
   closeOnClick?: boolean
   label?: string
 }>(), {
-  id: Math.random().toString(36).substring(7),
+  id: undefined,
   closeOnClick: true,
-  label: 'Select an option'
+  label: 'Select an option',
 })
+
+const generatedId = useId()
+const selectId = computed(() => props.id ?? generatedId)
 </script>
 
 <template>
   <BaseButton
-    :commandFor="props.id"
+    :commandFor="selectId"
     command="toggle-popover"
-    :aria-label="props.label"
     :aria-expanded="false"
     aria-haspopup="listbox"
-    :aria-controls="props.id"
+    :aria-controls="selectId"
     :style="{
-      'anchor-name': `--${props.id}`,
+      'anchor-name': `--${selectId}`,
     }"
   >
     <slot>
       <img
         v-if="model?.image"
         :src="model.image"
-        :alt="model.text"
+        alt=""
         class="w-5 h-4 object-cover rounded-sm"
       >
       <span>{{ model?.text ?? props.label }}</span>
@@ -61,13 +63,13 @@ const props = withDefaults(defineProps<{
   </BaseButton>
 
   <ul
-    :id="props.id"
+    :id="selectId"
     ref="popoverRef"
     role="listbox"
     :aria-label="props.label"
     popover
     :style="{
-      'position-anchor': `--${props.id}`,
+      'position-anchor': `--${selectId}`,
     }"
     class="menu-position rounded-lg bg-gray-800 shadow-xl ring-1 ring-white/10 overflow-hidden z-50 m-0 p-0 list-none"
   >
@@ -79,7 +81,7 @@ const props = withDefaults(defineProps<{
       class="flex items-center"
     >
       <BaseButton
-        :commandFor="props.closeOnClick && props.id"
+        :commandFor="props.closeOnClick && selectId"
         command="hide-popover"
         class="gap-3 w-full rounded-none"
         :class="{ 'bg-gray-700/60': item.id === model?.id }"
@@ -88,7 +90,7 @@ const props = withDefaults(defineProps<{
         <img
           v-if="item.image"
           :src="item.image"
-          :alt="item.text"
+          alt=""
           class="w-5 h-4 object-cover rounded-sm"
         >
         {{ item.text }}
