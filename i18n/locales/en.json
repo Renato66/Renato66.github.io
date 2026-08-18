@@ -42,7 +42,7 @@
     "map": "World travel map",
     "countryMap": "{country} map",
     "selectCountry": "Show {country} map",
-    "deselectCountry": "Show world map",
+    "deselectCountry": "Show world map for {country}",
     "departures": {
       "title": "Departures",
       "columns": {

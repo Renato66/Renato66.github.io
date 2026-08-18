@@ -42,7 +42,7 @@
     "map": "Mapa mundial de viagens",
     "countryMap": "Mapa de {country}",
     "selectCountry": "Mostrar mapa de {country}",
-    "deselectCountry": "Mostrar mapa mundial",
+    "deselectCountry": "Mostrar mapa mundial de {country}",
     "departures": {
       "title": "Partidas",
       "columns": {
