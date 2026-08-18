@@ -17,23 +17,33 @@ const pages = computed<NavPage[]>(() => [
   {
     id: 'travel-log',
     text: t('pages.travelLog'),
-    path: '/travel-log',
+    path: '/travel-log/',
   },
   {
     id: 'achievements',
     text: t('pages.achievements'),
-    path: '/achievements',
+    path: '/achievements/',
   },
   {
     id: 'ask-ai',
     text: t('pages.askAi'),
-    path: '/llm',
+    path: '/llm/',
   },
 ])
 
+function normalizePath(path: string) {
+  if (path === '/') {
+    return path
+  }
+
+  return path.replace(/\/$/, '')
+}
+
 const currentPage = computed(() => {
   const route = useRoute()
-  return pages.value.find(p => p.path === route.path) || pages.value[0]
+  const currentPath = normalizePath(route.path)
+
+  return pages.value.find(p => normalizePath(p.path) === currentPath) || pages.value[0]
 })
 
 const selectedPage = computed({
