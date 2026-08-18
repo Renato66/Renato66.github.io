@@ -18,11 +18,11 @@ function countryFlag(code: string) {
 
 function chipTo(country: Country) {
   if (props.selectedCode === country.code) {
-    return { path: '/travel-log' }
+    return { path: '/travel-log/' }
   }
 
   return {
-    path: '/travel-log',
+    path: '/travel-log/',
     query: { country: country.code },
   }
 }
@@ -38,7 +38,7 @@ function chipClasses(country: Country) {
 
 function chipLabel(country: Country) {
   if (props.selectedCode === country.code) {
-    return t('travelLog.deselectCountry')
+    return t('travelLog.deselectCountry', { country: country.name })
   }
 
   return t('travelLog.selectCountry', { country: country.name })
