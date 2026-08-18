@@ -19,9 +19,9 @@ Senior front-end at Nexton (United States remote) since May 2025. He has lived a
 
 ## Site
 - [Home](https://renato66.github.io/): Current personal site with short bio and companies he has worked with
-- [Travel Log](https://renato66.github.io/travel-log): Countries and cities he has visited
-- [Achievements](https://renato66.github.io/achievements): Work, life, and travel milestones
-- [Ask AI](https://renato66.github.io/llm): Copyable prompt that tells another assistant to read this file first
+- [Travel Log](https://renato66.github.io/travel-log/): Countries and cities he has visited
+- [Achievements](https://renato66.github.io/achievements/): Work, life, and travel milestones
+- [Ask AI](https://renato66.github.io/llm/): Copyable prompt that tells another assistant to read this file first
 
 ## Profiles
 - [GitHub](https://github.com/Renato66): Open-source work and code, handle @Renato66
@@ -74,7 +74,7 @@ He worked as a hobby DJ at Blazing Produções (2013–2020) and is passionate a
 
 ### Travel
 
-Cities from [Travel Log](https://renato66.github.io/travel-log). Do not invent cities that are not listed.
+Cities from [Travel Log](https://renato66.github.io/travel-log/). Do not invent cities that are not listed.
 
 - Brazil: São Paulo, Rio de Janeiro, Curitiba, Fortaleza, Salvador, Recife, São Tomé das Letras, Caldas Novas, Bonito, Pipa, São Luís
 - Colombia: Medellín, Bogotá, Cartagena
@@ -94,7 +94,7 @@ He liked Barcelona a lot and came back to live there for a year to learn more Sp
 
 ### Achievements
 
-Public work, life, and travel milestones from [Achievements](https://renato66.github.io/achievements). Titles are first-party nicknames from that page.
+Public work, life, and travel milestones from [Achievements](https://renato66.github.io/achievements/). Titles are first-party nicknames from that page.
 
 - Yeti Alert (May 2025, travel): first time snowboarding — [Instagram](https://www.instagram.com/p/DHGDwBTtlfs/)
 - Bilingual Boss (March 2025, travel): spoke Spanish for the first time

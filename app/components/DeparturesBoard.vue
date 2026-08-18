@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { Country } from '@/data/travel'
 
+interface DepartureRow {
+  name: string
+  code: string
+  key: string
+  flight: string
+  time: string
+  statusKey: 'onTime' | 'gateOpen' | 'delayed'
+}
+
 const props = defineProps<{
   countries: Country[]
 }>()
@@ -12,37 +21,33 @@ const cityQueue = props.countries.flatMap(country => country.cities.map(city => 
   code: country.code,
 })))
 
-const shuffledCities = shuffleCities(cityQueue)
 const boardSize = 10
-const baseTime = useState<number>('travel-log-base-time', () => Date.now())
 const threeHoursInMinutes = 180
 const destinationCellCount = 19
+const statusKeys = ['onTime', 'gateOpen', 'delayed'] as const
 
-const departures = shuffledCities.slice(0, boardSize).map((city, rowIndex) => {
-  const start = new Date(baseTime.value)
-  const roundedMinute = Math.floor(start.getMinutes() / 5) * 5
-  start.setMinutes(roundedMinute, 0, 0)
+function createDepartures(): DepartureRow[] {
+  const shuffledCities = shuffleCities(cityQueue)
+  const start = new Date()
+  const roundedMinute = Math.floor(start.getUTCMinutes() / 5) * 5
+  start.setUTCMinutes(roundedMinute, 0, 0)
 
   const minuteStep = boardSize > 1 ? Math.floor(threeHoursInMinutes / (boardSize - 1)) : 0
-  const rowTime = new Date(start.getTime() + (rowIndex * minuteStep * 60 * 1000))
-  const hour = String(rowTime.getHours()).padStart(2, '0')
-  const minute = String(rowTime.getMinutes()).padStart(2, '0')
-  const status = ['On Time', 'Gate Open', 'Delayed'][rowIndex % 3]
-  const statusKey = status === 'On Time'
-    ? 'onTime'
-    : status === 'Gate Open'
-      ? 'gateOpen'
-      : 'delayed'
 
-  return {
-    ...city,
-    key: `${rowIndex}-${city.code}-${city.name}`,
-    flight: `${city.code.toUpperCase()}${String(100 + ((rowIndex * 37) % 900)).padStart(3, '0')}`,
-    time: `${hour}:${minute}`,
-    status,
-    statusKey,
-  }
-})
+  return shuffledCities.slice(0, boardSize).map((city, rowIndex) => {
+    const rowTime = new Date(start.getTime() + (rowIndex * minuteStep * 60 * 1000))
+    const hour = String(rowTime.getUTCHours()).padStart(2, '0')
+    const minute = String(rowTime.getUTCMinutes()).padStart(2, '0')
+
+    return {
+      ...city,
+      key: `${rowIndex}-${city.code}-${city.name}`,
+      flight: `${city.code.toUpperCase()}${String(100 + ((rowIndex * 37) % 900)).padStart(3, '0')}`,
+      time: `${hour}:${minute}`,
+      statusKey: statusKeys[rowIndex % statusKeys.length] ?? 'onTime',
+    }
+  })
+}
 
 function shuffleCities<T>(items: T[]) {
   const copy = [...items]
@@ -56,6 +61,8 @@ function shuffleCities<T>(items: T[]) {
 
   return copy
 }
+
+const departures = useState<DepartureRow[]>('travel-log-departures', createDepartures)
 
 function cityCells(name: string) {
   return Array.from(name.toUpperCase().padEnd(destinationCellCount, ' ')).slice(0, destinationCellCount)
