@@ -12,6 +12,7 @@ node_modules
 # Logs
 logs
 *.log
+.unlighthouse
 
 # Local env files
 .env
